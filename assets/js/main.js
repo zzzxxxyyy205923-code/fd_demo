@@ -506,14 +506,10 @@ function renderHome() {
     <video id="stories-reel-video" class="stories-reel__video" src="${esc(reelList[0].video)}" muted autoplay loop playsinline preload="auto"></video>
     <div class="stories-reel__veil" aria-hidden="true"></div>
     <div class="stories-reel__head">
-      <div class="wrap">
-        <div class="section__head">
-          <div>
-            <span class="section__eyebrow">STORIES</span>
-            <h2 class="section__title">Stories</h2>
-          </div>
-          <a class="more-link" href="#/stories">See more stories <span class="arr">→</span></a>
-        </div>
+      <div class="wrap stories-reel__inner">
+        <span class="section__eyebrow">STORIES</span>
+        <h2 class="section__title">Stories</h2>
+        <a class="stories-reel__cta" href="#/stories">MORE</a>
       </div>
     </div>
   </section>`;
