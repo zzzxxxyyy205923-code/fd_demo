@@ -18,7 +18,7 @@ window.COURSE_PRODUCTS = {
     },
     "elite": {
       "eyebrow": "Global Talent Visa",
-      "title": "艺术精英计划"
+      "title": "设计师孵化"
     },
     "overseas": {
       "eyebrow": "Overseas Programs",
@@ -26,129 +26,10 @@ window.COURSE_PRODUCTS = {
     },
     "frontier": {
       "eyebrow": "Art Frontier Lectures",
-      "title": "艺术前沿讯息讲座"
+      "title": "时尚未来趋势讲座"
     }
   },
   "elite": [
-    {
-      "id": "elite-uk-plan",
-      "badge": "UK Centre",
-      "cover": "",
-      "placeholder": true,
-      "tileVariant": null,
-      "levels": [
-        "ug",
-        "pg"
-      ],
-      "meta": {
-        "eyebrow": "UK Centre｜艺术生留英 · Global Talent Visa",
-        "titleEn": "Global Talent Visa",
-        "titleCn": "艺术生留英计划",
-        "desc": "【占位】",
-        "chips": [
-          "无需雇主担保",
-          "3 / 5 年转永居",
-          "艺术家身份孵化",
-          "招募中"
-        ]
-      },
-      "snapshot": [
-        {
-          "k": "【占位】",
-          "v": "【占位】"
-        },
-        {
-          "k": "【占位】",
-          "v": "【占位】"
-        },
-        {
-          "k": "【占位】",
-          "v": "【占位】"
-        },
-        {
-          "k": "【占位】",
-          "v": "【占位】"
-        }
-      ],
-      "curriculum": [
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        }
-      ],
-      "whySFK": [
-        {
-          "t": "【占位】",
-          "d": "【占位】"
-        },
-        {
-          "t": "【占位】",
-          "d": "【占位】"
-        },
-        {
-          "t": "【占位】",
-          "d": "【占位】"
-        },
-        {
-          "t": "【占位】",
-          "d": "【占位】"
-        }
-      ],
-      "closing": {
-        "cn": "【占位】",
-        "en": "【占位】"
-      }
-    },
     {
       "id": "elite-incubator",
       "badge": "孵化计划",
@@ -163,7 +44,7 @@ window.COURSE_PRODUCTS = {
         "eyebrow": "Arts & Humanities｜青年艺术家孵化 · Young Artist Incubation",
         "titleEn": "Young Artist Incubation Program",
         "titleCn": "青年艺术家孵化计划",
-        "desc": "【占位】",
+        "desc": "",
         "chips": [
           "五大成长资产",
           "8 大服务模块",
@@ -171,107 +52,12 @@ window.COURSE_PRODUCTS = {
           "招募中"
         ]
       },
-      "snapshot": [
-        {
-          "k": "【占位】",
-          "v": "【占位】"
-        },
-        {
-          "k": "【占位】",
-          "v": "【占位】"
-        },
-        {
-          "k": "【占位】",
-          "v": "【占位】"
-        },
-        {
-          "k": "【占位】",
-          "v": "【占位】"
-        }
-      ],
-      "curriculum": [
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        }
-      ],
-      "whySFK": [
-        {
-          "t": "【占位】",
-          "d": "【占位】"
-        },
-        {
-          "t": "【占位】",
-          "d": "【占位】"
-        },
-        {
-          "t": "【占位】",
-          "d": "【占位】"
-        },
-        {
-          "t": "【占位】",
-          "d": "【占位】"
-        }
-      ],
+      "snapshot": [],
+      "curriculum": [],
+      "whySFK": [],
       "closing": {
-        "cn": "【占位】",
-        "en": "【占位】"
+        "cn": "",
+        "en": ""
       }
     }
   ],
@@ -534,7 +320,7 @@ window.COURSE_PRODUCTS = {
         "eyebrow": "US Undergraduate Admissions｜本科申请 · 作品集 + 科研双轨",
         "titleEn": "US Undergraduate Elite Program",
         "titleCn": "美国本科未来精英计划",
-        "desc": "【占位】",
+        "desc": "",
         "chips": [
           "TOP1 – TOP10 五层级",
           "AI全线覆盖",
@@ -542,71 +328,12 @@ window.COURSE_PRODUCTS = {
           "招募中"
         ]
       },
-      "snapshot": [
-        {
-          "k": "【占位】",
-          "v": "【占位】"
-        },
-        {
-          "k": "【占位】",
-          "v": "【占位】"
-        },
-        {
-          "k": "【占位】",
-          "v": "【占位】"
-        },
-        {
-          "k": "【占位】",
-          "v": "【占位】"
-        }
-      ],
-      "curriculum": [
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        }
-      ],
-      "whySFK": [
-        {
-          "t": "【占位】",
-          "d": "【占位】"
-        },
-        {
-          "t": "【占位】",
-          "d": "【占位】"
-        },
-        {
-          "t": "【占位】",
-          "d": "【占位】"
-        },
-        {
-          "t": "【占位】",
-          "d": "【占位】"
-        }
-      ],
+      "snapshot": [],
+      "curriculum": [],
+      "whySFK": [],
       "closing": {
-        "cn": "【占位】",
-        "en": "【占位】"
+        "cn": "",
+        "en": ""
       },
       "levels": [
         "ug"
@@ -622,7 +349,7 @@ window.COURSE_PRODUCTS = {
         "eyebrow": "UK Undergraduate Admissions｜本科申请 · 升学就业一体化",
         "titleEn": "UK Undergraduate Program",
         "titleCn": "英国本科未来成长计划",
-        "desc": "【占位】",
+        "desc": "",
         "chips": [
           "TOP1 – TOP9 多层级",
           "升学就业一体化",
@@ -630,67 +357,12 @@ window.COURSE_PRODUCTS = {
           "招募中"
         ]
       },
-      "snapshot": [
-        {
-          "k": "【占位】",
-          "v": "【占位】"
-        },
-        {
-          "k": "【占位】",
-          "v": "【占位】"
-        },
-        {
-          "k": "【占位】",
-          "v": "【占位】"
-        }
-      ],
-      "curriculum": [
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        }
-      ],
-      "whySFK": [
-        {
-          "t": "【占位】",
-          "d": "【占位】"
-        },
-        {
-          "t": "【占位】",
-          "d": "【占位】"
-        },
-        {
-          "t": "【占位】",
-          "d": "【占位】"
-        },
-        {
-          "t": "【占位】",
-          "d": "【占位】"
-        }
-      ],
+      "snapshot": [],
+      "curriculum": [],
+      "whySFK": [],
       "closing": {
-        "cn": "【占位】",
-        "en": "【占位】"
+        "cn": "",
+        "en": ""
       },
       "levels": [
         "ug"
@@ -706,7 +378,7 @@ window.COURSE_PRODUCTS = {
         "eyebrow": "HK Undergraduate Admissions｜本科申请 · 常规计划 + 学霸计划",
         "titleEn": "Hong Kong Undergraduate Program",
         "titleCn": "香港本科升学计划",
-        "desc": "【占位】",
+        "desc": "",
         "chips": [
           "常规计划 · 学霸计划",
           "TOP3 – TOP8 分层",
@@ -714,71 +386,12 @@ window.COURSE_PRODUCTS = {
           "招募中"
         ]
       },
-      "snapshot": [
-        {
-          "k": "【占位】",
-          "v": "【占位】"
-        },
-        {
-          "k": "【占位】",
-          "v": "【占位】"
-        },
-        {
-          "k": "【占位】",
-          "v": "【占位】"
-        },
-        {
-          "k": "【占位】",
-          "v": "【占位】"
-        }
-      ],
-      "curriculum": [
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        }
-      ],
-      "whySFK": [
-        {
-          "t": "【占位】",
-          "d": "【占位】"
-        },
-        {
-          "t": "【占位】",
-          "d": "【占位】"
-        },
-        {
-          "t": "【占位】",
-          "d": "【占位】"
-        },
-        {
-          "t": "【占位】",
-          "d": "【占位】"
-        }
-      ],
+      "snapshot": [],
+      "curriculum": [],
+      "whySFK": [],
       "closing": {
-        "cn": "【占位】",
-        "en": "【占位】"
+        "cn": "",
+        "en": ""
       },
       "levels": [
         "ug"
@@ -788,7 +401,7 @@ window.COURSE_PRODUCTS = {
   "catalog": [
     {
       "id": "internship",
-      "badge": "90 门课程",
+      "badge": "56 个岗位",
       "cover": "",
       "placeholder": true,
       "tileVariant": null,
@@ -825,32 +438,7 @@ window.COURSE_PRODUCTS = {
           "v": "核心数据待提供"
         }
       ],
-      "curriculum": [
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        }
-      ],
+      "curriculum": [],
       "whySFK": [
         {
           "t": "占位",
@@ -876,7 +464,7 @@ window.COURSE_PRODUCTS = {
     },
     {
       "id": "summerwinter",
-      "badge": "9 门课程",
+      "badge": "11 门课程",
       "cover": "",
       "placeholder": true,
       "tileVariant": "v2",
@@ -914,32 +502,7 @@ window.COURSE_PRODUCTS = {
           "v": "核心数据待提供"
         }
       ],
-      "curriculum": [
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        }
-      ],
+      "curriculum": [],
       "whySFK": [
         {
           "t": "占位",
@@ -965,7 +528,7 @@ window.COURSE_PRODUCTS = {
     },
     {
       "id": "bizpractice",
-      "badge": "5 门课程",
+      "badge": "6 个项目",
       "cover": "",
       "placeholder": true,
       "tileVariant": "v3",
@@ -1002,32 +565,7 @@ window.COURSE_PRODUCTS = {
           "v": "核心数据待提供"
         }
       ],
-      "curriculum": [
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        }
-      ],
+      "curriculum": [],
       "whySFK": [
         {
           "t": "占位",
@@ -1053,7 +591,7 @@ window.COURSE_PRODUCTS = {
     },
     {
       "id": "masterclass",
-      "badge": "10 门课程",
+      "badge": "11 门课程",
       "cover": "",
       "placeholder": true,
       "tileVariant": null,
@@ -1091,32 +629,7 @@ window.COURSE_PRODUCTS = {
           "v": "核心数据待提供"
         }
       ],
-      "curriculum": [
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        }
-      ],
+      "curriculum": [],
       "whySFK": [
         {
           "t": "占位",
@@ -1164,34 +677,197 @@ window.COURSE_PRODUCTS = {
         ]
       },
       "snapshot": [],
-      "curriculum": [
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        }
-      ],
+      "curriculum": [],
       "whySFK": [],
-      "closing": {}
+      "closing": {},
+      "detail": {
+        "curriculumFacets": {
+          "searchPlaceholder": "搜索项目 / 国家 / 城市院校…",
+          "searchFields": ["role_or_course", "university", "professor"],
+          "groups": [
+            {"value": "境外访校", "label": "境外访校"},
+            {"value": "境外夏校", "label": "境外夏校"},
+            {"value": "境外冬校", "label": "境外冬校"},
+            {"value": "境外研学", "label": "境外研学"},
+            {"value": "家长团", "label": "家长团"}
+          ]
+        },
+        "curriculum": [
+          {
+            "tab": "oversea",
+            "program_type": "境外访校",
+            "category": "艺术人文",
+            "role_or_course": "2027寒假-新加坡名校探访团",
+            "suitable_for": "全科系专业",
+            "location": "7天",
+            "level": "本科/研究生",
+            "outcomes": "2027.1.24-1.30",
+            "poster": "assets/img/courses/2027寒假-新加坡名校探访团.jpg",
+            "university": "新加坡",
+            "professor": "新加坡",
+            "type": "境外项目",
+            "cat": "境外访校",
+            "eyebrow": "境外项目",
+            "title": "2027寒假-新加坡名校探访团",
+            "program": "新加坡",
+            "tags": ["全科系专业", "本科/研究生", "7天", "2027.1.24-1.30"],
+            "desc": "新加坡",
+            "facets": {"program_type": "境外访校", "category": "艺术人文"},
+            "searchText": "2027寒假-新加坡名校探访团 新加坡 新加坡"
+          },
+          {
+            "tab": "oversea",
+            "program_type": "境外访校",
+            "category": "艺术人文",
+            "role_or_course": "2027寒假-英国名校探访团",
+            "suitable_for": "全科系专业",
+            "location": "10天",
+            "level": "本科/研究生",
+            "outcomes": "2027.2.11-2.20",
+            "poster": "assets/img/courses/2027寒假-英国名校探访团.jpg",
+            "university": "英国",
+            "professor": "伦敦、剑桥、提赛德、拉夫堡、利兹、爱丁堡、格拉斯哥",
+            "type": "境外项目",
+            "cat": "境外访校",
+            "eyebrow": "境外项目",
+            "title": "2027寒假-英国名校探访团",
+            "program": "英国",
+            "tags": ["全科系专业", "本科/研究生", "10天", "2027.2.11-2.20"],
+            "desc": "伦敦、剑桥、提赛德、拉夫堡、利兹、爱丁堡、格拉斯哥",
+            "facets": {"program_type": "境外访校", "category": "艺术人文"},
+            "searchText": "2027寒假-英国名校探访团 英国 伦敦、剑桥、提赛德、拉夫堡、利兹、爱丁堡、格拉斯哥"
+          },
+          {
+            "tab": "oversea",
+            "program_type": "境外访校",
+            "category": "艺术人文",
+            "role_or_course": "2027暑假-美国访校访企团",
+            "suitable_for": "全科系专业",
+            "location": "10天",
+            "level": "本科/研究生",
+            "outcomes": "2027.7",
+            "poster": "assets/img/courses/2027暑假-美国访校访企团.jpg",
+            "university": "美国",
+            "professor": "纽约、波士顿、洛杉矶",
+            "type": "境外项目",
+            "cat": "境外访校",
+            "eyebrow": "境外项目",
+            "title": "2027暑假-美国访校访企团",
+            "program": "美国",
+            "tags": ["全科系专业", "本科/研究生", "10天", "2027.7"],
+            "desc": "纽约、波士顿、洛杉矶",
+            "facets": {"program_type": "境外访校", "category": "艺术人文"},
+            "searchText": "2027暑假-美国访校访企团 美国 纽约、波士顿、洛杉矶"
+          },
+          {
+            "tab": "oversea",
+            "program_type": "境外夏校",
+            "category": "艺术人文",
+            "role_or_course": "2027暑假- RISD官方夏校",
+            "suitable_for": "全科系专业",
+            "location": "14天",
+            "level": "本科/研究生",
+            "outcomes": "2027.7.11-7.24",
+            "poster": "assets/img/courses/2027暑假- RISD官方夏校.jpg",
+            "university": "美国",
+            "professor": "普罗维登斯",
+            "type": "境外项目",
+            "cat": "境外夏校",
+            "eyebrow": "境外项目",
+            "title": "2027暑假- RISD官方夏校",
+            "program": "美国",
+            "tags": ["全科系专业", "本科/研究生", "14天", "2027.7.11-7.24"],
+            "desc": "普罗维登斯",
+            "facets": {"program_type": "境外夏校", "category": "艺术人文"},
+            "searchText": "2027暑假- risd官方夏校 美国 普罗维登斯"
+          },
+          {
+            "tab": "oversea",
+            "program_type": "境外夏校",
+            "category": "艺术人文",
+            "role_or_course": "2027暑假- UAL伦艺本科官方夏校",
+            "suitable_for": "全科系专业",
+            "location": "11天",
+            "level": "本科/研究生",
+            "outcomes": "",
+            "poster": "assets/img/courses/2027暑假- UAL伦艺本科官方夏校.jpg",
+            "university": "英国",
+            "professor": "",
+            "type": "境外项目",
+            "cat": "境外夏校",
+            "eyebrow": "境外项目",
+            "title": "2027暑假- UAL伦艺本科官方夏校",
+            "program": "英国",
+            "tags": ["全科系专业", "本科/研究生", "11天"],
+            "desc": "",
+            "facets": {"program_type": "境外夏校", "category": "艺术人文"},
+            "searchText": "2027暑假- ual伦艺本科官方夏校 英国 "
+          }
+        ]
+      }
+    },
+    {
+      "id": "overseas-anxinban",
+      "badge": "安心伴",
+      "cover": "",
+      "placeholder": true,
+      "tileVariant": null,
+      "levels": [
+        "ug",
+        "pg"
+      ],
+      "meta": {
+        "eyebrow": "Overseas Programs｜安心伴",
+        "titleEn": "Anxinban",
+        "titleCn": "安心伴",
+        "desc": "占位：安心伴项目整体定位、服务内容与申请引导待后续填充。",
+        "chips": [
+          "安心伴",
+          "毕无忧",
+          "本科 / 研究生"
+        ]
+      },
+      "snapshot": [],
+      "curriculum": [],
+      "whySFK": [],
+      "closing": {},
+      "detail": {
+        "curriculumFacets": {
+          "searchPlaceholder": "搜索课程模块…",
+          "groups": [
+            {"value": "安心伴", "label": "安心伴"},
+            {"value": "毕无忧", "label": "毕无忧"}
+          ]
+        },
+        "curriculum": [
+          {
+            "cat": "安心伴",
+            "eyebrow": "MODULE 01",
+            "title": "课程模块标题占位 01",
+            "program": "所属项目 / 院校占位",
+            "tags": ["标签占位一", "标签占位二"],
+            "desc": "课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。",
+            "poster": "",
+            "pdf": "",
+            "_ph": true,
+            "facets": {"program_type": "安心伴"},
+            "searchText": "课程模块标题占位 01 所属项目 / 院校占位 课程模块简介占位 标签占位一 标签占位二 安心伴"
+          },
+          {
+            "cat": "毕无忧",
+            "eyebrow": "MODULE 02",
+            "title": "课程模块标题占位 02",
+            "program": "所属项目 / 院校占位",
+            "tags": ["标签占位一", "标签占位二"],
+            "desc": "课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。",
+            "poster": "",
+            "pdf": "",
+            "_ph": true,
+            "facets": {"program_type": "毕无忧"},
+            "searchText": "课程模块标题占位 02 所属项目 / 院校占位 课程模块简介占位 标签占位一 标签占位二 毕无忧"
+          }
+        ]
+      }
     }
   ],
   "frontier": [
@@ -1206,9 +882,9 @@ window.COURSE_PRODUCTS = {
         "pg"
       ],
       "meta": {
-        "eyebrow": "Art Frontier Lectures｜艺术前沿讯息讲座",
+        "eyebrow": "Art Frontier Lectures｜时尚未来趋势讲座",
         "titleEn": "Art Frontier Lecture",
-        "titleCn": "艺术前沿讯息讲座",
+        "titleCn": "时尚未来趋势讲座",
         "desc": "覆盖 lecture 25 与 lecture 26 两季共 11 门海外院校领航课，由 Camberwell、RCA、CSM、UCL、Stanford、RISD、LCC、Penn 等院校教授线上授课，地方导师总结。",
         "chips": [
           "11 门课程",
@@ -1218,32 +894,7 @@ window.COURSE_PRODUCTS = {
         ]
       },
       "snapshot": [],
-      "curriculum": [
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        },
-        {
-          "title": "【占位】",
-          "desc": "【占位】",
-          "img": "",
-          "meta": "【占位】"
-        }
-      ],
+      "curriculum": [],
       "whySFK": [],
       "closing": {}
     }

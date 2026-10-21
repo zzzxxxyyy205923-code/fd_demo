@@ -39,60 +39,31 @@ const CP_DATA = {
     "eyebrow": "UK Centre｜艺术生留英 · Global Talent Visa",
     "titleEn": "Global Talent Visa",
     "titleCn": "艺术生留英计划",
-    "desc": "【占位】模块介绍文字待填入——培养目标、教学模式与成果说明。",
-    "chips": [
-     "【占位】标签待填入",
-     "【占位】标签待填入"
-    ]
+    "desc": "",
+    "chips": []
    },
    "snapshot": [
     {
      "k": "项目周期",
-     "v": "【占位】待填入"
+     "v": ""
     },
     {
      "k": "适合人群",
-     "v": "【占位】待填入"
+     "v": ""
     },
     {
      "k": "授课形式",
-     "v": "【占位】待填入"
+     "v": ""
     },
     {
      "k": "成果产出",
-     "v": "【占位】待填入"
+     "v": ""
     }
    ],
-   "curriculum": [
-    {
-     "title": "【占位】课程模块名称 1",
-     "desc": "【占位】课程模块说明文字待填入，含教学目标与产出。"
-    },
-    {
-     "title": "【占位】课程模块名称 2",
-     "desc": "【占位】课程模块说明文字待填入，含教学目标与产出。"
-    },
-    {
-     "title": "【占位】课程模块名称 3",
-     "desc": "【占位】课程模块说明文字待填入，含教学目标与产出。"
-    }
-   ],
-   "whySFK": [
-    {
-     "t": "【占位】优势点 1",
-     "d": "【占位】优势说明文字待填入。"
-    },
-    {
-     "t": "【占位】优势点 2",
-     "d": "【占位】优势说明文字待填入。"
-    },
-    {
-     "t": "【占位】优势点 3",
-     "d": "【占位】优势说明文字待填入。"
-    }
-   ],
+   "curriculum": [],
+   "whySFK": [],
    "closing": {
-    "cn": "【占位】结语中文待填入。",
+    "cn": "",
     "en": "【Placeholder】Closing statement to be filled."
    },
    "levels": [
@@ -110,60 +81,31 @@ const CP_DATA = {
     "eyebrow": "Arts & Humanities｜青年艺术家孵化 · Young Artist Incubation",
     "titleEn": "Young Artist Incubation Program",
     "titleCn": "青年艺术家孵化计划",
-    "desc": "【占位】模块介绍文字待填入——培养目标、教学模式与成果说明。",
-    "chips": [
-     "【占位】标签待填入",
-     "【占位】标签待填入"
-    ]
+    "desc": "",
+    "chips": []
    },
    "snapshot": [
     {
      "k": "项目周期",
-     "v": "【占位】待填入"
+     "v": ""
     },
     {
      "k": "适合人群",
-     "v": "【占位】待填入"
+     "v": ""
     },
     {
      "k": "授课形式",
-     "v": "【占位】待填入"
+     "v": ""
     },
     {
      "k": "成果产出",
-     "v": "【占位】待填入"
+     "v": ""
     }
    ],
-   "curriculum": [
-    {
-     "title": "【占位】课程模块名称 1",
-     "desc": "【占位】课程模块说明文字待填入，含教学目标与产出。"
-    },
-    {
-     "title": "【占位】课程模块名称 2",
-     "desc": "【占位】课程模块说明文字待填入，含教学目标与产出。"
-    },
-    {
-     "title": "【占位】课程模块名称 3",
-     "desc": "【占位】课程模块说明文字待填入，含教学目标与产出。"
-    }
-   ],
-   "whySFK": [
-    {
-     "t": "【占位】优势点 1",
-     "d": "【占位】优势说明文字待填入。"
-    },
-    {
-     "t": "【占位】优势点 2",
-     "d": "【占位】优势说明文字待填入。"
-    },
-    {
-     "t": "【占位】优势点 3",
-     "d": "【占位】优势说明文字待填入。"
-    }
-   ],
+   "curriculum": [],
+   "whySFK": [],
    "closing": {
-    "cn": "【占位】结语中文待填入。",
+    "cn": "",
     "en": "【Placeholder】Closing statement to be filled."
    },
    "levels": [
@@ -434,7 +376,7 @@ const CP_DATA = {
  "catalog": [
   {
    "id": "internship",
-   "badge": "90 门课程",
+   "badge": "56 个岗位",
    "tileVariant": null,
    "cover": "",
    "placeholder": false,
@@ -525,11 +467,11 @@ const CP_DATA = {
     {
      "program_type": "核心课程",
      "category": "",
-     "role_or_course": "【占位】课程名称待填入 1",
-     "suitable_for": "【占位】适合对象待填入",
-     "location": "【占位】",
-     "level": "【占位】",
-     "outcomes": "【占位】课程成果说明待填入。",
+     "role_or_course": "",
+     "suitable_for": "",
+     "location": "",
+     "level": "",
+     "outcomes": "",
      "poster": "",
      "university": "",
      "professor": ""
@@ -537,11 +479,11 @@ const CP_DATA = {
     {
      "program_type": "核心课程",
      "category": "",
-     "role_or_course": "【占位】课程名称待填入 2",
-     "suitable_for": "【占位】适合对象待填入",
-     "location": "【占位】",
-     "level": "【占位】",
-     "outcomes": "【占位】课程成果说明待填入。",
+     "role_or_course": "",
+     "suitable_for": "",
+     "location": "",
+     "level": "",
+     "outcomes": "",
      "poster": "",
      "university": "",
      "professor": ""
@@ -549,11 +491,11 @@ const CP_DATA = {
     {
      "program_type": "实践模块",
      "category": "",
-     "role_or_course": "【占位】课程名称待填入 3",
-     "suitable_for": "【占位】适合对象待填入",
-     "location": "【占位】",
-     "level": "【占位】",
-     "outcomes": "【占位】课程成果说明待填入。",
+     "role_or_course": "",
+     "suitable_for": "",
+     "location": "",
+     "level": "",
+     "outcomes": "",
      "poster": "",
      "university": "",
      "professor": ""
@@ -634,11 +576,11 @@ const CP_DATA = {
     {
      "program_type": "核心课程",
      "category": "",
-     "role_or_course": "【占位】课程名称待填入 1",
-     "suitable_for": "【占位】适合对象待填入",
-     "location": "【占位】",
-     "level": "【占位】",
-     "outcomes": "【占位】课程成果说明待填入。",
+     "role_or_course": "",
+     "suitable_for": "",
+     "location": "",
+     "level": "",
+     "outcomes": "",
      "poster": "",
      "university": "",
      "professor": ""
@@ -646,11 +588,11 @@ const CP_DATA = {
     {
      "program_type": "核心课程",
      "category": "",
-     "role_or_course": "【占位】课程名称待填入 2",
-     "suitable_for": "【占位】适合对象待填入",
-     "location": "【占位】",
-     "level": "【占位】",
-     "outcomes": "【占位】课程成果说明待填入。",
+     "role_or_course": "",
+     "suitable_for": "",
+     "location": "",
+     "level": "",
+     "outcomes": "",
      "poster": "",
      "university": "",
      "professor": ""
@@ -658,11 +600,11 @@ const CP_DATA = {
     {
      "program_type": "实践模块",
      "category": "",
-     "role_or_course": "【占位】课程名称待填入 3",
-     "suitable_for": "【占位】适合对象待填入",
-     "location": "【占位】",
-     "level": "【占位】",
-     "outcomes": "【占位】课程成果说明待填入。",
+     "role_or_course": "",
+     "suitable_for": "",
+     "location": "",
+     "level": "",
+     "outcomes": "",
      "poster": "",
      "university": "",
      "professor": ""
@@ -692,7 +634,7 @@ const CP_DATA = {
   },
   {
    "id": "bizpractice",
-   "badge": "5 门课程",
+   "badge": "6 个项目",
    "tileVariant": "v3",
    "cover": "",
    "placeholder": false,
@@ -762,11 +704,11 @@ const CP_DATA = {
     {
      "program_type": "核心课程",
      "category": "",
-     "role_or_course": "【占位】课程名称待填入 1",
-     "suitable_for": "【占位】适合对象待填入",
-     "location": "【占位】",
-     "level": "【占位】",
-     "outcomes": "【占位】课程成果说明待填入。",
+     "role_or_course": "",
+     "suitable_for": "",
+     "location": "",
+     "level": "",
+     "outcomes": "",
      "poster": "",
      "university": "",
      "professor": ""
@@ -774,11 +716,11 @@ const CP_DATA = {
     {
      "program_type": "核心课程",
      "category": "",
-     "role_or_course": "【占位】课程名称待填入 2",
-     "suitable_for": "【占位】适合对象待填入",
-     "location": "【占位】",
-     "level": "【占位】",
-     "outcomes": "【占位】课程成果说明待填入。",
+     "role_or_course": "",
+     "suitable_for": "",
+     "location": "",
+     "level": "",
+     "outcomes": "",
      "poster": "",
      "university": "",
      "professor": ""
@@ -786,11 +728,11 @@ const CP_DATA = {
     {
      "program_type": "实践模块",
      "category": "",
-     "role_or_course": "【占位】课程名称待填入 3",
-     "suitable_for": "【占位】适合对象待填入",
-     "location": "【占位】",
-     "level": "【占位】",
-     "outcomes": "【占位】课程成果说明待填入。",
+     "role_or_course": "",
+     "suitable_for": "",
+     "location": "",
+     "level": "",
+     "outcomes": "",
      "poster": "",
      "university": "",
      "professor": ""
@@ -892,11 +834,11 @@ const CP_DATA = {
     {
      "program_type": "核心课程",
      "category": "",
-     "role_or_course": "【占位】课程名称待填入 1",
-     "suitable_for": "【占位】适合对象待填入",
-     "location": "【占位】",
-     "level": "【占位】",
-     "outcomes": "【占位】课程成果说明待填入。",
+     "role_or_course": "",
+     "suitable_for": "",
+     "location": "",
+     "level": "",
+     "outcomes": "",
      "poster": "",
      "university": "",
      "professor": ""
@@ -904,11 +846,11 @@ const CP_DATA = {
     {
      "program_type": "核心课程",
      "category": "",
-     "role_or_course": "【占位】课程名称待填入 2",
-     "suitable_for": "【占位】适合对象待填入",
-     "location": "【占位】",
-     "level": "【占位】",
-     "outcomes": "【占位】课程成果说明待填入。",
+     "role_or_course": "",
+     "suitable_for": "",
+     "location": "",
+     "level": "",
+     "outcomes": "",
      "poster": "",
      "university": "",
      "professor": ""
@@ -916,11 +858,11 @@ const CP_DATA = {
     {
      "program_type": "实践模块",
      "category": "",
-     "role_or_course": "【占位】课程名称待填入 3",
-     "suitable_for": "【占位】适合对象待填入",
-     "location": "【占位】",
-     "level": "【占位】",
-     "outcomes": "【占位】课程成果说明待填入。",
+     "role_or_course": "",
+     "suitable_for": "",
+     "location": "",
+     "level": "",
+     "outcomes": "",
      "poster": "",
      "university": "",
      "professor": ""
@@ -1032,11 +974,11 @@ const CP_DATA = {
     {
      "program_type": "海外院校领航课",
      "category": "",
-     "role_or_course": "【占位】课程名称待填入 1",
-     "suitable_for": "【占位】适合对象待填入",
-     "location": "【占位】",
-     "level": "【占位】",
-     "outcomes": "【占位】课程成果说明待填入。",
+     "role_or_course": "",
+     "suitable_for": "",
+     "location": "",
+     "level": "",
+     "outcomes": "",
      "poster": "",
      "university": "",
      "professor": ""
@@ -1044,11 +986,11 @@ const CP_DATA = {
     {
      "program_type": "行业前沿讲座",
      "category": "",
-     "role_or_course": "【占位】课程名称待填入 2",
-     "suitable_for": "【占位】适合对象待填入",
-     "location": "【占位】",
-     "level": "【占位】",
-     "outcomes": "【占位】课程成果说明待填入。",
+     "role_or_course": "",
+     "suitable_for": "",
+     "location": "",
+     "level": "",
+     "outcomes": "",
      "poster": "",
      "university": "",
      "professor": ""
@@ -1056,11 +998,11 @@ const CP_DATA = {
     {
      "program_type": "海外院校领航课",
      "category": "",
-     "role_or_course": "【占位】课程名称待填入 3",
-     "suitable_for": "【占位】适合对象待填入",
-     "location": "【占位】",
-     "level": "【占位】",
-     "outcomes": "【占位】课程成果说明待填入。",
+     "role_or_course": "",
+     "suitable_for": "",
+     "location": "",
+     "level": "",
+     "outcomes": "",
      "poster": "",
      "university": "",
      "professor": ""
@@ -1068,11 +1010,11 @@ const CP_DATA = {
     {
      "program_type": "行业前沿讲座",
      "category": "",
-     "role_or_course": "【占位】课程名称待填入 4",
-     "suitable_for": "【占位】适合对象待填入",
-     "location": "【占位】",
-     "level": "【占位】",
-     "outcomes": "【占位】课程成果说明待填入。",
+     "role_or_course": "",
+     "suitable_for": "",
+     "location": "",
+     "level": "",
+     "outcomes": "",
      "poster": "",
      "university": "",
      "professor": ""

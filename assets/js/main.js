@@ -29,8 +29,7 @@ const NAV_MAIN = [
 ];
 
 const HERO_QUICK = [
-  { label: 'Apply',            href: '#/offer' },
-  { label: 'Open days',        href: '#/whats-on' },
+  { label: 'Courses',          href: '#/courses' },
   { label: 'Student gallery',  href: '#/student-gallery' },
   { label: 'Career',           href: '#/career' }
 ];
@@ -155,14 +154,69 @@ const COLLEGE_SECTIONS = [
 
 /* Stories（对应 UAL 首页 Stories 区块，含 See more → 聚合页） */
 const STORIES = [
-  { tag: 'STORY', zh: '2026 时尚毕设大秀：新生代的剪裁语言', slug: 'graduate-show-2026' },
-  { tag: 'STORY', zh: '从 SKP 到巴黎：一位时尚管理学生的实习之路', slug: 'internship-paris' },
-  { tag: 'STORY', zh: '数字时装周：虚拟服装如何走上秀场', slug: 'digital-fashion-week' }
+  {
+    slug: "story-1",
+    tag: "中国国际时装周",
+    videoNo: 1,
+    date: "2026/9/2",
+    zh: "斯芬克时尚科系｜中国国际时装周",
+    sub: "2026年9月5日 798中央大厅 18:30 不见不散",
+    body: "",
+    video: "assets/video/story-1-fashion-week.mp4",
+    tags: "#中国国际时装周 #斯芬克 #服装设计 #艺术留学 #夏校"
+  },
+  {
+    slug: "story-2",
+    tag: "时尚研学",
+    videoNo: 2,
+    date: "2026/2/5",
+    zh: "Esmod时尚学院沉浸式研学",
+    sub: "打卡全球顶尖时装院Esmod，5小时沉浸式研学圆满收官，学员们收获证书、快乐加倍！#记录每个孩子认真学习的样子",
+    body: "上午走进Esmod校园，校方工作人员带我们逛遍教室图书馆面料室，讲解学校百年历史。招生官还详细解读了2026年招生信息，干货满满；随后聆听2026春夏时装周各大品牌作品解读，get国际时尚流行趋势。\n\n下午迎来超期待的迷你人台3D立体剪裁实操课，讲师手把手教学，大家展开想象动手制作白坯礼服样衣，最终全员拿下 Esmod结业证书，成就感拉满！课后打卡迪奥Dior画廊博物馆，惊喜发现课堂做的样衣的灵感就在馆藏藏品中，学员们兴奋不已，现场对照学习，把知识学透学活。\n\n餐食超合胃口，午餐中餐、晚餐越南河粉，吃得开心又满足。返程路上🚌上听歌聊天，分享今日收获，一路欢声笑语，团队氛围超棒！",
+    tags: "#服装设计 #时尚 #时尚传媒 #时尚学院 #ESMOD #时尚研学 #欧洲时尚文化"
+  },
+  {
+    slug: "story-3",
+    tag: "欧洲研学",
+    videoNo: 3,
+    date: "2026/2/4",
+    zh: "SFK FASHION ｜巴黎艺术游学日志",
+    sub: "乘车奔赴专业服装定制工作室，正式切换沉浸式研学Mode",
+    body: "研学内容：小分队深度沉浸课堂，特邀Dior男装版师与YSL时尚设计师带来分享讲座，聆听大佬分享自己的作品集，拆解版型工艺、设计理念与高定幕后故事；随后探访Alaïa基金会，沉浸式感受Dior经典剪裁与先锋设计美学，最后还打卡了巴黎圣母院，老佛爷百货，采购新年礼物，学员之间关系越来越融洽，互相送了礼物。\n午餐享用丰盛的海鲜自助，晚餐回归暖心的米饭炒菜家乡味，地道美味治愈味蕾，大家都吃得格外开心。回来路上一直在车上放音乐唱歌♪",
+    tags: "#服装设计 #时尚 #欧洲研学 #时尚工作室"
+  },
+  {
+    slug: "story-4",
+    tag: "时尚冬令营",
+    videoNo: 4,
+    date: "2026/2/2",
+    zh: "时尚虚拟交互艺术展",
+    sub: "-艺术与科技的跨学科语境与实践-\n| Inter-disciplinary Context and Practice of Art and Technology\n——贾俊",
+    body: "本次外校结业展圆满落幕，作品凝聚着思考与热爱。证书为这段时光加冕，艺术探索永无止境。愿大家坚守初心，在未来的创作道路上步履不停。",
+    tags: "#服装设计 #时尚 #时尚传媒 #时尚冬令营 #时尚跨专业 #时尚交互 #虚拟时尚"
+  },
+  {
+    slug: "story-5",
+    tag: "时尚冬令营",
+    videoNo: 5,
+    date: "2026/2/1",
+    zh: "SFK 冬校项目｜",
+    sub: "直击布展现场 × 「张力 Tension」",
+    body: "展览倒计时警报拉响！直击布展现场，科系产品经理和教研老师们全程坐镇把控，每一处细节都力求完美💥艺术与创意的碰撞进入白热化阶段，氛围感直接拉满！\n\n展览作品完善中！同学们专注打磨细节、优化呈现效果，创意火花持续迸发💫这场即将亮相的艺术盛宴，值得万分期待✨",
+    tags: "##服装设计 #时尚 #时尚传媒 #时尚冬令营 #时尚虚拟 #时尚交互 #时尚未来 #时尚策展"
+  },
+  {
+    slug: "story-6",
+    tag: "时尚冬令营",
+    videoNo: 6,
+    date: "2026/1/30",
+    zh: "SFK26冬校-RCA时尚研究生班",
+    sub: "全员终期汇报，完整展示个人项目成果\nRCA皇艺Anna教授专属终评，规划学术进阶之路",
+    body: "教授亲身为作品走秀模特\n强化设计与人体、体验的真实联结\n布展冲刺收尾，只为最佳呈现效果\n从概念到落地，完成完整学术创作闭环\n艺术留学的每一步深耕，都在靠近梦校🤎",
+    tags: "#SFK斯芬克 #艺术留学 #皇家艺术学院 #RCA #时尚设计 #服装设计 #艺术冬校 #设计作品集 #艺术生 #留学英国 #创作落地 #设计教育#时尚传媒"
+  },
 ];
-const STORIES_MORE = [
-  { tag: 'ALUMNI', zh: '校友故事：LVMH 面料创新岗位的一天', slug: 'alumni-lvmh' },
-  { tag: 'STORY',  zh: '可持续材料的 12 次实验', slug: 'sustainable-materials' }
-];
+const STORIES_MORE = [];
 
 /* What's on（对应 UAL 首页 What's on 区块） */
 const EVENTS = [
@@ -209,34 +263,50 @@ const Header = {
           ${NAV_MAIN.map(it => `<a class="nav-link" data-view="${it.id}" href="#/${it.id}">${esc(it.label)}</a>`).join('')}
         </div>
         <div style="display:flex;align-items:center;gap:14px;">
-          <button class="nav-search-btn" id="search-toggle" aria-label="Search">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-            <span class="u-en">Search</span>
-          </button>
+          <form id="search-form" action="#/search" method="get" class="nav-search">
+            <svg class="nav-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <input class="nav-search__input" type="search" name="query" id="search-input" placeholder="Search SFK Fashion Design" autocomplete="off" aria-label="搜索">
+            <input type="hidden" name="in" value="">
+          </form>
           <button class="navbar__menu-btn" id="menu-toggle" aria-label="菜单"><span></span><span></span><span></span></button>
         </div>
       </nav>
-      <div class="search-panel" id="search-panel">
-        <form id="search-form" action="#/search" method="get">
-          <input type="search" name="query" id="search-input" placeholder="Search SFK Fashion Design" autocomplete="off">
-          <input type="hidden" name="in" value="">
-        </form>
-      </div>
     `;
-    document.getElementById('search-toggle').addEventListener('click', () => {
-      const p = document.getElementById('search-panel');
-      p.classList.toggle('is-open');
-      if (p.classList.contains('is-open')) document.getElementById('search-input').focus();
-    });
+    /* 导航栏内嵌搜索：输入后回车直接跳转搜索结果页（空关键词不跳转） */
     document.getElementById('search-form').addEventListener('submit', e => {
       e.preventDefault();
       const q = document.getElementById('search-input').value.trim();
+      if (!q) return;
       const inScope = document.querySelector('#search-form input[name=in]').value || 'courses';
-      document.getElementById('search-panel').classList.remove('is-open');
       location.hash = `#/search?in=${encodeURIComponent(inScope)}&query=${encodeURIComponent(q)}`;
     });
     document.getElementById('menu-toggle').addEventListener('click', () => {
       document.getElementById('navbar').classList.toggle('is-mobile-open');
+    });
+    /* 顶部透明导航：滚动进入内容区后切换实底，保证文字与 Logo 不被浅色背景淹没 */
+    const navEl = document.getElementById('navbar');
+    const onNavScroll = () => {
+      const scrolled = window.scrollY > 24;
+      navEl && navEl.classList.toggle('is-scrolled', scrolled);
+      /* 光标停在导航栏上滚动页面时，清除悬停白底态与轮播下滑态，防止白底叠加浅色内容 */
+      if (scrolled) {
+        navEl.classList.remove('nav-hover');
+        document.querySelector('.hero__carousel')?.classList.remove('nav-hover');
+      }
+    };
+    window.addEventListener('scroll', onNavScroll, { passive: true });
+    onNavScroll();
+    /* 悬停导航栏：白底黑字 + 首屏轮播整体下滑至导航栏底缘；移出即平滑复原。
+       仅在页面顶部（未滚动）时触发，避免白底导航叠加浅色内容导致不可读 */
+    const heroBox = () => document.querySelector('.hero__carousel');
+    navEl.addEventListener('mouseenter', () => {
+      if (navEl.classList.contains('is-scrolled')) return;
+      navEl.classList.add('nav-hover');
+      heroBox()?.classList.add('nav-hover');
+    });
+    navEl.addEventListener('mouseleave', () => {
+      navEl.classList.remove('nav-hover');
+      heroBox()?.classList.remove('nav-hover');
     });
   },
   markActive(view) {
@@ -296,7 +366,7 @@ const BackTab = {
 const HERO_SLIDES = Array.from({ length: 22 }, (_, i) => `assets/img/hero/slide-${String(i + 1).padStart(2, '0')}.jpeg`);
 
 const HeroCarousel = {
-  _timer: 0, _index: 0, _track: null, _animating: false,
+  _timer: 0, _index: 1, _track: null, _animating: false,
   SLIDE_DURATION: 1000,   /* 关键参数：慢速左滑过场时长 ms */
   SLIDE_INTERVAL: 6000,   /* 关键参数：每张展示时长 ms（须大于过场时长） */
   EASE: 'cubic-bezier(.65,.05,.25,1)',   /* 缓入缓出，过场自然 */
@@ -311,36 +381,52 @@ const HeroCarousel = {
     this.stop();
     const track = document.getElementById('hero-track');
     if (!track || !HERO_SLIDES.length) return;
-    /* 22 张 + 首张克隆：末张滑向克隆完成后瞬时归位，循环无接缝、无回跳 */
-    track.innerHTML = HERO_SLIDES.map(s => this.slide(s)).join('') + this.slide(HERO_SLIDES[0]);
+    /* 首尾各加一张克隆帧：正向 / 反向翻页均可平滑过渡 */
+    track.innerHTML = this.slide(HERO_SLIDES[HERO_SLIDES.length - 1]) +
+      HERO_SLIDES.map(s => this.slide(s)).join('') +
+      this.slide(HERO_SLIDES[0]);
     this._track = track;
-    this._index = 0;
+    this._index = 1;
     this._apply(false);
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    this._timer = setInterval(() => this.next(), this.SLIDE_INTERVAL);
+    this._startTimer();
+  },
+  _startTimer() {
+    this._timer = setInterval(() => this.go(1), this.SLIDE_INTERVAL);
   },
   _apply(animate) {
     this._track.style.transition = animate ? `transform ${this.SLIDE_DURATION}ms ${this.EASE}` : 'none';
-    this._track.style.transform = `translate3d(${-this._index * 100}%, 0, 0)`;
+    this._track.style.transform = `translate3d(${-(this._index - 1) * 100}%, 0, 0)`;
   },
-  next() {
+  /* dir = 1 下一张 / -1 上一张；越界后瞬时归位到对侧克隆帧，画面内容相同无感知 */
+  go(dir) {
     if (this._animating || !this._track) return;
     this._animating = true;
-    this._index += 1;
+    this._index += dir;
     this._apply(true);
     setTimeout(() => {
       if (!this._track) return;
-      if (this._index >= HERO_SLIDES.length) {
-        this._index = 0;
-        this._apply(false);            /* 过场结束后瞬时归位到首张（画面内容相同，无感知） */
-        void this._track.offsetWidth;  /* 强制重排，避免归位与下次过场被浏览器合并 */
-      }
+      if (this._index > HERO_SLIDES.length) { this._index = 1; this._apply(false); void this._track.offsetWidth; }
+      else if (this._index < 1) { this._index = HERO_SLIDES.length; this._apply(false); void this._track.offsetWidth; }
       this._animating = false;
     }, this.SLIDE_DURATION + 60);
   },
+  /* 手动翻页：翻页后重置自动播放计时，避免刚切换就再次自动翻页 */
+  prev() { this.go(-1); this._restartTimer(); },
+  next() { this.go(1); this._restartTimer(); },
+  _restartTimer() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    clearInterval(this._timer);
+    this._startTimer();
+  },
+  /* 底部向下符号：平滑滚动至下一屏（Find a course） */
+  scrollNext() {
+    const el = document.querySelector('.card-grid')?.closest('section.section');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  },
   stop() {
     if (this._timer) { clearInterval(this._timer); this._timer = 0; }
-    this._track = null; this._animating = false; this._index = 0;
+    this._track = null; this._animating = false; this._index = 1;
   }
 };
 
@@ -350,15 +436,17 @@ function renderHome() {
   <!-- ① Hero：We are SFK Fashion Design（对应 UAL「We are University of the Arts London」位置） -->
   <section class="hero">
     <div class="hero__carousel" aria-hidden="true"><div class="hero__track" id="hero-track"></div></div>
+    <button class="hero-nav hero-nav--prev" onclick="HeroCarousel.prev()" aria-label="上一张">&lt;</button>
+    <button class="hero-nav hero-nav--next" onclick="HeroCarousel.next()" aria-label="下一张">&gt;</button>
     <span class="hero__veil" aria-hidden="true"></span>
     <div class="hero__content">
-      <div class="hero__eyebrow">SFK · 时尚科系 · <span class="u-en">FASHION DESIGN</span></div>
-      <h1><em>SFK</em> Fashion Design</h1>
+      <h1><em>SFK</em> Fashion</h1>
       <p class="hero__sub">从服装与剪裁到商业与传播，时尚科系帮助学生建立一条能被名校看见、能被行业理解、能被未来转化的成长路径。</p>
       <div class="hero__quick">
         ${HERO_QUICK.map(q => `<a href="${q.href}">${esc(q.label)}</a>`).join('')}
       </div>
     </div>
+    <button class="hero-scroll" onclick="HeroCarousel.scrollNext()" aria-label="向下滚动至下一屏"><span class="hero-scroll__sym" aria-hidden="true">》</span></button>
   </section>
 
   <!-- ② Find a course（对应 UAL card-grid-container 位置） -->
@@ -389,7 +477,10 @@ function renderHome() {
     </div>
   </section>
 
-  <!-- ③ Stories（对应 UAL curated-stories-container dark--theme 位置） -->
+  <!-- ③ Stories（全屏视频轮播：内嵌视频逐个循环播放，标题浮层覆盖于画面之上） -->
+  ${(() => {
+    const reelList = STORIES.filter(s => s.video);
+    if (!reelList.length) return `
   <section class="section band--dark">
     <div class="wrap">
       <div class="section__head">
@@ -402,13 +493,31 @@ function renderHome() {
       <div class="story-grid">
         ${STORIES.map(s => `
         <a class="story-card" href="#/stories/${s.slug}">
-          ${ph('STORY')}
+          ${ph(s.tag)}
           <span class="story-card__tag">${esc(s.tag)}</span>
           <h3>${esc(s.zh)}</h3>
+          ${s.date ? `<p class="story-card__date">${esc(s.date)}</p>` : ''}
         </a>`).join('')}
       </div>
     </div>
-  </section>
+  </section>`;
+    return `
+  <section class="stories-reel">
+    <video id="stories-reel-video" class="stories-reel__video" src="${esc(reelList[0].video)}" muted autoplay loop playsinline preload="auto"></video>
+    <div class="stories-reel__veil" aria-hidden="true"></div>
+    <div class="stories-reel__head">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <span class="section__eyebrow">STORIES</span>
+            <h2 class="section__title">Stories</h2>
+          </div>
+          <a class="more-link" href="#/stories">See more stories <span class="arr">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>`;
+  })()}
 
   <!-- ④ What's on（浅色带：延续主页深浅交替节奏） -->
   <section class="section band--light">
@@ -450,6 +559,30 @@ function equalizeHomeBands() {
   });
 }
 window.addEventListener('resize', equalizeHomeBands);
+
+/* Stories 全屏视频轮播：板块内嵌视频逐个循环播放
+   单视频时无缝 loop；补充多个视频后自动逐个切换、到末尾回到第一个 */
+const StoriesReel = {
+  _list: [], _i: 0,
+  mount() {
+    const v = document.getElementById('stories-reel-video');
+    if (!v) return;
+    this._list = STORIES.filter(s => s.video);
+    this._i = 0;
+    if (!this._list.length) return;
+    v.loop = this._list.length === 1;
+    v.onended = v.loop ? null : () => {
+      this._i = (this._i + 1) % this._list.length;
+      v.src = this._list[this._i].video;
+      v.play().catch(() => {});
+    };
+    v.play().catch(() => {});
+  },
+  stop() {
+    const v = document.getElementById('stories-reel-video');
+    if (v) v.pause();
+  }
+};
 
 /* ─────────── Subjects（对应 UAL /subjects 一级） ─────────── */
 function renderSubjects() {
@@ -509,14 +642,18 @@ function renderSubject(slug) {
   </section>`;
 }
 
-/* 次级页面：学历 × 国家筛选 → 院校列表（如 美国 → Parsons、RISD…） */
+/* 次级页面：学历 × 国家筛选 → 院校列表。
+   “全部”标签（默认选中）汇总展示所有国家内容；具体国家仅显示对应内容 */
 function renderSubjectLevel(slug, levelId, query) {
   const s = byId(SUBJECTS, slug);
   const level = byId(SUBJECT_LEVELS, levelId);
   if (!s || !level) return renderNotFound();
-  const country = SCHOOL_COUNTRIES.includes(query.country) ? query.country : SCHOOL_COUNTRIES[0];
-  const schools = SCHOOL_DB[country] || [];
-  SCHOOL_CTX = { subject: s, level, country };
+  const country = !query.country || query.country === '全部' || !SCHOOL_COUNTRIES.includes(query.country) ? '全部' : query.country;
+  const list = country === '全部'
+    ? SCHOOL_COUNTRIES.flatMap(ct => (SCHOOL_DB[ct] || []).map(sc => ({ ...sc, country: ct })))
+    : (SCHOOL_DB[country] || []).map(sc => ({ ...sc, country }));
+  SCHOOL_CTX = { subject: s, level, country, list };
+  const tabHref = ct => `#/subjects/${s.id}/${level.id}` + (ct === '全部' ? '' : `?country=${encodeURIComponent(ct)}`);
   return `
   <section class="page-hero">
     <div class="wrap">
@@ -524,7 +661,7 @@ function renderSubjectLevel(slug, levelId, query) {
       <h1>${esc(level.label)}</h1>
       <p>「${esc(s.zh)}」· ${esc(level.label)} — 按国家/地区筛选开设该专业的院校，点击院校查看详情。</p>
       <div class="level-row">
-        ${SCHOOL_COUNTRIES.map(ct => `<a class="level-tab level-tab--sm ${ct === country ? 'is-active' : ''}" href="#/subjects/${s.id}/${level.id}?country=${encodeURIComponent(ct)}">${esc(ct)}</a>`).join('')}
+        ${['全部'].concat(SCHOOL_COUNTRIES).map(ct => `<a class="level-tab level-tab--sm ${ct === country ? 'is-active' : ''}" href="${tabHref(ct)}">${esc(ct)}</a>`).join('')}
       </div>
     </div>
   </section>
@@ -533,13 +670,13 @@ function renderSubjectLevel(slug, levelId, query) {
       <span class="section__eyebrow">${esc(country)} · SCHOOLS</span>
       <h2 class="section__title" style="font-size:clamp(22px,2.6vw,34px);">开设「${esc(s.zh)}」的院校</h2>
       <div class="list-grid" style="margin-top:28px;">
-        ${schools.map((sc, i) => `
+        ${list.map((sc, i) => `
         <button class="school-card" onclick="openSchoolDetail(${i})">
           <span class="tile__num">${String(i + 1).padStart(2, '0')}</span>
           <h3>${esc(sc.zh)}</h3>
           <span class="subject-tile__en u-en">${esc(sc.en)}</span>
           <p class="school-card__note">${esc(sc.note)}</p>
-          <span class="school-card__meta">${esc(sc.city)} · 查看详情 →</span>
+          <span class="school-card__meta">${esc(sc.country)} · ${esc(sc.city)} · 查看详情 →</span>
         </button>`).join('')}
       </div>
       <p class="school-note">院校名单为示例数据，可按申请季实时增补替换。</p>
@@ -550,7 +687,7 @@ function renderSubjectLevel(slug, levelId, query) {
 /* 院校详情浮层（叠加处理，层级参照 ftam_demo 院校库：遮罩 + 居中面板 + 吸顶关闭 + 信息盒） */
 function openSchoolDetail(idx) {
   if (!SCHOOL_CTX) return;
-  const sc = (SCHOOL_DB[SCHOOL_CTX.country] || [])[idx];
+  const sc = (SCHOOL_CTX.list || [])[idx];
   if (!sc) return;
   const { subject: s, level } = SCHOOL_CTX;
   const infoBox = (label, copy, wide) => `<div class="info-box${wide ? ' info-box--wide' : ''}"><div class="info-box__label">${label}</div><div class="info-box__copy">${copy}</div></div>`;
@@ -574,7 +711,7 @@ function openSchoolDetail(idx) {
       <div class="school-overlay__panel">
         <button class="school-overlay__close" onclick="closeSchoolDetail()" aria-label="关闭">✕</button>
         <div class="school-overlay__body">
-          <div class="school-overlay__eyebrow">${esc(SCHOOL_CTX.country)} · ${esc(level.label)} · SCHOOL PROFILE</div>
+          <div class="school-overlay__eyebrow">${esc(sc.country)} · ${esc(level.label)} · SCHOOL PROFILE</div>
           <h2 class="school-overlay__title">${esc(sc.zh)}</h2>
           <div class="school-overlay__title-en u-en">${esc(sc.en)}</div>
           <p class="school-overlay__meta">${esc(sc.city)} · 开设「${esc(s.zh)}」相关方向</p>
@@ -660,6 +797,51 @@ function renderCollege(slug, sub) {
 }
 
 /* ─────────── Courses：课程产品（页面结构 / 信息层级 / 点击展开逻辑复用 art-humanities_demo「课程产品」） ─────────── */
+/* ── 课程展开页占位模板：结构与层级复刻 art-humanities_demo 课程详情浮层，
+   文案 / 图片 / PDF 统一占位，后续逐项填充（填充契约见 CourseProducts.detail 注释）── */
+const CP_DETAIL_PH = (() => {
+  const CN = ['一', '二', '三', '四', '五', '六', '七', '八'];
+  const curriculum = CN.map((cn, i) => {
+    const cat = i < 3 ? '课程分类占位一' : i < 6 ? '课程分类占位二' : '课程分类占位三';
+    const category = i < 3 ? (i < 2 ? '子分类占位 A' : '子分类占位 B') : '';
+    const title = '课程模块标题占位 ' + (i + 1);
+    const program = '所属项目 / 院校占位';
+    const tags = ['标签占位一', '标签占位二'];
+    const desc = '课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。';
+    return {
+      cat, eyebrow: 'MODULE 0' + (i + 1), title, program, tags, desc,
+      poster: '', pdf: '', _ph: true,
+      facets: { program_type: cat, category },
+      searchText: (title + ' ' + program + ' ' + desc + ' ' + tags.join(' ') + ' ' + cat).toLowerCase()
+    };
+  });
+  return {
+    desc: '课程简介占位：此处将展示课程整体定位、教学路径、师资配置与产出成果，待后续填充。',
+    chips: ['标签占位一', '标签占位二', '标签占位三'],
+    snapshot: ['01', '02', '03', '04'].map(n => ({
+      k: '核心数据占位 ' + n,
+      v: '数值待填充：此处展示该课程的关键数据指标。'
+    })),
+    facets: {
+      searchPlaceholder: '搜索课程模块…',
+      groups: [
+        { value: '课程分类占位一', label: '课程分类占位一', children: ['子分类占位 A', '子分类占位 B'] },
+        { value: '课程分类占位二', label: '课程分类占位二' },
+        { value: '课程分类占位三', label: '课程分类占位三' }
+      ]
+    },
+    curriculum,
+    whySFK: ['01', '02', '03'].map(n => ({
+      t: '优势点占位 ' + n,
+      d: '优势说明占位：此处将展示选择本课程的核心理由，待后续填充。'
+    })),
+    closing: {
+      cn: '收尾文案占位：此处将展示课程结语与申请引导，待后续填充。',
+      en: 'Closing statement placeholder · to be filled.'
+    }
+  };
+})();
+
 const CourseProducts = {
   /* 分区顺序：elite / longform 用长线式详情，catalog / overseas / frontier 用目录式详情 */
   ZONES: [
@@ -693,9 +875,9 @@ const CourseProducts = {
   card(p, group) {
     const ph = p.cover
       ? `<img src="${esc(p.cover)}" alt="" loading="lazy">`
-      : `<span class="cp-card__ph">IMAGE · 占位图</span>`;
+      : '';
     return `<div class="cp-card cp-card--${group}" role="button" tabindex="0" data-cp-id="${esc(p.id)}" aria-label="${esc(p.meta.titleCn)}">
-      <div class="cp-card__banner${p.tileVariant ? ' cp-card__banner--' + esc(p.tileVariant) : ''}">${ph}<span class="cp-card__badge">${esc(p.badge)}</span></div>
+      <div class="cp-card__banner${p.tileVariant ? ' cp-card__banner--' + esc(p.tileVariant) : ''}">${ph}<span class="cp-card__badge">${esc(p.badge)}</span><span class="subject-tile__line" aria-hidden="true"></span></div>
       <div class="cp-card__body">
         <div class="cp-card__eyebrow">${esc(p.meta.eyebrow)}</div>
         <div class="cp-card__title">${esc(p.meta.titleCn)}</div>
@@ -707,34 +889,179 @@ const CourseProducts = {
   },
 
   /* 详情结构：cd-hero → 核心数据 · SNAPSHOT → 课程模块 · CURRICULUM → WHY SFK → CTA */
-  detail(p) {
-    const sec = (label, inner) => `<section class="cd-section"><div class="cd-section__label">${esc(label)}</div>${inner}</section>`;
+  /* 预计算数据源与模块卡集合（幂等，供 heroHTML / detailBody / open 复用） */
+  _prepare(p) {
+    const PH = CP_DETAIL_PH;
+    const D = p.detail || (window.SFK_INDUSTRY_COURSES || {})[p.id]
+      || (window.SFK_ACADEMIC_COURSES || {})[p.id] || {};
+    this._cur = {
+      cards: (D.curriculum && D.curriculum.length) ? D.curriculum : PH.curriculum,
+      facets: D.curriculumFacets || PH.facets,
+      main: '', sub: '', q: ''
+    };
+    return { PH, D };
+  },
+
+  /* 顶部标题区（独立浮于正文之上，背景为 ink 深色、占满 panel 顶部） */
+  heroHTML(p) {
+    const { PH, D } = this._prepare(p);
+    const desc = D.desc || PH.desc;
+    const chips = (D.chips && D.chips.length) ? D.chips : PH.chips;
+    const tile = 'cd-hero__tile' + (p.tileVariant ? ' cd-hero__tile--' + p.tileVariant : '');
     return `
       <div class="cd-hero">
         <div class="cd-hero__content">
           <div class="cd-hero__eyebrow">${esc(p.meta.eyebrow)}</div>
           <h2 class="cd-hero__title">${esc(p.meta.titleCn)}</h2>
           <div class="cd-hero__subtitle u-en">${esc(p.meta.titleEn)}</div>
-          <p class="cd-hero__desc">${esc(p.meta.desc)}</p>
-          <div class="cd-chips">${(p.meta.chips || []).map(c => `<span class="cd-chip">${esc(c)}</span>`).join('')}</div>
+          <p class="cd-hero__desc">${esc(desc)}</p>
+          <div class="cd-chips">${chips.map(c => `<span class="cd-chip">${esc(c)}</span>`).join('')}</div>
         </div>
-      </div>
-      ${p.placeholder ? '<p class="cd-note">本目录的具体课程、课时与配图待提供，以下为结构占位。</p>' : ''}
-      ${(p.snapshot || []).length ? sec('核心数据 · SNAPSHOT', `<div class="cd-stat-grid">${p.snapshot.map(s => `<div class="cd-stat"><div class="cd-stat__k">${esc(s.k)}</div><div class="cd-stat__v">${esc(s.v)}</div></div>`).join('')}</div>`) : ''}
-      ${(p.curriculum || []).length ? sec('课程模块 · CURRICULUM', `<div class="cd-curriculum-grid">${p.curriculum.map(c => this.curriculumCard(c)).join('')}</div>`) : ''}
-      ${(p.whySFK || []).length ? sec('为什么选择 SFK · WHY SFK', `<div class="cd-why-grid">${p.whySFK.map(w => `<div class="cd-why"><div class="cd-stat__k">${esc(w.t)}</div><div class="cd-stat__v">${esc(w.d)}</div></div>`).join('')}</div>`) : ''}
-      <div class="cd-cta">
-        <p class="cd-cta__statement">${esc((p.closing || {}).cn || '')}</p>
-        <p class="cd-cta__statement-en u-en">${esc((p.closing || {}).en || '')}</p>
+        <div class="${tile}" aria-hidden="true"></div>
       </div>`;
   },
 
+  /* 顶部标题区之外的内容（核心数据 / 课程模块 / WHY SFK / CTA） */
+  detailBody(p) {
+    const { PH, D } = this._prepare(p);
+    const sec = (label, inner) => `<section class="cd-section"><div class="cd-section__label">${esc(label)}</div>${inner}</section>`;
+    const snapshot = (D.snapshot && D.snapshot.length) ? D.snapshot : PH.snapshot;
+    const whys = (D.whySFK && D.whySFK.length) ? D.whySFK : PH.whySFK;
+    const closing = D.closing || PH.closing;
+    return `
+      ${sec('核心数据 · SNAPSHOT', `<div class="cd-stat-grid">${snapshot.map(s => `<div class="cd-stat"><div class="cd-stat__k">${esc(s.k)}</div><div class="cd-stat__v">${esc(s.v)}</div></div>`).join('')}</div>`)}
+      ${sec('课程模块 · CURRICULUM', this.curriculumBlock())}
+      ${sec('为什么选择 SFK · WHY SFK', `<div class="cd-why-grid">${whys.map(w => `<div class="cd-why"><div class="cd-stat__k">${esc(w.t)}</div><div class="cd-stat__v">${esc(w.d)}</div></div>`).join('')}</div>`)}
+      <div class="cd-cta">
+        <p class="cd-cta__statement">${esc(closing.cn)}</p>
+        <p class="cd-cta__statement-en u-en">${esc(closing.en)}</p>
+      </div>`;
+  },
+
+  /* 完整详情（兼容旧调用） = 顶部标题区 + 正文 */
+  detail(p) {
+    this._prepare(p);
+    return this.heroHTML(p) + this.detailBody(p);
+  },
+
+  /* ── 课程模块区：分类主标签 × 子分类 × 搜索（联动逻辑复刻 art-humanities_demo）──
+     主标签选中展开其子分类；三者 AND 联动实时过滤；只重渲染网格 / 计数 / 空状态 */
+  curriculumBlock() {
+    const st = this._cur;
+    const f = st.facets;
+    const mains = f.groups.map(g =>
+      `<button class="filter-btn" type="button" data-cur-main="${esc(g.value)}">${esc(g.label)}</button>`).join('');
+    const subs = f.groups.filter(g => (g.children || []).length).map(g =>
+      g.children.map(c => `<button class="filter-btn filter-btn--sub" type="button" data-cur-sub="${esc(c)}" data-cur-parent="${esc(g.value)}">${esc(c)}</button>`).join('')
+    ).join('');
+    return `
+      <div class="cd-cur-bar">
+        <div class="cd-cur-left">
+          <div class="cd-filter-group">
+            <span class="cd-filter-group__label">分类</span>
+            <span class="cd-filter-group__sep">|</span>
+            <span class="cd-filter-group__btns" id="cd-cur-mains">${mains}</span>
+          </div>
+          <div class="cd-filter-group__btns" id="cd-cur-subs" hidden>${subs}</div>
+        </div>
+        <div class="cd-cur-right">
+          <input class="cd-cur-input" id="cd-cur-search" type="search" autocomplete="off"
+            placeholder="${esc(f.searchPlaceholder || '搜索课程模块…')}" aria-label="搜索课程模块">
+          <button class="cd-cur-clear" id="cd-cur-clear" type="button" hidden>清除</button>
+          <span class="cd-cur-count" id="cd-cur-count"></span>
+        </div>
+      </div>
+      <div class="cd-curriculum-grid" id="cd-cur-grid"></div>
+      <p class="cd-cur-empty" id="cd-cur-empty" hidden>没有符合当前筛选条件的课程模块 · 请调整分类或搜索词</p>`;
+  },
+
+  /* 按当前筛选状态重渲染模块网格 + 计数 + 空状态（不动筛选栏，保持输入焦点） */
+  renderCurriculum() {
+    const st = this._cur;
+    const grid = document.getElementById('cd-cur-grid');
+    if (!st || !grid) return;
+    const list = st.cards.filter(c => this.curMatch(c, st));
+    grid.innerHTML = list.map(c => this.curriculumCard(c)).join('');
+    const empty = document.getElementById('cd-cur-empty');
+    if (empty) empty.hidden = list.length > 0;
+    const count = document.getElementById('cd-cur-count');
+    if (count) count.textContent = list.length === st.cards.length
+      ? st.cards.length + ' 个模块'
+      : list.length + ' / ' + st.cards.length + ' 个模块';
+    const clear = document.getElementById('cd-cur-clear');
+    if (clear) clear.hidden = !st.q;
+  },
+
+  curMatch(c, st) {
+    const f = c.facets || {};
+    if (st.main && f.program_type !== st.main) return false;
+    if (st.sub && f.category !== st.sub) return false;
+    if (st.q && !(c.searchText || '').includes(st.q)) return false;
+    return true;
+  },
+
+  /* 主标签 / 子分类：单击选中、再击取消；切换主分类时清空并收起子分类 */
+  curFacet(kind, btn) {
+    const st = this._cur;
+    if (!st) return;
+    const attr = kind === 'main' ? 'data-cur-main' : 'data-cur-sub';
+    const val = btn.getAttribute(attr);
+    if (kind === 'main') {
+      st.main = st.main === val ? '' : val;
+      st.sub = '';
+    } else {
+      st.sub = st.sub === val ? '' : val;
+    }
+    document.querySelectorAll('#cd-cur-mains .filter-btn').forEach(b =>
+      b.classList.toggle('is-active', b.getAttribute('data-cur-main') === st.main));
+    let shown = 0;
+    document.querySelectorAll('#cd-cur-subs .filter-btn').forEach(b => {
+      b.hidden = !st.main || b.getAttribute('data-cur-parent') !== st.main;
+      if (!b.hidden) shown++;
+      b.classList.toggle('is-active', b.getAttribute('data-cur-sub') === st.sub);
+    });
+    const subs = document.getElementById('cd-cur-subs');
+    if (subs) subs.hidden = shown === 0;
+    this.renderCurriculum();
+  },
+
+  /* 搜索：实时匹配（不区分大小写）；不回写输入框，避免打断输入 */
+  curSearch(value) {
+    const st = this._cur;
+    if (!st) return;
+    st.q = String(value == null ? '' : value).trim().toLowerCase();
+    const clear = document.getElementById('cd-cur-clear');
+    if (clear) clear.hidden = !st.q;
+    this.renderCurriculum();
+  },
+
+  /* 课程模块卡（层级复刻源站）：图片（含左上分类角标）→ 眉标 → 标题 → 项目 → 标签组 → 说明
+     poster / pdf 字段填充后自动可点，弹出海报大图 / PDF 阅读视图（PosterModal）；
+     占位态同样可点，弹窗内展示对应占位 */
   curriculumCard(c) {
-    const img = c.img ? `<img src="${esc(c.img)}" alt="" loading="lazy">` : `<span>IMAGE · 占位图</span>`;
-    return `<div class="cd-curriculum-card">
-      <div class="cd-curriculum-card__img${c.img ? ' cd-curriculum-card__img--photo' : ''}">${img}</div>
-      <div class="cd-curriculum-card__title">${esc(c.title || '')}</div>
-      <p class="cd-curriculum-card__desc">${esc(c.desc || '')}</p>
+    const hasMedia = !!(c.poster || c.pdf || c._ph);
+    const img = c.poster ? `<img src="${esc(c.poster)}" alt="" loading="lazy">` : '';
+    const catTag = c.cat ? `<span class="cd-curriculum-card__cat-tag">${esc(c.cat)}</span>` : '';
+    const tags = (c.tags && c.tags.length)
+      ? `<div class="cd-curriculum-card__tags">${c.tags.map(t => `<span class="cd-curriculum-card__tag">${esc(t)}</span>`).join('')}</div>`
+      : '';
+    const split = c.split === 1;   /* 商业实践：海报 + PDF 左右分栏叠加层 */
+    const attr = hasMedia
+      ? ` role="button" tabindex="0"` +
+        (c.pdf ? ` data-pdf="${esc(c.pdf)}"` : '') +
+        (c.posterFull ? ` data-poster-full="${esc(c.posterFull)}"` : '') +
+        (split ? ' data-split="1"' : '') +
+        ` data-poster="${esc(c.poster || '')}" data-poster-title="${esc(c.title)}" data-poster-sub="${esc(c.program || '')}" aria-label="${esc(c.title)} 点击查看${c.pdf || split ? '课程 PDF' : '课程海报'}"`
+      : '';
+    return `<div class="cd-curriculum-card cd-curriculum-card--dark${hasMedia ? ' is-clickable' : ''}" style="--poster:url('${esc(c.poster || '')}')"${attr}>
+      <div class="cd-curriculum-card__img${c.poster ? ' cd-curriculum-card__img--photo' : ''}"${hasMedia ? '' : ' aria-hidden="true"'}>${img}${catTag}</div>
+      <div class="cd-curriculum-card__body">
+        ${c.eyebrow ? `<div class="cd-curriculum-card__eyebrow u-en">${esc(c.eyebrow)}</div>` : ''}
+        <h4 class="cd-curriculum-card__title">${esc(c.program || c.title)}</h4>
+        ${c.title ? `<div class="cd-curriculum-card__program">${esc(c.title)}</div>` : ''}
+        ${tags}
+        ${c.desc ? `<p class="cd-curriculum-card__desc" title="${esc(c.desc)}">${esc(c.desc)}</p>` : ''}
+      </div>
     </div>`;
   },
 
@@ -748,9 +1075,32 @@ const CourseProducts = {
         <div class="course-overlay__backdrop" onclick="CourseProducts.close()"></div>
         <div class="course-overlay__panel">
           <button class="course-overlay__close" onclick="CourseProducts.close()" aria-label="关闭">✕</button>
-          <div class="course-overlay__body">${this.detail(p)}</div>
+          ${this.heroHTML(p)}
+          <div class="course-overlay__body course-overlay__body--wide">${this.detailBody(p)}</div>
         </div>
       </div>`;
+    /* 展开页内交互：分类 / 子分类 / 清除按钮 + 搜索输入 + 模块卡（海报 / PDF 弹窗），事件委托 */
+    const body = document.querySelector('.course-overlay__body');
+    body.addEventListener('click', e => {
+      const main = e.target.closest && e.target.closest('[data-cur-main]');
+      if (main) return this.curFacet('main', main);
+      const sub = e.target.closest && e.target.closest('[data-cur-sub]');
+      if (sub) return this.curFacet('sub', sub);
+      if (e.target.closest && e.target.closest('#cd-cur-clear')) return this.curSearch('');
+      const card = e.target.closest && e.target.closest('.cd-curriculum-card.is-clickable');
+      if (card) return PosterModal.open(card);
+    });
+    body.addEventListener('input', e => {
+      if (e.target && e.target.id === 'cd-cur-search') this.curSearch(e.target.value);
+    });
+    body.addEventListener('keydown', e => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const card = e.target.closest && e.target.closest('.cd-curriculum-card.is-clickable');
+      if (!card) return;
+      e.preventDefault();
+      PosterModal.open(card);
+    });
+    this.renderCurriculum();
     document.body.style.overflow = 'hidden';
     document.addEventListener('keydown', _cpEscClose);
   },
@@ -772,6 +1122,94 @@ const CourseProducts = {
   }
 };
 function _cpEscClose(e) { if (e.key === 'Escape') CourseProducts.close(); }
+
+/* ── 课程海报 / PDF 二级弹窗：结构复刻 art-humanities_demo 的 PosterModal ──
+   海报视图（poster 填充后显示图片，未填充显示占位）↔ PDF 视图（pdf 填充后用内嵌
+   框架预览，未填充显示占位）；关闭钮 / 点遮罩 / Esc 关闭，Esc 优先于课程详情浮层 */
+const PosterModal = {
+  _el: null, _lastTrigger: null,
+  build() {
+    if (this._el) return this._el;
+    const el = document.createElement('div');
+    el.className = 'poster-modal';
+    el.setAttribute('role', 'dialog');
+    el.setAttribute('aria-modal', 'true');
+    el.innerHTML = `
+      <div class="poster-modal__backdrop"></div>
+      <div class="poster-modal__flipper"><div class="poster-modal__inner">
+        <button class="poster-modal__close" type="button" aria-label="关闭">✕</button>
+        <div class="poster-modal__pane poster-modal__pane--poster">
+          <img class="poster-modal__img" src="" alt="">
+          <div class="poster-modal__poster-info" hidden>
+            <div class="poster-modal__poster-title"></div>
+            <div class="poster-modal__poster-sub"></div>
+          </div>
+          <div class="poster-modal__ph" hidden><span>课程海报占位</span><small>图片待填充 · 填充课程模块 poster 字段后自动展示</small></div>
+        </div>
+        <div class="poster-modal__pane poster-modal__pane--pdf">
+          <div class="poster-modal__pdf-ph"><span>课程 PDF 占位</span><small>文档待填充 · 填充课程模块 pdf 字段后自动预览</small></div>
+          <iframe class="poster-modal__pdf-frame" src="" title="课程 PDF"></iframe>
+        </div>
+      </div></div>`;
+    document.body.appendChild(el);
+    el.querySelector('.poster-modal__backdrop').addEventListener('click', () => this.close());
+    el.querySelector('.poster-modal__close').addEventListener('click', () => this.close());
+    document.addEventListener('keydown', e => {
+      if (e.key !== 'Escape' || !this.isOpen()) return;
+      e.stopImmediatePropagation();     /* 只关海报 / PDF，不再冒泡去关课程详情浮层 */
+      e.preventDefault();
+      this.close();
+    }, true);
+    this._el = el;
+    return el;
+  },
+  isOpen() { return !!this._el && this._el.classList.contains('is-visible'); },
+  open(cardEl) {
+    if (!cardEl) return;
+    /* posterFull：点击后弹出的大图（如「课程名 PDF.jpg」），缺省则弹出卡片海报本身 */
+    const poster = cardEl.getAttribute('data-poster-full') || cardEl.getAttribute('data-poster') || '';
+    const pdf = cardEl.getAttribute('data-pdf') || '';
+    const split = cardEl.getAttribute('data-split') === '1';   /* 左海报 + 右 PDF 分栏 */
+    const el = this.build();
+    this._lastTrigger = cardEl;
+    const title = cardEl.getAttribute('data-poster-title') || '';
+    const sub = cardEl.getAttribute('data-poster-sub') || '';
+    const img = el.querySelector('.poster-modal__img');
+    const ph = el.querySelector('.poster-modal__ph');
+    const info = el.querySelector('.poster-modal__poster-info');
+    const infoTitle = el.querySelector('.poster-modal__poster-title');
+    const infoSub = el.querySelector('.poster-modal__poster-sub');
+    const pdfPh = el.querySelector('.poster-modal__pdf-ph');
+    const frame = el.querySelector('.poster-modal__pdf-frame');
+
+    if (poster) { img.src = poster; img.alt = title; img.hidden = false; ph.hidden = true; }
+    else { img.removeAttribute('src'); img.hidden = true; ph.hidden = false; }
+    infoTitle.textContent = title;
+    infoSub.textContent = sub;
+    info.hidden = !split;                      /* 标题信息区仅分栏模式展示 */
+    if (pdf) { frame.src = pdf; pdfPh.hidden = true; }
+    else { frame.removeAttribute('src'); pdfPh.hidden = false; }
+
+    el.classList.toggle('is-split', split);
+    if (!split) el.classList.toggle('is-pdf', !!pdf);   /* 有 PDF 文档的课程模块直接弹出文档 */
+
+    el.setAttribute('aria-label', (title ? title + ' ' : '') + (split ? '课程海报与 PDF' : (pdf ? '课程 PDF' : '课程海报')));
+    el.style.display = 'flex';
+    el.offsetHeight;                                   /* 强制回流，确保入场过渡生效 */
+    el.classList.add('is-visible');
+    el.querySelector('.poster-modal__close').focus();
+  },
+  close() {
+    if (!this._el) return;
+    const el = this._el;
+    el.classList.remove('is-visible');
+    el.querySelector('.poster-modal__pdf-frame').removeAttribute('src');   /* 释放文档，避免下次复用加载旧文件 */
+    setTimeout(() => { if (!this.isOpen()) el.style.display = 'none'; }, 340);   /* 等退场过渡结束再隐藏 */
+    const trigger = this._lastTrigger;
+    this._lastTrigger = null;
+    if (trigger && trigger.isConnected) trigger.focus();
+  }
+};
 
 function renderCourses() {
   const d = window.COURSE_PRODUCTS;
@@ -811,9 +1249,10 @@ function renderStoriesIndex() {
       <div class="story-grid">
         ${all.map(s => `
         <a class="story-card" href="#/stories/${s.slug}">
-          ${ph('STORY')}
+          ${s.video ? `<video class="story-card__media" src="${esc(s.video)}" muted playsinline preload="metadata"></video>` : ph(s.tag)}
           <span class="story-card__tag">${esc(s.tag)}</span>
           <h3>${esc(s.zh)}</h3>
+          ${s.date ? `<p class="story-card__date">${esc(s.date)}</p>` : ''}
         </a>`).join('')}
       </div>
     </div>
@@ -823,19 +1262,17 @@ function renderStory(slug) {
   const s = [...STORIES, ...STORIES_MORE].find(x => x.slug === slug);
   if (!s) return renderNotFound();
   return `
-  <section class="page-hero">
+  <section class="section story-page">
     <div class="wrap">
-      <div class="breadcrumb"><a href="#/home">Home</a><span class="sep">/</span><a href="#/stories">Stories</a><span class="sep">/</span><span>${esc(s.zh)}</span></div>
-      <h1 style="font-size:clamp(24px,3.2vw,44px);">${esc(s.zh)}</h1>
-    </div>
-  </section>
-  <section class="section">
-    <div class="wrap">
-      ${ph('STORY COVER')}
-      <div class="placeholder-note" style="margin-top:28px;">
-        <h2>【占位】正文内容</h2>
-        <p>故事正文待填入。路径：<span class="u-en">/stories/${esc(s.slug)}</span>（对应 UAL /{audience}/stories/{slug}）。</p>
+      ${s.video
+        ? `<div class="story-video-wrap"><video class="story-detail__video" src="${esc(s.video)}" controls preload="metadata" playsinline></video></div>`
+        : ph(s.tag)}
+      <div class="story-detail">
+        <h1>${esc(s.zh)}</h1>
+        ${s.sub ? `<p class="story-detail__sub">${esc(s.sub)}</p>` : ''}
+        ${s.tag ? `<div class="story-detail__tags">${esc(s.tag)}</div>` : ''}
       </div>
+      <div class="story-body">${s.body ? esc(s.body) : '<p class="placeholder-note">【占位】正文内容待补充。</p>'}</div>
     </div>
   </section>`;
 }
@@ -937,6 +1374,189 @@ function renderNotFound() {
   <section class="page-hero"><div class="wrap"><h1>404</h1><p>页面不存在。<a href="#/home" style="color:var(--pink-soft);">返回首页 →</a></p></div></section>`;
 }
 
+/* ─────────── Offer 成果（结构 / 信息层级 / 交互复用 art-humanities_demo「OFFER成果」） ───────────
+   页头 → 筛选栏（申请季 ｜ 国家 ｜ 搜索）→ 院校卡片栅格 → 查看更多 / 收起
+   卡片点击原地展开为院校档案卡（年份 × offer 数 + 本科/研究生录取专业） */
+const OfferSection = {
+  _active: 'US', _activeSeason: '', _seasons: [], _rows: 4,
+  _q: '', _openCard: '', _expanded: false,
+  data() { return window.SFK_OFFERS || null; },
+
+  page() {
+    const d = this.data();
+    if (!d) return renderPlaceholder('offer');
+    this._seasons = d.seasonFilters || [];
+    this._activeSeason = this._seasons[0] || '';
+    this._rows = d.rows || 4;
+    this._q = ''; this._openCard = ''; this._expanded = false;
+    this._active = (d.filters && d.filters[0] && d.filters[0].id) || 'US';
+    const grp = (label, inner) => `<div class="offer-filter-group"><span class="offer-filter-group__label">${label}</span><span class="offer-filter-group__sep">|</span><span class="offer-filter-group__btns">${inner}</span></div>`;
+    const seasonBtns = this._seasons.map(s => `<button class="offer-filter-btn${s === this._activeSeason ? ' is-active' : ''}" type="button" data-season="${esc(s)}" onclick="OfferSection.setSeason('${esc(s)}')">${esc(s)}</button>`).join('');
+    const countryBtns = (d.filters || []).map(f => `<button class="offer-filter-btn${f.id === this._active ? ' is-active' : ''}" type="button" data-group="${esc(f.id)}" onclick="OfferSection.setCountry('${esc(f.id)}')">${esc(f.label)}</button>`).join('');
+    return `
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="#/home">Home</a><span class="sep">/</span><span>Offer</span></div>
+      <h1>${esc(d.hero.title)}</h1>
+      <p>${esc(d.hero.desc)}</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap">
+      <div class="offers-filter-bar" id="offers-filter-bar">
+        ${this._seasons.length ? grp('申请季', seasonBtns) : ''}
+        ${grp('国家', countryBtns)}
+        <div class="offer-filter-group offer-filter-group--search">
+          <span class="offer-filter-group__label">搜索</span><span class="offer-filter-group__sep">|</span>
+          <input class="offers-search" id="offers-search" type="search" placeholder="输入院校中 / 英文名" autocomplete="off">
+        </div>
+      </div>
+      <div class="rough-grid" id="offers-grid">${this.gridHtml()}</div>
+      <div class="offers-more" id="offers-more"></div>
+    </div>
+  </section>`;
+  },
+
+  /* 当前应渲染的行：[row, groupId]。常规态 = 当前国家组；搜索态 = 跨全部国家匹配，
+     按 offer 总数降序，再叠加国家 / 申请季筛选 */
+  rowsData() {
+    const d = this.data(); if (!d) return [];
+    const groups = d.groups || {};
+    let pool = [];
+    if (this._q) {
+      Object.keys(groups).forEach(g => (groups[g] || []).forEach(r => {
+        const hay = ((r.zh || '') + ' ' + (r.en || '')).toLowerCase();
+        if (hay.includes(this._q)) pool.push([r, g]);
+      }));
+      pool.sort((a, b) => (parseInt(b[0].count, 10) || 0) - (parseInt(a[0].count, 10) || 0));
+      if (this._active) pool = pool.filter(([, g]) => g === this._active);
+    } else {
+      pool = (groups[this._active] || []).map(r => [r, null]);
+    }
+    if (this._activeSeason) {
+      pool = pool.filter(([r]) => !(r.seasons || []).length || (r.seasons || []).includes(this._activeSeason));
+    }
+    return pool;
+  },
+
+  gridHtml() {
+    const d = this.data(); if (!d) return '';
+    const filters = d.filters || [];
+    const inSearch = !!this._q;
+    return this.rowsData().map(([r, g]) => {
+      const cnt = (this._activeSeason && r.seasonCounts && r.seasonCounts[this._activeSeason]) || r.count;
+      const dossier = inSearch || this._openCard === r.zh;
+      if (!dossier) {
+        return `
+      <div class="offer-card offer-card--clickable" data-school="${esc(r.zh)}">
+        <div class="offer-card__count${r.hl ? ' offer-card__count--hl' : ''}">${esc(cnt)}</div>
+        <div class="offer-card__school-zh">${esc(r.zh)}</div>
+        <div class="offer-card__school-en u-en">${esc(r.en)}</div>
+      </div>`;
+      }
+      const fl = filters.find(f => f.id === (g || this._active));
+      const years = (r.seasons || []).slice().sort().reverse()
+        .map(s => `<div class="offer-card__year">${esc(s)} ｜ <span class="offer-card__year-num">${esc((r.seasonCounts && r.seasonCounts[s]) || '—')}</span></div>`).join('');
+      const majorsGrp = (list, label) => (list && list.length) ? `
+        <div class="offer-card__major-group">
+          <div class="offer-card__major-h">${label}</div>
+          <ul>${list.map(m => `<li><span class="offer-card__major-en u-en">${esc(m[0])}</span><span class="offer-card__major-cn">${esc(m[1])}</span></li>`).join('')}</ul>
+        </div>` : '';
+      const majors = r.majors ? `
+        <aside class="offer-card__majors">
+          ${majorsGrp(r.majors.ug, '本科 · Undergraduate')}
+          ${majorsGrp(r.majors.pg, '研究生 · Postgraduate')}
+        </aside>` : '';
+      return `
+      <div class="offer-card offer-card--dossier${inSearch ? '' : ' offer-card--clickable'}" data-school="${esc(r.zh)}">
+        <div class="offer-card__info">
+          <div class="offer-card__count${r.hl ? ' offer-card__count--hl' : ''}">${esc(cnt)}</div>
+          <div class="offer-card__school-zh">${esc(r.zh)}</div>
+          <div class="offer-card__school-en u-en">${esc(r.en)}</div>
+          <div class="offer-card__meta">${esc(fl ? fl.label : '—')}</div>
+          <div class="offer-card__years">${years}</div>
+        </div>${majors}
+      </div>`;
+    }).join('');
+  },
+
+  syncBtns() {
+    const bar = document.getElementById('offers-filter-bar');
+    if (!bar) return;
+    bar.querySelectorAll('[data-group]').forEach(b => b.classList.toggle('is-active', b.getAttribute('data-group') === this._active));
+    bar.querySelectorAll('[data-season]').forEach(b => b.classList.toggle('is-active', b.getAttribute('data-season') === this._activeSeason));
+  },
+
+  /* 申请季：搜索态下点击已选中 = 取消；常规态点击即选中 */
+  setSeason(s) {
+    const deselect = !!this._q && this._activeSeason === s;
+    this._activeSeason = deselect ? '' : s;
+    this.syncBtns(); this.refresh();
+  },
+
+  /* 国家：搜索态下点击已选中 = 取消；常规态点击即选中 */
+  setCountry(id) {
+    const deselect = !!this._q && this._active === id;
+    this._active = deselect ? '' : id;
+    this.syncBtns(); this.refresh();
+  },
+
+  /* 实时搜索（150ms 防抖）：进入搜索态清空筛选，清空输入恢复默认 */
+  search(v) {
+    const q = String(v == null ? '' : v).trim().toLowerCase();
+    if (q === this._q) return;
+    this._q = q;
+    if (this._q) {
+      this._active = ''; this._activeSeason = '';
+    } else {
+      const d = this.data();
+      this._active = (d && d.filters && d.filters[0] && d.filters[0].id) || 'US';
+      this._activeSeason = this._seasons[0] || '';
+    }
+    this.syncBtns(); this.refresh();
+  },
+
+  refresh() {
+    const grid = document.getElementById('offers-grid');
+    if (grid) {
+      grid.innerHTML = this.gridHtml();
+      grid.classList.toggle('rough-grid--search', !!this._q);
+    }
+    this.clamp();
+  },
+
+  toggleCard(zh) { this._openCard = this._openCard === zh ? '' : zh; this.refresh(); },
+  toggleExpand() { this._expanded = !this._expanded; this.clamp(); },
+
+  /* 整行折叠：读取栅格实际列数 × 行数（rows），避免末尾稀疏半行；展开时显示全部 */
+  clamp() {
+    const grid = document.getElementById('offers-grid');
+    const more = document.getElementById('offers-more');
+    if (!grid || !more) return;
+    const tpl = getComputedStyle(grid).gridTemplateColumns;
+    const cols = (tpl && tpl !== 'none') ? tpl.split(' ').length : 1;
+    const limit = cols * this._rows;
+    const cards = Array.from(grid.children);
+    cards.forEach((c, i) => { c.style.display = (this._expanded || i < limit) ? '' : 'none'; });
+    const total = cards.length;
+    more.innerHTML = total <= limit ? '' : (this._expanded
+      ? `<button class="btn btn--ghost" type="button" onclick="OfferSection.toggleExpand()">收起</button>`
+      : `<button class="btn btn--ghost" type="button" onclick="OfferSection.toggleExpand()">查看更多 <span class="u-en">/ ${total - limit} more</span></button>`);
+  },
+
+  init() {
+    const input = document.getElementById('offers-search');
+    if (input) {
+      let t;
+      input.addEventListener('input', () => {
+        clearTimeout(t);
+        t = setTimeout(() => this.search(input.value), 150);
+      });
+    }
+    this.clamp();
+  }
+};
+
 /* ─────────── 路由分发 ─────────── */
 function route() {
   const { segs, query } = parseHash();
@@ -955,16 +1575,20 @@ function route() {
   else if (a === 'stories') { view = 'stories'; html = renderStory(b); }
   else if (a === 'whats-on' && !b) html = renderWhatsOnIndex();
   else if (a === 'whats-on') { view = 'whats-on'; html = renderEvent(b); }
+  else if (a === 'offer') { view = 'offer'; html = OfferSection.page(); }
   else if (a === 'search') { view = 'search'; html = renderSearch(query); }
   else if (NAV_MAIN.some(x => x.id === a)) html = renderPlaceholder(a);
   else html = renderNotFound();
 
   document.getElementById('app-main').innerHTML = html;
   Header.markActive(view);
+  /* 次级页面及下属层级：导航栏统一白底黑字（on-sub）；主页保持透明轮播叠加逻辑 */
+  document.getElementById('navbar')?.classList.toggle('on-sub', view !== 'home');
   closeSchoolDetail();
   CourseProducts.close();
   BackTab.render(a && a !== 'home' ? (c ? `#/${a}/${b}` : (b ? `#/${a}` : '#/home')) : '');
-  if (view === 'home') { HeroCarousel.mount(); requestAnimationFrame(equalizeHomeBands); } else { HeroCarousel.stop(); }
+  if (view === 'home') { HeroCarousel.mount(); StoriesReel.mount(); requestAnimationFrame(equalizeHomeBands); } else { HeroCarousel.stop(); StoriesReel.stop(); }
+  if (view === 'offer') OfferSection.init();
   if (!location.hash.includes('#/home') || segs.length) window.scrollTo(0, 0);
 }
 
@@ -983,6 +1607,15 @@ document.addEventListener('keydown', e => {
   if (!card) return;
   e.preventDefault();
   CourseProducts.open(card.getAttribute('data-cp-id'));
+});
+/* Offer 院校卡：点击原地展开 / 收起档案卡（事件委托，路由重渲染后依然生效） */
+document.addEventListener('click', e => {
+  const card = e.target.closest && e.target.closest('.offer-card--clickable');
+  if (card) OfferSection.toggleCard(card.getAttribute('data-school'));
+});
+/* 视口变化时重算整行折叠（展开态不干预） */
+window.addEventListener('resize', () => {
+  if (document.getElementById('offers-grid') && !OfferSection._expanded) OfferSection.clamp();
 });
 window.addEventListener('hashchange', route);
 route();
