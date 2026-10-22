@@ -5,23 +5,108 @@ window.SFK_ACADEMIC_COURSES = {
   "curriculum": [
    {
     "cat": "海外冬夏校",
-    "eyebrow": "冬校 ｜ 26",
-    "title": "RCA X 央美国际时尚虚拟交互研究生班",
-    "program": "RCA ｜ Anna",
+    "eyebrow": "冬校 ｜ 27",
+    "title": "27冬校-上海时装周 X LCF 时尚传媒班",
+    "program": "LCF ｜ Avril",
     "tags": [
-     "研究生",
-     "北京-798",
-     "高校合作"
+     "本科/研究生",
+     "北京今日美术馆",
+     "大师共创"
     ],
-    "desc": "时尚",
-    "poster": "assets/img/courses/academic/academic_000.jpg",
+    "desc": "时尚传媒、虚拟时尚",
+    "poster": "assets/img/courses/academic/academic_006.jpg",
     "facets": {
-     "program_type": "往期",
-     "category": "时尚设计",
-     "status": "往期"
+     "program_type": "招募中",
+     "category": "时尚传媒",
+     "status": "招募中"
     },
     "split": 0,
-    "searchText": "rca x 央美国际时尚虚拟交互研究生班 rca ｜ anna 时尚 冬校 ｜ 26 高校合作 北京-798 研究生"
+    "pdf": "assets/pdf/courses/academic/academic_006.pdf",
+    "searchText": "27冬校-上海时装周 x lcf 时尚传媒班 lcf ｜ avril 时尚传媒、虚拟时尚 冬校 ｜ 27 大师共创 北京今日美术馆 本科/研究生"
+   },
+   {
+    "cat": "海外冬夏校",
+    "eyebrow": "冬校 ｜ 27",
+    "title": "27冬校-上海时装周 X LCF 时尚管理班",
+    "program": "LCF ｜ Jenny",
+    "tags": [
+     "本科/研究生",
+     "北京今日美术馆",
+     "大师共创"
+    ],
+    "desc": "时尚管理、买手管理",
+    "poster": "assets/img/courses/academic/academic_007.jpg",
+    "facets": {
+     "program_type": "招募中",
+     "category": "时尚管理",
+     "status": "招募中"
+    },
+    "split": 0,
+    "pdf": "assets/pdf/courses/academic/academic_007.pdf",
+    "searchText": "27冬校-上海时装周 x lcf 时尚管理班 lcf ｜ jenny 时尚管理、买手管理 冬校 ｜ 27 大师共创 北京今日美术馆 本科/研究生"
+   },
+   {
+    "cat": "海外冬夏校",
+    "eyebrow": "冬校 ｜ 27",
+    "title": "27冬校-上海时装周 X UAL 时尚设计班",
+    "program": "LCF ｜ Lilia",
+    "tags": [
+     "本科/研究生",
+     "北京今日美术馆",
+     "大师共创"
+    ],
+    "desc": "时尚设计、珠宝设计、纺织品设计",
+    "poster": "assets/img/courses/academic/academic_008.jpg",
+    "facets": {
+     "program_type": "招募中",
+     "category": "时尚设计",
+     "status": "招募中"
+    },
+    "split": 0,
+    "pdf": "assets/pdf/courses/academic/academic_008.pdf",
+    "searchText": "27冬校-上海时装周 x ual 时尚设计班 lcf ｜ lilia 时尚设计、珠宝设计、纺织品设计 冬校 ｜ 27 大师共创 北京今日美术馆 本科/研究生"
+   },
+   {
+    "cat": "海外冬夏校",
+    "eyebrow": "冬校 ｜ 27",
+    "title": "27冬校-时装周 X LCF 青年设计师10人联合秀场班",
+    "program": "LCF ｜ Lilia",
+    "tags": [
+     "本科/研究生",
+     "北京今日美术馆",
+     "实战产学研"
+    ],
+    "desc": "时尚设计、珠宝设计、纺织品设计",
+    "poster": "assets/img/courses/academic/academic_009.jpg",
+    "facets": {
+     "program_type": "招募中",
+     "category": "时尚设计",
+     "status": "招募中"
+    },
+    "split": 0,
+    "posterFull": "assets/img/courses/academic/academic_010.jpg",
+    "searchText": "27冬校-时装周 x lcf 青年设计师10人联合秀场班 lcf ｜ lilia 时尚设计、珠宝设计、纺织品设计 冬校 ｜ 27 实战产学研 北京今日美术馆 本科/研究生"
+   },
+   {
+    "cat": "海外冬夏校",
+    "eyebrow": "冬校 ｜ 27",
+    "title": "27冬校-时装周 X LCF 青年设计师5人菁英联秀班",
+    "program": "LCF ｜ Lilia",
+    "tags": [
+     "本科/研究生",
+     "北京今日美术馆",
+     "实战产学研"
+    ],
+    "desc": "时尚设计、珠宝设计、纺织品设计",
+    "poster": "assets/img/courses/academic/academic_011.jpg",
+    "facets": {
+     "program_type": "招募中",
+     "category": "时尚设计",
+     "status": "招募中"
+    },
+    "split": 0,
+    "posterFull": "assets/img/courses/academic/academic_012.jpg",
+    "searchText": "27冬校-时装周 x lcf 青年设计师5人菁英联秀班 lcf ｜ lilia 时尚设计、珠宝设计、纺织品设计 冬校 ｜ 27 实战产学研 北京今日美术馆 本科/研究生"
    },
    {
     "cat": "海外冬夏校",
@@ -125,108 +210,23 @@ window.SFK_ACADEMIC_COURSES = {
    },
    {
     "cat": "海外冬夏校",
-    "eyebrow": "冬校 ｜ 27",
-    "title": "27冬校-上海时装周 X LCF 时尚传媒班",
-    "program": "LCF ｜ Avril",
+    "eyebrow": "冬校 ｜ 26",
+    "title": "RCA X 央美国际时尚虚拟交互研究生班",
+    "program": "RCA ｜ Anna",
     "tags": [
-     "本科/研究生",
-     "北京今日美术馆",
-     "大师共创"
+     "研究生",
+     "北京-798",
+     "高校合作"
     ],
-    "desc": "时尚传媒、虚拟时尚",
-    "poster": "assets/img/courses/academic/academic_006.jpg",
+    "desc": "时尚",
+    "poster": "assets/img/courses/academic/academic_000.jpg",
     "facets": {
-     "program_type": "招募中",
-     "category": "时尚传媒",
-     "status": "招募中"
-    },
-    "split": 0,
-    "pdf": "assets/pdf/courses/academic/academic_006.pdf",
-    "searchText": "27冬校-上海时装周 x lcf 时尚传媒班 lcf ｜ avril 时尚传媒、虚拟时尚 冬校 ｜ 27 大师共创 北京今日美术馆 本科/研究生"
-   },
-   {
-    "cat": "海外冬夏校",
-    "eyebrow": "冬校 ｜ 27",
-    "title": "27冬校-上海时装周 X LCF 时尚管理班",
-    "program": "LCF ｜ Jenny",
-    "tags": [
-     "本科/研究生",
-     "北京今日美术馆",
-     "大师共创"
-    ],
-    "desc": "时尚管理、买手管理",
-    "poster": "assets/img/courses/academic/academic_007.jpg",
-    "facets": {
-     "program_type": "招募中",
-     "category": "时尚管理",
-     "status": "招募中"
-    },
-    "split": 0,
-    "pdf": "assets/pdf/courses/academic/academic_007.pdf",
-    "searchText": "27冬校-上海时装周 x lcf 时尚管理班 lcf ｜ jenny 时尚管理、买手管理 冬校 ｜ 27 大师共创 北京今日美术馆 本科/研究生"
-   },
-   {
-    "cat": "海外冬夏校",
-    "eyebrow": "冬校 ｜ 27",
-    "title": "27冬校-上海时装周 X UAL 时尚设计班",
-    "program": "LCF ｜ Lilia",
-    "tags": [
-     "本科/研究生",
-     "北京今日美术馆",
-     "大师共创"
-    ],
-    "desc": "时尚设计、珠宝设计、纺织品设计",
-    "poster": "assets/img/courses/academic/academic_008.jpg",
-    "facets": {
-     "program_type": "招募中",
+     "program_type": "往期",
      "category": "时尚设计",
-     "status": "招募中"
+     "status": "往期"
     },
     "split": 0,
-    "pdf": "assets/pdf/courses/academic/academic_008.pdf",
-    "searchText": "27冬校-上海时装周 x ual 时尚设计班 lcf ｜ lilia 时尚设计、珠宝设计、纺织品设计 冬校 ｜ 27 大师共创 北京今日美术馆 本科/研究生"
-   },
-   {
-    "cat": "海外冬夏校",
-    "eyebrow": "冬校 ｜ 27",
-    "title": "27冬校-时装周 X LCF 青年设计师10人联合秀场班",
-    "program": "LCF ｜ Lilia",
-    "tags": [
-     "本科/研究生",
-     "北京今日美术馆",
-     "实战产学研"
-    ],
-    "desc": "时尚设计、珠宝设计、纺织品设计",
-    "poster": "assets/img/courses/academic/academic_009.jpg",
-    "facets": {
-     "program_type": "招募中",
-     "category": "时尚设计",
-     "status": "招募中"
-    },
-    "split": 0,
-    "posterFull": "assets/img/courses/academic/academic_010.jpg",
-    "searchText": "27冬校-时装周 x lcf 青年设计师10人联合秀场班 lcf ｜ lilia 时尚设计、珠宝设计、纺织品设计 冬校 ｜ 27 实战产学研 北京今日美术馆 本科/研究生"
-   },
-   {
-    "cat": "海外冬夏校",
-    "eyebrow": "冬校 ｜ 27",
-    "title": "27冬校-时装周 X LCF 青年设计师5人菁英联秀班",
-    "program": "LCF ｜ Lilia",
-    "tags": [
-     "本科/研究生",
-     "北京今日美术馆",
-     "实战产学研"
-    ],
-    "desc": "时尚设计、珠宝设计、纺织品设计",
-    "poster": "assets/img/courses/academic/academic_011.jpg",
-    "facets": {
-     "program_type": "招募中",
-     "category": "时尚设计",
-     "status": "招募中"
-    },
-    "split": 0,
-    "posterFull": "assets/img/courses/academic/academic_012.jpg",
-    "searchText": "27冬校-时装周 x lcf 青年设计师5人菁英联秀班 lcf ｜ lilia 时尚设计、珠宝设计、纺织品设计 冬校 ｜ 27 实战产学研 北京今日美术馆 本科/研究生"
+    "searchText": "rca x 央美国际时尚虚拟交互研究生班 rca ｜ anna 时尚 冬校 ｜ 26 高校合作 北京-798 研究生"
    }
   ],
   "curriculumFacets": {
@@ -245,6 +245,26 @@ window.SFK_ACADEMIC_COURSES = {
  },
  "masterclass": {
   "curriculum": [
+   {
+    "cat": "海外大师课",
+    "eyebrow": "大师课 ｜ 26",
+    "title": "26F-NYU跨学科大师课-Jonathan",
+    "program": "NYU ｜ Jonathan",
+    "tags": [
+     "跨学科",
+     "线上"
+    ],
+    "desc": "跨学科大师课",
+    "poster": "assets/img/courses/academic/26F-NYU跨学科大师课-Jonathan.jpeg",
+    "facets": {
+     "program_type": "招募中",
+     "category": "跨学科",
+     "status": "招募中"
+    },
+    "split": 0,
+    "pdf": "assets/pdf/courses/academic/26F-NYU跨学科大师课-Jonathan.pdf",
+    "searchText": "26f-nyu跨学科大师课-jonathan nyu ｜ jonathan 跨学科大师课 大师课 ｜ 26 跨学科 线上"
+   },
    {
     "cat": "海外大师课",
     "eyebrow": "大师课 ｜ 26",
