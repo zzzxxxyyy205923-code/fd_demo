@@ -6,9 +6,41 @@
   <title>SFK 时尚科系 · Fashion Design</title>
   <meta name="description" content="SFK 时尚科系 — 时装设计、时尚商业、时尚传媒全链路升学与作品集规划">
   <link rel="icon" type="image/png" href="assets/img/brand/logo-fashion.png">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261022p">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261031a">
 </head>
 <body>
+
+<!-- 启动提示：仅在数据层两条通道都不可用时显示（文案为静态兜底，不依赖 JSON） -->
+
+<!-- ① 本地直开（file://）且镜像缺失：双击打开时走 <script> 镜像，镜像没生成则提示生成 -->
+<section class="boot-notice" id="boot-notice-bundle" hidden>
+  <div class="boot-notice__inner">
+    <p class="boot-notice__eyebrow">LOCAL DATA MIRROR MISSING</p>
+    <h1 class="boot-notice__title">本地数据镜像缺失</h1>
+    <p class="boot-notice__desc">当前以 <code>file://</code> 方式直接打开页面。浏览器在这种模式下禁止读取本地 <code>JSON</code>，站点会自动改用内置镜像 <code>assets/js/data.bundle.js</code>，但该文件不存在或已损坏。</p>
+    <ol class="boot-notice__steps">
+      <li>在项目根目录生成镜像：<code>python3 tools/build_data_bundle.py</code></li>
+      <li>刷新页面即可正常浏览；也可改用本地服务：<code>python3 -m http.server 8931</code></li>
+    </ol>
+    <p class="boot-notice__hint">镜像由脚本从 <code>assets/data/*.json</code> 自动生成，请勿手工编辑；修改数据后需重新生成一次。</p>
+    <p class="boot-notice__detail" id="boot-notice-bundle-detail" hidden></p>
+  </div>
+</section>
+
+<!-- ② 通过 HTTP 打开但取数失败：JSON 与镜像都不可用 -->
+<section class="boot-notice" id="boot-notice-load" hidden>
+  <div class="boot-notice__inner">
+    <p class="boot-notice__eyebrow">DATA LOAD FAILED</p>
+    <h1 class="boot-notice__title">数据加载失败</h1>
+    <p class="boot-notice__desc">页面已通过 HTTP 打开，但未能读取 <code>assets/data/*.json</code>，本地镜像也不可用。请确认预览服务仍在运行，且数据文件未被移动或改名。</p>
+    <ol class="boot-notice__steps">
+      <li>重新启动预览服务：<code>python3 -m http.server 8931</code></li>
+      <li>打开 <a href="http://localhost:8931/index.html">http://localhost:8931/index.html</a> 后刷新页面</li>
+    </ol>
+    <p class="boot-notice__hint">若仍失败，可在浏览器控制台的 Network 面板查看具体失败请求；也可双击 <code>index.html</code> 改走本地镜像。</p>
+    <p class="boot-notice__detail" id="boot-notice-load-detail" hidden></p>
+  </div>
+</section>
 
 <div id="app-header"></div>
 
@@ -20,10 +52,21 @@
 
 <div id="app-footer"></div>
 
-<script src="assets/js/course-products.js?v=20261022p"></script>
-<script src="assets/js/course-industry-data.js?v=20261022p"></script>
-<script src="assets/js/course-academic-data.js?v=20261022p"></script>
-<script src="assets/js/offers.js?v=20261022p"></script>
-<script src="assets/js/main.js?v=20261022p"></script>
+<!-- 数据层：全部文案与内容来自 assets/data/*.json，仅支持 http(s) 预览地址访问 -->
+<script src="assets/js/data.js?v=20261031a"></script>
+<script src="assets/js/router.js?v=20261031a"></script>
+<script src="assets/js/components.js?v=20261031a"></script>
+<script src="assets/js/effects.js?v=20261031a"></script>
+<script src="assets/js/course-products.js?v=20261031a"></script>
+<script src="assets/js/pages/home.js?v=20261031a"></script>
+<script src="assets/js/pages/subjects.js?v=20261031a"></script>
+<script src="assets/js/pages/colleges.js?v=20261031a"></script>
+<script src="assets/js/pages/courses.js?v=20261031a"></script>
+<script src="assets/js/pages/stories.js?v=20261031a"></script>
+<script src="assets/js/pages/whats-on.js?v=20261031a"></script>
+<script src="assets/js/pages/offer.js?v=20261031a"></script>
+<script src="assets/js/pages/search.js?v=20261031a"></script>
+<script src="assets/js/pages/misc.js?v=20261031a"></script>
+<script src="assets/js/main.js?v=20261031a"></script>
 </body>
 </html>

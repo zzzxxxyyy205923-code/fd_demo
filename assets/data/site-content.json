@@ -1,0 +1,1063 @@
+{
+  "data": {
+    "meta": {
+      "brand": "SFK · 时尚科系",
+      "logo": "assets/img/brand/logo-fashion.png",
+      "subtitle": "SFK 时尚科系 — 覆盖时装设计、时尚商业、时尚传媒、纺织材料等方向的升学规划、作品集指导与案例展示。",
+      "footer": {
+        "contact": {
+          "email": "fashion@sfk.example.com",
+          "tel": "+86 400-000-0000"
+        },
+        "copyright": "© 2026 SFK 时尚科系 · Fashion Design. All rights reserved."
+      }
+    },
+    "nav_main": [
+      {
+        "id": "subjects",
+        "label": "Subject",
+        "en": "Subject"
+      },
+      {
+        "id": "colleges",
+        "label": "Colleges and Institutes",
+        "en": "Colleges & Institutes"
+      },
+      {
+        "id": "career",
+        "label": "Career",
+        "en": "Career",
+        "placeholder": true
+      },
+      {
+        "id": "offer",
+        "label": "Offer",
+        "en": "Offer",
+        "placeholder": true
+      },
+      {
+        "id": "instructors",
+        "label": "Instructors",
+        "en": "Instructors",
+        "placeholder": true
+      },
+      {
+        "id": "resources",
+        "label": "Resources",
+        "en": "Resources",
+        "placeholder": true
+      },
+      {
+        "id": "student-gallery",
+        "label": "Student Gallery",
+        "en": "Student Gallery",
+        "placeholder": true
+      },
+      {
+        "id": "timeline",
+        "label": "Timeline",
+        "en": "Timeline",
+        "placeholder": true
+      },
+      {
+        "id": "courses",
+        "label": "Courses",
+        "en": "Courses"
+      }
+    ],
+    "hero_quick": [
+      {
+        "label": "Courses",
+        "href": "#/courses"
+      },
+      {
+        "label": "Student gallery",
+        "href": "#/student-gallery"
+      },
+      {
+        "label": "Career",
+        "href": "#/career"
+      }
+    ],
+    "home_courses": [
+      "changemakers-ug",
+      "longform2",
+      "summerwinter",
+      "internship"
+    ],
+    "course_levels": [
+      {
+        "id": "undergraduate",
+        "label": "Undergraduate",
+        "zh": "本科"
+      },
+      {
+        "id": "postgraduate",
+        "label": "Postgraduate",
+        "zh": "研究生"
+      },
+      {
+        "id": "pre-degree",
+        "label": "Pre-degree",
+        "zh": "预科"
+      },
+      {
+        "id": "short-course",
+        "label": "Short Courses",
+        "zh": "短期课程"
+      }
+    ],
+    "subjects": [
+      {
+        "id": "fashion-design",
+        "zh": "时装设计",
+        "en": "Fashion Design",
+        "num": "01"
+      },
+      {
+        "id": "textiles-and-materials",
+        "zh": "纺织与材料",
+        "en": "Textiles & Materials",
+        "num": "02"
+      },
+      {
+        "id": "fashion-business",
+        "zh": "时尚商业与管理",
+        "en": "Fashion Business & Management",
+        "num": "03"
+      },
+      {
+        "id": "fashion-communication",
+        "zh": "时尚传媒",
+        "en": "Fashion Communication",
+        "num": "04"
+      },
+      {
+        "id": "fashion-styling",
+        "zh": "时尚造型与妆发",
+        "en": "Fashion Styling & Make-up",
+        "num": "05"
+      },
+      {
+        "id": "accessories-footwear-jewellery",
+        "zh": "配饰鞋履与珠宝",
+        "en": "Accessories, Footwear & Jewellery",
+        "num": "06"
+      },
+      {
+        "id": "fashion-making",
+        "zh": "服装制版与工艺",
+        "en": "Fashion Making & Pattern Cutting",
+        "num": "07"
+      },
+      {
+        "id": "digital-fashion",
+        "zh": "数字时尚与虚拟时装",
+        "en": "Digital & Virtual Fashion",
+        "num": "08"
+      },
+      {
+        "id": "fashion-photography",
+        "zh": "时尚摄影",
+        "en": "Fashion Photography",
+        "num": "09"
+      },
+      {
+        "id": "fashion-film",
+        "zh": "时尚影像与短片",
+        "en": "Fashion Film",
+        "num": "10"
+      },
+      {
+        "id": "fashion-marketing",
+        "zh": "时尚营销",
+        "en": "Fashion Marketing",
+        "num": "11"
+      },
+      {
+        "id": "luxury-brand-management",
+        "zh": "奢侈品管理",
+        "en": "Luxury Brand Management",
+        "num": "12"
+      },
+      {
+        "id": "fashion-journalism",
+        "zh": "时尚新闻与出版",
+        "en": "Fashion Journalism & Publishing",
+        "num": "13"
+      },
+      {
+        "id": "performance-costume",
+        "zh": "戏剧影视服装设计",
+        "en": "Performance & Costume Design",
+        "num": "14"
+      },
+      {
+        "id": "knitwear",
+        "zh": "针织设计",
+        "en": "Knitwear Design",
+        "num": "15"
+      },
+      {
+        "id": "footwear-design",
+        "zh": "鞋履设计",
+        "en": "Footwear Design",
+        "num": "16"
+      },
+      {
+        "id": "jewellery-design",
+        "zh": "珠宝设计",
+        "en": "Jewellery Design",
+        "num": "17"
+      },
+      {
+        "id": "beauty-industry",
+        "zh": "美妆产业管理",
+        "en": "Beauty Industry Management",
+        "num": "18"
+      },
+      {
+        "id": "fashion-tech-ai",
+        "zh": "时尚科技与 AI",
+        "en": "Fashion Tech & AI",
+        "num": "19"
+      },
+      {
+        "id": "sustainable-fashion",
+        "zh": "可持续时尚",
+        "en": "Sustainable Fashion",
+        "num": "20"
+      }
+    ],
+    "subject_images": {
+      "fashion-design": "assets/img/subjects/fashion-design.jpeg"
+    },
+    "subject_levels": [
+      {
+        "id": "undergraduate",
+        "label": "本科"
+      },
+      {
+        "id": "postgraduate",
+        "label": "研究生"
+      },
+      {
+        "id": "fulltime",
+        "label": "全日制"
+      },
+      {
+        "id": "oneplus2",
+        "label": "1+2"
+      }
+    ],
+    "school_countries": [
+      "美国",
+      "英国",
+      "港新澳",
+      "欧洲",
+      "日韩"
+    ],
+    "school_db": {
+      "美国": [
+        {
+          "zh": "帕森斯设计学院",
+          "en": "Parsons School of Design",
+          "city": "纽约",
+          "note": "全美艺术设计顶尖，时装设计王牌方向"
+        },
+        {
+          "zh": "罗德岛设计学院",
+          "en": "Rhode Island School of Design",
+          "city": "普罗维登斯",
+          "note": "纯艺与设计并重的顶尖美院"
+        },
+        {
+          "zh": "纽约时装学院",
+          "en": "Fashion Institute of Technology",
+          "city": "纽约",
+          "note": "时装技术与产业资源深厚"
+        },
+        {
+          "zh": "芝加哥艺术学院",
+          "en": "School of the Art Institute of Chicago",
+          "city": "芝加哥",
+          "note": "跨学科实验性突出"
+        },
+        {
+          "zh": "普瑞特艺术学院",
+          "en": "Pratt Institute",
+          "city": "纽约布鲁克林",
+          "note": "设计与建筑传统名校"
+        },
+        {
+          "zh": "加州艺术学院",
+          "en": "California Institute of the Arts",
+          "city": "洛杉矶",
+          "note": "实验艺术与影像强校"
+        }
+      ],
+      "英国": [
+        {
+          "zh": "伦敦艺术大学",
+          "en": "University of the Arts London",
+          "city": "伦敦",
+          "note": "全球艺术设计顶尖，六院联合体"
+        },
+        {
+          "zh": "皇家艺术学院",
+          "en": "Royal College of Art",
+          "city": "伦敦",
+          "note": "研究生阶段全球第 1 的艺术设计学院"
+        },
+        {
+          "zh": "金史密斯学院",
+          "en": "Goldsmiths, University of London",
+          "city": "伦敦",
+          "note": "实验性与批判性著称"
+        },
+        {
+          "zh": "格拉斯哥美术学院",
+          "en": "Glasgow School of Art",
+          "city": "格拉斯哥",
+          "note": "苏格兰老牌美术学院"
+        },
+        {
+          "zh": "利兹大学",
+          "en": "University of Leeds",
+          "city": "利兹",
+          "note": "设计与材料研究见长"
+        }
+      ],
+      "港新澳": [
+        {
+          "zh": "香港理工大学",
+          "en": "The Hong Kong Polytechnic University",
+          "city": "香港",
+          "note": "设计学院亚洲领先"
+        },
+        {
+          "zh": "新加坡拉萨尔艺术学院",
+          "en": "LASALLE College of the Arts",
+          "city": "新加坡",
+          "note": "东南亚当代艺术重镇"
+        },
+        {
+          "zh": "南洋艺术学院",
+          "en": "Nanyang Academy of Fine Arts",
+          "city": "新加坡",
+          "note": "应用艺术与实践导向"
+        },
+        {
+          "zh": "皇家墨尔本理工大学",
+          "en": "RMIT University",
+          "city": "墨尔本",
+          "note": "澳洲设计第一梯队"
+        },
+        {
+          "zh": "新南威尔士大学",
+          "en": "UNSW Sydney",
+          "city": "悉尼",
+          "note": "综合名校中的艺术设计强校"
+        }
+      ],
+      "欧洲": [
+        {
+          "zh": "马兰戈尼学院",
+          "en": "Istituto Marangoni",
+          "city": "米兰 / 巴黎 / 伦敦",
+          "note": "时尚产业资源与行业网络深厚"
+        },
+        {
+          "zh": "安特卫普皇家艺术学院",
+          "en": "Royal Academy of Fine Arts Antwerp",
+          "city": "安特卫普",
+          "note": "安特卫普六君子发源地"
+        },
+        {
+          "zh": "ESMOD 高级时装艺术学院",
+          "en": "ESMOD Paris",
+          "city": "巴黎",
+          "note": "世界首所时装学院"
+        },
+        {
+          "zh": "米兰理工大学",
+          "en": "Politecnico di Milano",
+          "city": "米兰",
+          "note": "设计与工程结合见长"
+        },
+        {
+          "zh": "柏林魏森湖艺术学院",
+          "en": "Weißensee Kunsthochschule Berlin",
+          "city": "柏林",
+          "note": "欧洲实验设计前沿"
+        }
+      ],
+      "日韩": [
+        {
+          "zh": "文化服装学院",
+          "en": "Bunka Fashion College",
+          "city": "东京",
+          "note": "日本时装教育最高学府"
+        },
+        {
+          "zh": "武藏野美术大学",
+          "en": "Musashino Art University",
+          "city": "东京",
+          "note": "日本顶级私立美术大学"
+        },
+        {
+          "zh": "多摩美术大学",
+          "en": "Tama Art University",
+          "city": "东京",
+          "note": "日本顶级私立美术大学"
+        },
+        {
+          "zh": "女子美术大学",
+          "en": "Joshibi University of Art and Design",
+          "city": "东京",
+          "note": "工艺与时尚表现见长"
+        },
+        {
+          "zh": "弘益大学",
+          "en": "Hongik University",
+          "city": "首尔",
+          "note": "韩国艺术设计第一学府"
+        }
+      ]
+    },
+    "colleges": [
+      {
+        "id": "school-of-fashion-design",
+        "zh": "时装设计学院",
+        "en": "School of Fashion Design"
+      },
+      {
+        "id": "school-of-fashion-business",
+        "zh": "时尚商学院",
+        "en": "School of Fashion Business"
+      },
+      {
+        "id": "school-of-fashion-communication",
+        "zh": "时尚传媒学院",
+        "en": "School of Fashion Communication"
+      },
+      {
+        "id": "school-of-textiles",
+        "zh": "纺织与材料学院",
+        "en": "School of Textiles & Materials"
+      },
+      {
+        "id": "school-of-accessories",
+        "zh": "配饰与珠宝学院",
+        "en": "School of Accessories & Jewellery"
+      },
+      {
+        "id": "school-of-fashion-tech",
+        "zh": "时尚科技学院",
+        "en": "School of Fashion Tech"
+      }
+    ],
+    "institutes": [
+      {
+        "id": "fashion-research-institute",
+        "zh": "时尚研究院",
+        "en": "Fashion Research Institute"
+      },
+      {
+        "id": "sustainable-fashion-centre",
+        "zh": "可持续时尚中心",
+        "en": "Sustainable Fashion Centre"
+      },
+      {
+        "id": "digital-fashion-lab",
+        "zh": "数字时尚实验室",
+        "en": "Digital Fashion Lab"
+      },
+      {
+        "id": "fashion-curation-institute",
+        "zh": "时尚策展研究所",
+        "en": "Fashion Curation Institute"
+      },
+      {
+        "id": "pre-degree-school",
+        "zh": "预科教学中心",
+        "en": "School of Pre-degree Studies"
+      }
+    ],
+    "college_sections": [
+      {
+        "id": "courses",
+        "zh": "课程",
+        "en": "Courses"
+      },
+      {
+        "id": "about",
+        "zh": "学院介绍",
+        "en": "About"
+      },
+      {
+        "id": "whats-on",
+        "zh": "活动",
+        "en": "What's on"
+      },
+      {
+        "id": "stories",
+        "zh": "故事",
+        "en": "Stories"
+      }
+    ],
+    "stories": [
+      {
+        "slug": "story-1",
+        "tag": "中国国际时装周",
+        "videoNo": 1,
+        "date": "2026/9/2",
+        "zh": "斯芬克时尚科系｜中国国际时装周",
+        "sub": "2026年9月5日 798中央大厅 18:30 不见不散",
+        "body": "",
+        "video": "assets/video/story-1-fashion-week.mp4",
+        "tags": "#中国国际时装周 #斯芬克 #服装设计 #艺术留学 #夏校"
+      },
+      {
+        "slug": "story-2",
+        "tag": "时尚研学",
+        "videoNo": 2,
+        "date": "2026/2/5",
+        "zh": "Esmod时尚学院沉浸式研学",
+        "sub": "打卡全球顶尖时装院Esmod，5小时沉浸式研学圆满收官，学员们收获证书、快乐加倍！#记录每个孩子认真学习的样子",
+        "body": "上午走进Esmod校园，校方工作人员带我们逛遍教室图书馆面料室，讲解学校百年历史。招生官还详细解读了2026年招生信息，干货满满；随后聆听2026春夏时装周各大品牌作品解读，get国际时尚流行趋势。\n\n下午迎来超期待的迷你人台3D立体剪裁实操课，讲师手把手教学，大家展开想象动手制作白坯礼服样衣，最终全员拿下 Esmod结业证书，成就感拉满！课后打卡迪奥Dior画廊博物馆，惊喜发现课堂做的样衣的灵感就在馆藏藏品中，学员们兴奋不已，现场对照学习，把知识学透学活。\n\n餐食超合胃口，午餐中餐、晚餐越南河粉，吃得开心又满足。返程路上🚌上听歌聊天，分享今日收获，一路欢声笑语，团队氛围超棒！",
+        "tags": "#服装设计 #时尚 #时尚传媒 #时尚学院 #ESMOD #时尚研学 #欧洲时尚文化"
+      },
+      {
+        "slug": "story-3",
+        "tag": "欧洲研学",
+        "videoNo": 3,
+        "date": "2026/2/4",
+        "zh": "SFK FASHION ｜巴黎艺术游学日志",
+        "sub": "乘车奔赴专业服装定制工作室，正式切换沉浸式研学Mode",
+        "body": "研学内容：小分队深度沉浸课堂，特邀Dior男装版师与YSL时尚设计师带来分享讲座，聆听大佬分享自己的作品集，拆解版型工艺、设计理念与高定幕后故事；随后探访Alaïa基金会，沉浸式感受Dior经典剪裁与先锋设计美学，最后还打卡了巴黎圣母院，老佛爷百货，采购新年礼物，学员之间关系越来越融洽，互相送了礼物。\n午餐享用丰盛的海鲜自助，晚餐回归暖心的米饭炒菜家乡味，地道美味治愈味蕾，大家都吃得格外开心。回来路上一直在车上放音乐唱歌♪",
+        "tags": "#服装设计 #时尚 #欧洲研学 #时尚工作室"
+      },
+      {
+        "slug": "story-4",
+        "tag": "时尚冬令营",
+        "videoNo": 4,
+        "date": "2026/2/2",
+        "zh": "时尚虚拟交互艺术展",
+        "sub": "-艺术与科技的跨学科语境与实践-\n| Inter-disciplinary Context and Practice of Art and Technology\n——贾俊",
+        "body": "本次外校结业展圆满落幕，作品凝聚着思考与热爱。证书为这段时光加冕，艺术探索永无止境。愿大家坚守初心，在未来的创作道路上步履不停。",
+        "tags": "#服装设计 #时尚 #时尚传媒 #时尚冬令营 #时尚跨专业 #时尚交互 #虚拟时尚"
+      },
+      {
+        "slug": "story-5",
+        "tag": "时尚冬令营",
+        "videoNo": 5,
+        "date": "2026/2/1",
+        "zh": "SFK 冬校项目｜",
+        "sub": "直击布展现场 × 「张力 Tension」",
+        "body": "展览倒计时警报拉响！直击布展现场，科系产品经理和教研老师们全程坐镇把控，每一处细节都力求完美💥艺术与创意的碰撞进入白热化阶段，氛围感直接拉满！\n\n展览作品完善中！同学们专注打磨细节、优化呈现效果，创意火花持续迸发💫这场即将亮相的艺术盛宴，值得万分期待✨",
+        "tags": "##服装设计 #时尚 #时尚传媒 #时尚冬令营 #时尚虚拟 #时尚交互 #时尚未来 #时尚策展"
+      },
+      {
+        "slug": "story-6",
+        "tag": "时尚冬令营",
+        "videoNo": 6,
+        "date": "2026/1/30",
+        "zh": "SFK26冬校-RCA时尚研究生班",
+        "sub": "全员终期汇报，完整展示个人项目成果\nRCA皇艺Anna教授专属终评，规划学术进阶之路",
+        "body": "教授亲身为作品走秀模特\n强化设计与人体、体验的真实联结\n布展冲刺收尾，只为最佳呈现效果\n从概念到落地，完成完整学术创作闭环\n艺术留学的每一步深耕，都在靠近梦校🤎",
+        "tags": "#SFK斯芬克 #艺术留学 #皇家艺术学院 #RCA #时尚设计 #服装设计 #艺术冬校 #设计作品集 #艺术生 #留学英国 #创作落地 #设计教育#时尚传媒"
+      }
+    ],
+    "stories_more": [],
+    "events": [
+      {
+        "zh": "时尚科系开放日：作品集面对面",
+        "slug": "open-day-portfolio"
+      },
+      {
+        "zh": "大师工作坊：立体剪裁入门",
+        "slug": "workshop-draping"
+      },
+      {
+        "zh": "行业讲座：买手与陈列的商业逻辑",
+        "slug": "talk-buying-merchandising"
+      },
+      {
+        "zh": "学生作品展：纤维与身体",
+        "slug": "exhibition-fibre-body"
+      },
+      {
+        "zh": "申请季答疑：研究生作品集策略",
+        "slug": "qa-postgraduate-portfolio"
+      },
+      {
+        "zh": "暑期短课发布：时尚摄影入门",
+        "slug": "short-course-photography"
+      }
+    ],
+    "hero_slides": [
+      "assets/img/hero/slide-01.jpeg",
+      "assets/img/hero/slide-02.jpeg",
+      "assets/img/hero/slide-03.jpeg",
+      "assets/img/hero/slide-04.jpeg",
+      "assets/img/hero/slide-05.jpeg",
+      "assets/img/hero/slide-06.jpeg",
+      "assets/img/hero/slide-07.jpeg",
+      "assets/img/hero/slide-08.jpeg",
+      "assets/img/hero/slide-09.jpeg",
+      "assets/img/hero/slide-10.jpeg",
+      "assets/img/hero/slide-11.jpeg",
+      "assets/img/hero/slide-12.jpeg",
+      "assets/img/hero/slide-13.jpeg",
+      "assets/img/hero/slide-14.jpeg",
+      "assets/img/hero/slide-15.jpeg",
+      "assets/img/hero/slide-16.jpeg",
+      "assets/img/hero/slide-17.jpeg",
+      "assets/img/hero/slide-18.jpeg",
+      "assets/img/hero/slide-19.jpeg",
+      "assets/img/hero/slide-20.jpeg",
+      "assets/img/hero/slide-21.jpeg",
+      "assets/img/hero/slide-22.jpeg"
+    ]
+  },
+  "ui": {
+    "nav": {
+      "brandEn": "Fashion Design",
+      "brandZh": "时尚科系",
+      "brandAria": "SFK 时尚科系 Fashion Design",
+      "logoAlt": "SFK 时尚科系 logo",
+      "searchPlaceholder": "Search SFK Fashion Design",
+      "searchAria": "搜索",
+      "menuAria": "菜单",
+      "backLabel": "返回",
+      "backAria": "返回"
+    },
+    "hero": {
+      "titleHtml": "<em>SFK</em> Fashion",
+      "sub": "从服装与剪裁到商业与传播，时尚科系帮助学生建立一条能被名校看见、能被行业理解、能被未来转化的成长路径。",
+      "prevAria": "上一张",
+      "nextAria": "下一张",
+      "scrollAria": "向下滚动至下一屏",
+      "scrollSym": "》"
+    },
+    "common": {
+      "home": "Home",
+      "crumbSep": "/",
+      "bar": "|",
+      "closeSym": "✕",
+      "closeAria": "关闭",
+      "all": "全部",
+      "dash": "—",
+      "viewDetail": "查看详情 →",
+      "phLabel": "IMAGE",
+      "phSuffix": " · 占位图",
+      "courseLabelPrefix": "COURSE 0",
+      "placeholderPrefix": "【占位】",
+      "more": "查看更多",
+      "collapse": "收起"
+    },
+    "footer": {
+      "colMain": "主要内容",
+      "colSubject": "科系板块",
+      "colPlan": "规划咨询"
+    },
+    "findCourse": {
+      "eyebrow": "FIND A COURSE",
+      "title": "Find a course",
+      "more": "All courses"
+    },
+    "stories": {
+      "eyebrow": "STORIES",
+      "title": "Stories",
+      "more": "See more stories",
+      "cta": "MORE",
+      "crumb": "Stories"
+    },
+    "whatsOn": {
+      "eyebrow": "WHAT'S ON",
+      "title": "What's on",
+      "more": "See more events",
+      "crumb": "What's on",
+      "eventTag": "EVENT"
+    },
+    "subjects": {
+      "crumb": "Subjects",
+      "intro": "从时装设计到可持续时尚，20 个学科方向覆盖时尚产业全链路。点击任意学科，按学历层次进入课程检索。",
+      "enDesc": "选择培养路径，按国家/地区查看开设该专业的院校。",
+      "overviewEyebrow": "OVERVIEW",
+      "overviewTitle": "学科概览",
+      "phTitlePrefix": "【占位】「",
+      "phTitleSuffix": "」学科介绍",
+      "phBody": "学科简介、课程体系、就业方向与工作室资源待填入。",
+      "levelPrefix": "「",
+      "levelMid": "」· ",
+      "levelSuffix": " — 按国家/地区筛选开设该专业的院校，点击院校查看详情。",
+      "schoolsEyebrowSuffix": "SCHOOLS",
+      "schoolsTitlePrefix": "开设「",
+      "schoolsTitleSuffix": "」的院校",
+      "schoolNote": "院校名单为示例数据，可按申请季实时增补替换。"
+    },
+    "school": {
+      "introTitle": "院校简介",
+      "introSuffix": "。其时尚方向课程强调工作室实践与产业连接，具体课程结构以院校官网当年公布为准。",
+      "programsTitle": "专业设置 · ",
+      "majorA": "主修方向 · ",
+      "majorB": "（学位与学制以院校官网为准）",
+      "interDisc": "跨学科方向 · 数字时尚 / 材料创新等（占位，可替换）",
+      "shortCourse": "短期与先修衔接课程（占位，可替换）",
+      "reqTitle": "申请要求",
+      "reqCopy": "作品集（建议 8–12 个项目，含过程稿与调研记录）、在校成绩单、个人陈述、推荐信 2 封；GPA 与先修要求以当年招生简章为准。",
+      "langTitle": "语言成绩",
+      "langCopy": "本科：雅思 6.0–6.5 / 托福 80–90 区间；研究生：雅思 6.5–7.0 / 托福 90–100 区间（以院校官网为准）。",
+      "tuitionTitle": "学费参考",
+      "tuitionCopy": "【占位】按院校、学制与学年存在差异，待填入最新数据。",
+      "careerTitle": "就业方向",
+      "careerCopy": "时装设计师、创意指导助理、买手与商品企划、时尚传媒与视觉造型、独立工作室与品牌创业等。",
+      "profileSuffix": "SCHOOL PROFILE",
+      "metaPrefix": "开设「",
+      "metaSuffix": "」相关方向"
+    },
+    "colleges": {
+      "crumb": "Colleges and Institutes",
+      "crumbShort": "Colleges",
+      "intro": "6 大学院与 5 个研究机构，共同构成 SFK 时尚科系的教学与研究网络。",
+      "eyebrow": "COLLEGES",
+      "title": "6 学院",
+      "instEyebrow": "INSTITUTES",
+      "instTitle": "研究机构",
+      "detailDefaultSection": "学院介绍",
+      "detailPhBody": "学院介绍、课程、活动与故事待填入。",
+      "detailPhBodySub": "子页面内容待填入。",
+      "detailLevelNote": "当前层级对应 UAL 学院页 ",
+      "detailLevelNoteSuffix": " 结构。"
+    },
+    "courses": {
+      "crumb": "Courses",
+      "levels": [
+        {
+          "id": "ug",
+          "label": "本科"
+        },
+        {
+          "id": "pg",
+          "label": "研究生"
+        }
+      ]
+    },
+    "courseDetail": {
+      "filterLabel": "分类",
+      "clear": "清除",
+      "searchAria": "搜索课程模块",
+      "empty": "没有符合当前筛选条件的课程模块 · 请调整分类或搜索词",
+      "countAll": "{n} 个模块",
+      "countFiltered": "{a} / {b} 个模块",
+      "posterAria": "课程海报",
+      "pdfAria": "课程 PDF",
+      "viewPosterAria": " 点击查看课程海报",
+      "viewPdfAria": " 点击查看课程 PDF",
+      "snapshotLabel": "核心数据 · SNAPSHOT",
+      "curriculumLabel": "课程模块 · CURRICULUM",
+      "whyLabel": "为什么选择 SFK · WHY SFK"
+    },
+    "poster": {
+      "phTitle": "课程海报占位",
+      "phDesc": "图片待填充 · 填充课程模块 poster 字段后自动展示",
+      "pdfPhTitle": "课程 PDF 占位",
+      "pdfPhDesc": "文档待填充 · 填充课程模块 pdf 字段后自动预览",
+      "pdfFrameTitle": "课程 PDF",
+      "ariaSplit": "课程海报与 PDF"
+    },
+    "storiesIndex": {
+      "intro": "学生故事、校友故事与科系动态（对应 UAL /stories 聚合页）。"
+    },
+    "storyDetail": {
+      "bodyPlaceholder": "【占位】正文内容待补充。"
+    },
+    "whatsOnIndex": {
+      "intro": "开放日、工作坊、行业讲座与展览（对应 UAL /whats-on 聚合页）。"
+    },
+    "eventDetail": {
+      "phTitle": "【占位】活动详情",
+      "phBodyPrefix": "时间、地点、报名方式待填入。路径：",
+      "phBodySuffix": "（对应 UAL /whats-on/{event-slug}）。"
+    },
+    "search": {
+      "crumb": "Search",
+      "scopes": [
+        {
+          "id": "courses",
+          "label": "courses"
+        },
+        {
+          "id": "whats-on",
+          "label": "whats-on"
+        },
+        {
+          "id": "stories",
+          "label": "stories"
+        },
+        {
+          "id": "people",
+          "label": "people"
+        },
+        {
+          "id": "scholarships",
+          "label": "scholarships"
+        },
+        {
+          "id": "research",
+          "label": "research"
+        }
+      ],
+      "resultTitlePrefix": "【占位】“",
+      "resultTitleMid": "” 在 ",
+      "resultTitleSuffix": " 范围内的结果",
+      "resultDesc": "搜索结果数据待接入（对应 UAL SaaS 搜索引擎 collection + facet 结构）。",
+      "emptyPrefix": "输入关键词开始搜索。当前范围：",
+      "emptySuffix": "。"
+    },
+    "placeholderPage": {
+      "titlePrefix": "【占位】「",
+      "titleSuffix": "」板块",
+      "bodyPrefix": "页面内容待填入。路由：",
+      "bodySuffix": "，已接入主导航与页脚层级。"
+    },
+    "notFound": {
+      "code": "404",
+      "title": "页面不存在。",
+      "back": "返回首页 →"
+    },
+    "offer": {
+      "crumb": "Offer",
+      "seasonLabel": "申请季",
+      "countryLabel": "国家",
+      "searchLabel": "搜索",
+      "searchPlaceholder": "输入院校中 / 英文名",
+      "ugLabel": "本科 · Undergraduate",
+      "pgLabel": "研究生 · Postgraduate",
+      "moreSuffix": " more",
+      "yearsSep": " ｜ "
+    }
+  },
+  "detailPlaceholder": {
+    "desc": "课程简介占位：此处将展示课程整体定位、教学路径、师资配置与产出成果，待后续填充。",
+    "chips": [
+      "标签占位一",
+      "标签占位二",
+      "标签占位三"
+    ],
+    "snapshot": [
+      {
+        "k": "核心数据占位 01",
+        "v": "数值待填充：此处展示该课程的关键数据指标。"
+      },
+      {
+        "k": "核心数据占位 02",
+        "v": "数值待填充：此处展示该课程的关键数据指标。"
+      },
+      {
+        "k": "核心数据占位 03",
+        "v": "数值待填充：此处展示该课程的关键数据指标。"
+      },
+      {
+        "k": "核心数据占位 04",
+        "v": "数值待填充：此处展示该课程的关键数据指标。"
+      }
+    ],
+    "facets": {
+      "searchPlaceholder": "搜索课程模块…",
+      "groups": [
+        {
+          "value": "课程分类占位一",
+          "label": "课程分类占位一",
+          "children": [
+            "子分类占位 A",
+            "子分类占位 B"
+          ]
+        },
+        {
+          "value": "课程分类占位二",
+          "label": "课程分类占位二"
+        },
+        {
+          "value": "课程分类占位三",
+          "label": "课程分类占位三"
+        }
+      ]
+    },
+    "curriculum": [
+      {
+        "cat": "课程分类占位一",
+        "eyebrow": "MODULE 01",
+        "title": "课程模块标题占位 1",
+        "program": "所属项目 / 院校占位",
+        "tags": [
+          "标签占位一",
+          "标签占位二"
+        ],
+        "desc": "课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。",
+        "poster": "",
+        "pdf": "",
+        "_ph": true,
+        "facets": {
+          "program_type": "课程分类占位一",
+          "category": "子分类占位 A"
+        },
+        "searchText": "课程模块标题占位 1 所属项目 / 院校占位 课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。 标签占位一 标签占位二 课程分类占位一"
+      },
+      {
+        "cat": "课程分类占位一",
+        "eyebrow": "MODULE 02",
+        "title": "课程模块标题占位 2",
+        "program": "所属项目 / 院校占位",
+        "tags": [
+          "标签占位一",
+          "标签占位二"
+        ],
+        "desc": "课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。",
+        "poster": "",
+        "pdf": "",
+        "_ph": true,
+        "facets": {
+          "program_type": "课程分类占位一",
+          "category": "子分类占位 A"
+        },
+        "searchText": "课程模块标题占位 2 所属项目 / 院校占位 课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。 标签占位一 标签占位二 课程分类占位一"
+      },
+      {
+        "cat": "课程分类占位一",
+        "eyebrow": "MODULE 03",
+        "title": "课程模块标题占位 3",
+        "program": "所属项目 / 院校占位",
+        "tags": [
+          "标签占位一",
+          "标签占位二"
+        ],
+        "desc": "课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。",
+        "poster": "",
+        "pdf": "",
+        "_ph": true,
+        "facets": {
+          "program_type": "课程分类占位一",
+          "category": "子分类占位 B"
+        },
+        "searchText": "课程模块标题占位 3 所属项目 / 院校占位 课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。 标签占位一 标签占位二 课程分类占位一"
+      },
+      {
+        "cat": "课程分类占位二",
+        "eyebrow": "MODULE 04",
+        "title": "课程模块标题占位 4",
+        "program": "所属项目 / 院校占位",
+        "tags": [
+          "标签占位一",
+          "标签占位二"
+        ],
+        "desc": "课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。",
+        "poster": "",
+        "pdf": "",
+        "_ph": true,
+        "facets": {
+          "program_type": "课程分类占位二",
+          "category": ""
+        },
+        "searchText": "课程模块标题占位 4 所属项目 / 院校占位 课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。 标签占位一 标签占位二 课程分类占位二"
+      },
+      {
+        "cat": "课程分类占位二",
+        "eyebrow": "MODULE 05",
+        "title": "课程模块标题占位 5",
+        "program": "所属项目 / 院校占位",
+        "tags": [
+          "标签占位一",
+          "标签占位二"
+        ],
+        "desc": "课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。",
+        "poster": "",
+        "pdf": "",
+        "_ph": true,
+        "facets": {
+          "program_type": "课程分类占位二",
+          "category": ""
+        },
+        "searchText": "课程模块标题占位 5 所属项目 / 院校占位 课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。 标签占位一 标签占位二 课程分类占位二"
+      },
+      {
+        "cat": "课程分类占位二",
+        "eyebrow": "MODULE 06",
+        "title": "课程模块标题占位 6",
+        "program": "所属项目 / 院校占位",
+        "tags": [
+          "标签占位一",
+          "标签占位二"
+        ],
+        "desc": "课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。",
+        "poster": "",
+        "pdf": "",
+        "_ph": true,
+        "facets": {
+          "program_type": "课程分类占位二",
+          "category": ""
+        },
+        "searchText": "课程模块标题占位 6 所属项目 / 院校占位 课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。 标签占位一 标签占位二 课程分类占位二"
+      },
+      {
+        "cat": "课程分类占位三",
+        "eyebrow": "MODULE 07",
+        "title": "课程模块标题占位 7",
+        "program": "所属项目 / 院校占位",
+        "tags": [
+          "标签占位一",
+          "标签占位二"
+        ],
+        "desc": "课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。",
+        "poster": "",
+        "pdf": "",
+        "_ph": true,
+        "facets": {
+          "program_type": "课程分类占位三",
+          "category": ""
+        },
+        "searchText": "课程模块标题占位 7 所属项目 / 院校占位 课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。 标签占位一 标签占位二 课程分类占位三"
+      },
+      {
+        "cat": "课程分类占位三",
+        "eyebrow": "MODULE 08",
+        "title": "课程模块标题占位 8",
+        "program": "所属项目 / 院校占位",
+        "tags": [
+          "标签占位一",
+          "标签占位二"
+        ],
+        "desc": "课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。",
+        "poster": "",
+        "pdf": "",
+        "_ph": true,
+        "facets": {
+          "program_type": "课程分类占位三",
+          "category": ""
+        },
+        "searchText": "课程模块标题占位 8 所属项目 / 院校占位 课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。 标签占位一 标签占位二 课程分类占位三"
+      }
+    ],
+    "whySFK": [
+      {
+        "t": "优势点占位 01",
+        "d": "优势说明占位：此处将展示选择本课程的核心理由，待后续填充。"
+      },
+      {
+        "t": "优势点占位 02",
+        "d": "优势说明占位：此处将展示选择本课程的核心理由，待后续填充。"
+      },
+      {
+        "t": "优势点占位 03",
+        "d": "优势说明占位：此处将展示选择本课程的核心理由，待后续填充。"
+      }
+    ],
+    "closing": {
+      "cn": "收尾文案占位：此处将展示课程结语与申请引导，待后续填充。",
+      "en": "Closing statement placeholder · to be filled."
+    }
+  },
+  "_note": "站点全部文案与数据。assets/js/data.js 负责加载，assets/js/main.js 等仅负责渲染与交互。"
+}

@@ -1,902 +1,410 @@
-/* 课程产品数据（结构/层级/展开逻辑复用 art-humanities_demo 课程产品板块）
-   精英计划、课程目录、前沿讲座的模块内文字与全部配图为占位；
-   长线旗舰、境外项目复用原有文案，仅配图占位。 */
-window.COURSE_PRODUCTS = {
-  "hero": {
-    "eyebrow": "COURSE PRODUCTS",
-    "title": "课程产品",
-    "sub": "从长线旗舰项目到分类课程目录，覆盖学术探索、行业实习与商业实践的完整课程体系。点击任意卡片查看完整介绍。"
+/* ═══════════════════════════════════════════════════════════
+   课程产品：分区渲染 / 学历筛选 / 详情浮层 / 模块检索 / 海报与 PDF 弹窗
+   结构与交互逻辑复用 art-humanities_demo「课程产品」；
+   课程内容、占位文案与图片 / PDF 资源全部来自 assets/data/*.json，
+   本文件不含任何页面文案。
+═══════════════════════════════════════════════════════════ */
+
+/* 详情占位模板：结构固定，文案来自 site-content.json 的 detailPlaceholder
+   （esc / fill / T / DATA 由 assets/js/data.js 提供） */
+const cpPlaceholder = () => (DATA.site && DATA.site.detailPlaceholder) || {};
+const cpSearchPlaceholder = () => ((cpPlaceholder().facets || {}).searchPlaceholder || '');
+
+/* ─────────── 详情版式注册表 ───────────
+   一个 type 一个渲染器；新增版式只在下面登记，数据里引用 type 即可，无需改动页面逻辑 */
+const DETAIL_SECTIONS = {
+  /* 核心数据：键值网格 */
+  stat(s) {
+    const items = s.items || [];
+    return `<section class="cd-section"><div class="cd-section__label">${esc(s.label)}</div><div class="cd-stat-grid">${items.map(x => `<div class="cd-stat"><div class="cd-stat__k">${esc(x.k)}</div><div class="cd-stat__v">${esc(x.v)}</div></div>`).join('')}</div></section>`;
   },
-  "zones": {
-    "longform": {
-      "eyebrow": "Signature Programs",
-      "title": "长线旗舰产品"
-    },
-    "catalog": {
-      "eyebrow": "Program Catalog",
-      "title": "课程目录"
-    },
-    "elite": {
-      "eyebrow": "Global Talent Visa",
-      "title": "设计师孵化"
-    },
-    "overseas": {
-      "eyebrow": "Overseas Programs",
-      "title": "境外项目"
-    },
-    "frontier": {
-      "eyebrow": "Art Frontier Lectures",
-      "title": "时尚未来趋势讲座"
-    }
+  /* 课程模块：分类 × 子分类 × 搜索（数据来自 CourseProducts._cur） */
+  curriculum(s) {
+    return `<section class="cd-section"><div class="cd-section__label">${esc(s.label)}</div>${this.curriculumBlock()}</section>`;
   },
-  "elite": [
-    {
-      "id": "elite-incubator",
-      "badge": "孵化计划",
-      "cover": "",
-      "placeholder": true,
-      "tileVariant": null,
-      "levels": [
-        "ug",
-        "pg"
-      ],
-      "meta": {
-        "eyebrow": "Arts & Humanities｜青年艺术家孵化 · Young Artist Incubation",
-        "titleEn": "Young Artist Incubation Program",
-        "titleCn": "青年艺术家孵化计划",
-        "desc": "",
-        "chips": [
-          "五大成长资产",
-          "8 大服务模块",
-          "三档成长方案",
-          "招募中"
-        ]
-      },
-      "snapshot": [],
-      "curriculum": [],
-      "whySFK": [],
-      "closing": {
-        "cn": "",
-        "en": ""
-      }
-    }
+  /* 为什么选择：条目网格 */
+  why(s) {
+    const items = s.items || [];
+    return `<section class="cd-section"><div class="cd-section__label">${esc(s.label)}</div><div class="cd-why-grid">${items.map(w => `<div class="cd-why"><div class="cd-stat__k">${esc(w.t)}</div><div class="cd-stat__v">${esc(w.d)}</div></div>`).join('')}</div></section>`;
+  },
+  /* 收尾文案 */
+  cta(s) {
+    const c = s.closing || {};
+    return `<div class="cd-cta">
+        <p class="cd-cta__statement">${esc(c.cn)}</p>
+        <p class="cd-cta__statement-en u-en">${esc(c.en)}</p>
+      </div>`;
+  }
+};
+
+/* 缺省版式：与旧版硬编码顺序完全一致（核心数据 → 课程模块 → WHY SFK → CTA） */
+function resolveDetailSections(D, PH) {
+  if (Array.isArray(D.sections) && D.sections.length) return D.sections;
+  return [
+    { type: 'stat', label: T.courseDetail.snapshotLabel, items: (D.snapshot && D.snapshot.length) ? D.snapshot : (PH.snapshot || []) },
+    { type: 'curriculum', label: T.courseDetail.curriculumLabel },
+    { type: 'why', label: T.courseDetail.whyLabel, items: (D.whySFK && D.whySFK.length) ? D.whySFK : (PH.whySFK || []) },
+    { type: 'cta', closing: D.closing || PH.closing || {} }
+  ];
+}
+
+const CourseProducts = {
+  /* 分区顺序：elite / longform 用长线式详情，catalog / overseas / frontier 用目录式详情 */
+  ZONES: [
+    { key: 'elite',    group: 'longform' },
+    { key: 'longform', group: 'longform' },
+    { key: 'catalog',  group: 'catalog' },
+    { key: 'overseas', group: 'catalog' },
+    { key: 'frontier', group: 'catalog' }
   ],
-  "longform": [
-    {
-      "id": "changemakers",
-      "badge": "长线内容",
-      "cover": "",
-      "placeholder": false,
-      "tileVariant": null,
-      "levels": [
-        "pg"
-      ],
-      "meta": {
-        "eyebrow": "US Graduate Admissions｜研究生申请 · 作品集 + 科研双轨",
-        "titleEn": "US Graduate Elite Program",
-        "titleCn": "美国研究生未来精英计划",
-        "desc": "面向冲刺美国顶尖艺术院校、藤校及综合大学艺术设计/跨学科创意方向的长期规划型产品：以作品集为核心，整合 AI 前沿技术、科研论文、海外教授项目与商业实践，建立更完整、更有说服力的美研申请竞争力。",
-        "chips": [
-          "TOP1 – TOP10 五层级",
-          "AI全线覆盖",
-          "科研论文双收获",
-          "招募中"
-        ]
-      },
-      "snapshot": [
-        {
-          "k": "TOP1–TOP10",
-          "v": "五个产品层级，匹配院校目标与预算"
-        },
-        {
-          "k": "作品集 + 科研",
-          "v": "双轨并行，建立更完整的申请竞争力"
-        },
-        {
-          "k": "AI 全线覆盖",
-          "v": "前沿技术贯穿项目创作与申请表达"
-        },
-        {
-          "k": "真实项目",
-          "v": "海外教授项目与商业实践并行"
-        }
-      ],
-      "curriculum": [
-        {
-          "title": "作品集核心项目",
-          "desc": "以目标院校标准为导向，完成 4–5 个高匹配度作品集项目。",
-          "img": ""
-        },
-        {
-          "title": "科研论文双收获",
-          "desc": "在导师带领下完成可用于申请的学术论文或研究产出。",
-          "img": ""
-        },
-        {
-          "title": "海外教授项目",
-          "desc": "对接海外院校教授资源，积累推荐信与学术背景。",
-          "img": ""
-        },
-        {
-          "title": "商业实践与实习",
-          "desc": "进入真实行业项目，补齐从学术到职业的闭环。",
-          "img": ""
-        }
-      ],
-      "whySFK": [
-        {
-          "t": "双轨并行",
-          "d": "作品集与科研同步推进，而非单一路径堆叠。"
-        },
-        {
-          "t": "层级清晰",
-          "d": "TOP1–TOP10 五个层级，按目标与预算灵活匹配。"
-        },
-        {
-          "t": "资源真实",
-          "d": "海外教授、大厂实习与企业命题均来自真实合作。"
-        },
-        {
-          "t": "长期规划",
-          "d": "从专业定位到申请递交，全周期陪跑。"
-        }
-      ],
-      "closing": {
-        "cn": "用作品集与科研，同时回答「你是谁」。",
-        "en": "Portfolio and research, answering who you are."
-      }
-    },
-    {
-      "id": "longform2",
-      "badge": "长线内容",
-      "cover": "",
-      "placeholder": false,
-      "tileVariant": "v2",
-      "levels": [
-        "pg"
-      ],
-      "meta": {
-        "eyebrow": "UK Graduate Admissions｜研究生申请 · 升学就业一体化",
-        "titleEn": "UK Graduate Program",
-        "titleCn": "英国研究生未来成长计划",
-        "desc": "同时面向名校申请与长期职业发展的升学就业一体化产品：以个性化作品集和英国研究生申请为基础，向前加入专业定位与项目规划，向后衔接商业实践、岗位制实习、求职作品集与企业内推。",
-        "chips": [
-          "TOP1 – TOP9 多层级",
-          "升学就业一体化",
-          "5个项目建高匹配作品集",
-          "招募中"
-        ]
-      },
-      "snapshot": [
-        {
-          "k": "TOP1–9",
-          "v": "5 个产品层级，匹配院校目标与预算"
-        },
-        {
-          "k": "5个项目",
-          "v": "高阶产品建立高匹配度作品集"
-        },
-        {
-          "k": "双路径",
-          "v": "升学产品 + 求职陪跑 A 计划可灵活组合"
-        }
-      ],
-      "curriculum": [
-        {
-          "title": "专业定位与项目规划",
-          "desc": "向前补齐方向判断与项目节奏设计。",
-          "img": ""
-        },
-        {
-          "title": "个性化作品集",
-          "desc": "以英国院校评审标准完成 5 个核心项目。",
-          "img": ""
-        },
-        {
-          "title": "商业实践与岗位制实习",
-          "desc": "向后衔接真实行业经验与推荐信。",
-          "img": ""
-        },
-        {
-          "title": "求职作品集与企业内推",
-          "desc": "把升学结果延伸到第一段职业起点。",
-          "img": ""
-        }
-      ],
-      "whySFK": [
-        {
-          "t": "升学就业一体",
-          "d": "不把申请与就业切成两段，而是同一条路径。"
-        },
-        {
-          "t": "5 个项目",
-          "d": "以完整项目序列建立高匹配度作品集。"
-        },
-        {
-          "t": "双路径组合",
-          "d": "升学产品与求职陪跑可按需叠加。"
-        },
-        {
-          "t": "长期衔接",
-          "d": "从申请到入职，服务链条不断裂。"
-        }
-      ],
-      "closing": {
-        "cn": "不只拿到录取，也拿到下一段起点。",
-        "en": "An offer, and the first step after it."
-      }
-    },
-    {
-      "id": "longform3",
-      "badge": "长线内容",
-      "cover": "",
-      "placeholder": false,
-      "tileVariant": "v3",
-      "levels": [
-        "pg"
-      ],
-      "meta": {
-        "eyebrow": "HK Graduate Admissions｜研究生申请 · 常规计划 + 学霸计划",
-        "titleEn": "Hong Kong Graduate Program",
-        "titleCn": "香港研究生升学计划",
-        "desc": "以作品集为核心，结合目标院校定位、专业能力补强、个性化项目、香港高校夏冬校、商业实践、实习推荐和全流程申请服务的港研升学产品。分为常规计划与学霸计划两条路径：常规计划面向需要系统建立专业与作品集能力的学生，学霸计划面向基础较强、目标明确、时间有限的学生。",
-        "chips": [
-          "常规计划 · 学霸计划",
-          "TOP3 – TOP8 分层",
-          "作品集+商业实践+实习",
-          "招募中"
-        ]
-      },
-      "snapshot": [
-        {
-          "k": "2个计划",
-          "v": "常规计划 · 学霸计划，按基础与时间灵活匹配"
-        },
-        {
-          "k": "TOP3–TOP8",
-          "v": "常规计划三档配置，学霸计划两档聚焦补强"
-        },
-        {
-          "k": "4个项目",
-          "v": "两个计划均以4个作品集项目为核心产出"
-        },
-        {
-          "k": "真实实习",
-          "v": "头部大厂岗位实习 · 行业推荐信 · 商业实践"
-        }
-      ],
-      "curriculum": [
-        {
-          "title": "目标院校定位",
-          "desc": "按港校分层明确申请目标与配置。",
-          "img": ""
-        },
-        {
-          "title": "专业能力补强",
-          "desc": "补齐专业基础与方法论训练。",
-          "img": ""
-        },
-        {
-          "title": "4 个作品集项目",
-          "desc": "两个计划均以 4 个核心项目为产出。",
-          "img": ""
-        },
-        {
-          "title": "夏冬校 + 商业实践 + 实习",
-          "desc": "叠加在地学习、真实项目与推荐信资源。",
-          "img": ""
-        }
-      ],
-      "whySFK": [
-        {
-          "t": "两条路径",
-          "d": "常规计划与学霸计划按基础与时间分流。"
-        },
-        {
-          "t": "分层清晰",
-          "d": "TOP3–TOP8 按目标院校匹配配置。"
-        },
-        {
-          "t": "在地资源",
-          "d": "港校夏冬校与本地实习资源可直接衔接。"
-        },
-        {
-          "t": "全流程申请",
-          "d": "从定位到递交，服务覆盖完整申请周期。"
-        }
-      ],
-      "closing": {
-        "cn": "两种节奏，同一条港研路径。",
-        "en": "Two paces, one Hong Kong pathway."
-      }
-    },
-    {
-      "id": "changemakers-ug",
-      "badge": "长线内容",
-      "tileVariant": null,
-      "cover": "",
-      "placeholder": true,
-      "meta": {
-        "eyebrow": "US Undergraduate Admissions｜本科申请 · 作品集 + 科研双轨",
-        "titleEn": "US Undergraduate Elite Program",
-        "titleCn": "美国本科未来精英计划",
-        "desc": "",
-        "chips": [
-          "TOP1 – TOP10 五层级",
-          "AI全线覆盖",
-          "科研论文双收获",
-          "招募中"
-        ]
-      },
-      "snapshot": [],
-      "curriculum": [],
-      "whySFK": [],
-      "closing": {
-        "cn": "",
-        "en": ""
-      },
-      "levels": [
-        "ug"
-      ]
-    },
-    {
-      "id": "longform2-ug",
-      "badge": "长线内容",
-      "tileVariant": "v2",
-      "cover": "",
-      "placeholder": true,
-      "meta": {
-        "eyebrow": "UK Undergraduate Admissions｜本科申请 · 升学就业一体化",
-        "titleEn": "UK Undergraduate Program",
-        "titleCn": "英国本科未来成长计划",
-        "desc": "",
-        "chips": [
-          "TOP1 – TOP9 多层级",
-          "升学就业一体化",
-          "5个项目建高匹配作品集",
-          "招募中"
-        ]
-      },
-      "snapshot": [],
-      "curriculum": [],
-      "whySFK": [],
-      "closing": {
-        "cn": "",
-        "en": ""
-      },
-      "levels": [
-        "ug"
-      ]
-    },
-    {
-      "id": "longform3-ug",
-      "badge": "长线内容",
-      "tileVariant": "v3",
-      "cover": "",
-      "placeholder": true,
-      "meta": {
-        "eyebrow": "HK Undergraduate Admissions｜本科申请 · 常规计划 + 学霸计划",
-        "titleEn": "Hong Kong Undergraduate Program",
-        "titleCn": "香港本科升学计划",
-        "desc": "",
-        "chips": [
-          "常规计划 · 学霸计划",
-          "TOP3 – TOP8 分层",
-          "作品集+商业实践+实习",
-          "招募中"
-        ]
-      },
-      "snapshot": [],
-      "curriculum": [],
-      "whySFK": [],
-      "closing": {
-        "cn": "",
-        "en": ""
-      },
-      "levels": [
-        "ug"
-      ]
+  _level: '',                    /* '' = 全部；'ug' = 本科；'pg' = 研究生 */
+  data() { return DATA.courseProducts || null; },
+
+  /* 按学历筛选渲染五个分区；筛选后为空的分区整体隐藏，保持版面协调 */
+  zonesHtml() {
+    const d = this.data(); if (!d) return '';
+    return this.ZONES.map(z => {
+      const list = (d[z.key] || []).filter(p => !this._level || (p.levels || []).includes(this._level));
+      if (!list.length) return '';
+      const zc = (d.zones || {})[z.key] || {};
+      return `
+      <section class="cp-zone">
+        <div class="cp-zone__head">
+          <span class="section__eyebrow">${esc(zc.eyebrow)}</span>
+          <h2 class="section__title cp-zone__title">${esc(zc.title)}</h2>
+        </div>
+        <div class="cp-grid">${list.map(p => this.card(p, z.group)).join('')}</div>
+      </section>`;
+    }).join('');
+  },
+
+  card(p, group) {
+    const cover = p.cover
+      ? `<img src="${esc(p.cover)}" alt="" loading="lazy">`
+      : '';
+    return `<div class="cp-card cp-card--${group}" role="button" tabindex="0" data-cp-id="${esc(p.id)}" aria-label="${esc(p.meta.titleCn)}">
+      <div class="cp-card__banner${p.tileVariant ? ' cp-card__banner--' + esc(p.tileVariant) : ''}">${cover}<span class="cp-card__badge">${esc(p.badge)}</span><span class="subject-tile__line" aria-hidden="true"></span></div>
+      <div class="cp-card__body">
+        <div class="cp-card__eyebrow">${esc(p.meta.eyebrow)}</div>
+        <div class="cp-card__title">${esc(p.meta.titleCn)}</div>
+        <div class="cp-card__subtitle u-en">${esc(p.meta.titleEn)}</div>
+        <p class="cp-card__desc">${esc(p.meta.desc)}</p>
+        <div class="cp-card__chips">${(p.meta.chips || []).map(c => `<span class="cd-chip">${esc(c)}</span>`).join('')}</div>
+      </div>
+    </div>`;
+  },
+
+  /* 详情结构：cd-hero → 核心数据 · SNAPSHOT → 课程模块 · CURRICULUM → WHY SFK → CTA */
+  /* 预计算数据源与模块卡集合（幂等，供 heroHTML / detailBody / open 复用） */
+  _prepare(p) {
+    const PH = cpPlaceholder();
+    const D = p.detail || (DATA.coursesIndustry || {})[p.id] || (DATA.coursesAcademic || {})[p.id] || {};
+    this._cur = {
+      cards: (D.curriculum && D.curriculum.length) ? D.curriculum : (PH.curriculum || []),
+      facets: D.curriculumFacets || PH.facets || { groups: [] },
+      main: '', sub: '', q: ''
+    };
+    return { PH, D };
+  },
+
+  /* 顶部标题区（独立浮于正文之上，背景为 ink 深色、占满 panel 顶部） */
+  heroHTML(p) {
+    const { PH, D } = this._prepare(p);
+    const desc = D.desc || PH.desc;
+    const chips = (D.chips && D.chips.length) ? D.chips : (PH.chips || []);
+    const tile = 'cd-hero__tile' + (p.tileVariant ? ' cd-hero__tile--' + p.tileVariant : '');
+    return `
+      <div class="cd-hero">
+        <div class="cd-hero__content">
+          <div class="cd-hero__eyebrow">${esc(p.meta.eyebrow)}</div>
+          <h2 class="cd-hero__title">${esc(p.meta.titleCn)}</h2>
+          <div class="cd-hero__subtitle u-en">${esc(p.meta.titleEn)}</div>
+          <p class="cd-hero__desc">${esc(desc)}</p>
+          <div class="cd-chips">${chips.map(c => `<span class="cd-chip">${esc(c)}</span>`).join('')}</div>
+        </div>
+        <div class="${tile}" aria-hidden="true"></div>
+      </div>`;
+  },
+
+  /* 顶部标题区之外的内容：按 sections[] 顺序渲染
+     数据侧可在课程条目里提供 detail.sections / 课表条目里提供 sections：
+       [{ type: 'stat', label, items:[{k,v}] },
+        { type: 'curriculum', label },
+        { type: 'why', label, items:[{t,d}] },
+        { type: 'cta', closing:{cn,en} }]
+     未提供时按内置顺序（核心数据 → 课程模块 → WHY SFK → CTA）推导，行为与旧版一致 */
+  detailBody(p) {
+    const { PH, D } = this._prepare(p);
+    const parts = resolveDetailSections(D, PH)
+      .map(s => {
+        const render = DETAIL_SECTIONS[s.type];
+        return render ? render.call(this, s) : '';
+      })
+      .filter(Boolean);
+    return '\n      ' + parts.join('\n      ');
+  },
+
+  /* 完整详情（兼容旧调用） = 顶部标题区 + 正文 */
+  detail(p) {
+    this._prepare(p);
+    return this.heroHTML(p) + this.detailBody(p);
+  },
+
+  /* ── 课程模块区：分类主标签 × 子分类 × 搜索（联动逻辑复刻 art-humanities_demo）──
+     主标签选中展开其子分类；三者 AND 联动实时过滤；只重渲染网格 / 计数 / 空状态 */
+  curriculumBlock() {
+    const st = this._cur;
+    const f = st.facets || {};
+    const groups = f.groups || [];
+    const mains = groups.map(g =>
+      `<button class="filter-btn" type="button" data-cur-main="${esc(g.value)}">${esc(g.label)}</button>`).join('');
+    const subs = groups.filter(g => (g.children || []).length).map(g =>
+      g.children.map(c => `<button class="filter-btn filter-btn--sub" type="button" data-cur-sub="${esc(c)}" data-cur-parent="${esc(g.value)}">${esc(c)}</button>`).join('')
+    ).join('');
+    return `
+      <div class="cd-cur-bar">
+        <div class="cd-cur-left">
+          <div class="cd-filter-group">
+            <span class="cd-filter-group__label">${esc(T.courseDetail.filterLabel)}</span>
+            <span class="cd-filter-group__sep">${esc(T.common.bar)}</span>
+            <span class="cd-filter-group__btns" id="cd-cur-mains">${mains}</span>
+          </div>
+          <div class="cd-filter-group__btns" id="cd-cur-subs" hidden>${subs}</div>
+        </div>
+        <div class="cd-cur-right">
+          <input class="cd-cur-input" id="cd-cur-search" type="search" autocomplete="off"
+            placeholder="${esc(f.searchPlaceholder || cpSearchPlaceholder())}" aria-label="${esc(T.courseDetail.searchAria)}">
+          <button class="cd-cur-clear" id="cd-cur-clear" type="button" hidden>${esc(T.courseDetail.clear)}</button>
+          <span class="cd-cur-count" id="cd-cur-count"></span>
+        </div>
+      </div>
+      <div class="cd-curriculum-grid" id="cd-cur-grid"></div>
+      <p class="cd-cur-empty" id="cd-cur-empty" hidden>${esc(T.courseDetail.empty)}</p>`;
+  },
+
+  /* 按当前筛选状态重渲染模块网格 + 计数 + 空状态（不动筛选栏，保持输入焦点） */
+  renderCurriculum() {
+    const st = this._cur;
+    const grid = document.getElementById('cd-cur-grid');
+    if (!st || !grid) return;
+    const list = st.cards.filter(c => this.curMatch(c, st));
+    grid.innerHTML = list.map(c => this.curriculumCard(c)).join('');
+    const empty = document.getElementById('cd-cur-empty');
+    if (empty) empty.hidden = list.length > 0;
+    const count = document.getElementById('cd-cur-count');
+    if (count) count.textContent = list.length === st.cards.length
+      ? fill(T.courseDetail.countAll, { n: st.cards.length })
+      : fill(T.courseDetail.countFiltered, { a: list.length, b: st.cards.length });
+    const clear = document.getElementById('cd-cur-clear');
+    if (clear) clear.hidden = !st.q;
+  },
+
+  curMatch(c, st) {
+    const f = c.facets || {};
+    if (st.main && f.program_type !== st.main) return false;
+    if (st.sub && f.category !== st.sub) return false;
+    if (st.q && !(c.searchText || '').includes(st.q)) return false;
+    return true;
+  },
+
+  /* 主标签 / 子分类：单击选中、再击取消；切换主分类时清空并收起子分类 */
+  curFacet(kind, btn) {
+    const st = this._cur;
+    if (!st) return;
+    const attr = kind === 'main' ? 'data-cur-main' : 'data-cur-sub';
+    const val = btn.getAttribute(attr);
+    if (kind === 'main') {
+      st.main = st.main === val ? '' : val;
+      st.sub = '';
+    } else {
+      st.sub = st.sub === val ? '' : val;
     }
-  ],
-  "catalog": [
-    {
-      "id": "internship",
-      "badge": "56 个岗位",
-      "cover": "",
-      "placeholder": true,
-      "tileVariant": null,
-      "levels": [
-        "pg"
-      ],
-      "meta": {
-        "eyebrow": "Employment Track｜岗位实习 × 行业导师带训",
-        "titleEn": "Career Internship Program",
-        "titleCn": "就业实习课程 · 岗位实习与导师带训",
-        "desc": "面向希望获得真实行业经验、积累作品集与推荐信的学生，通过岗位制实地实习与线上行业导师带训两种路径，进入头部大厂、行业名企与创意工作室的真实项目。",
-        "chips": [
-          "岗位制实习",
-          "行业导师带训",
-          "真实项目产出",
-          "招募中"
-        ]
-      },
-      "snapshot": [
-        {
-          "k": "占位",
-          "v": "核心数据待提供"
-        },
-        {
-          "k": "占位",
-          "v": "核心数据待提供"
-        },
-        {
-          "k": "占位",
-          "v": "核心数据待提供"
-        },
-        {
-          "k": "占位",
-          "v": "核心数据待提供"
-        }
-      ],
-      "curriculum": [],
-      "whySFK": [
-        {
-          "t": "占位",
-          "d": "优势说明待提供。"
-        },
-        {
-          "t": "占位",
-          "d": "优势说明待提供。"
-        },
-        {
-          "t": "占位",
-          "d": "优势说明待提供。"
-        },
-        {
-          "t": "占位",
-          "d": "优势说明待提供。"
-        }
-      ],
-      "closing": {
-        "cn": "课程内容与图片待补充。",
-        "en": "Content & visuals to be provided."
-      }
-    },
-    {
-      "id": "summerwinter",
-      "badge": "11 门课程",
-      "cover": "",
-      "placeholder": true,
-      "tileVariant": "v2",
-      "levels": [
-        "ug",
-        "pg"
-      ],
-      "meta": {
-        "eyebrow": "Academic Track｜海外院校冬夏校",
-        "titleEn": "Overseas Summer & Winter School",
-        "titleCn": "海外冬夏校课程 · 顶尖院校在地学习",
-        "desc": "走进海外顶尖院校的官方冬夏校项目，在真实校园环境中体验前沿学术方向，积累院校认可的学术背景与教授推荐资源。",
-        "chips": [
-          "院校官方项目",
-          "在地学习",
-          "官方结业证明",
-          "招募中"
-        ]
-      },
-      "snapshot": [
-        {
-          "k": "占位",
-          "v": "核心数据待提供"
-        },
-        {
-          "k": "占位",
-          "v": "核心数据待提供"
-        },
-        {
-          "k": "占位",
-          "v": "核心数据待提供"
-        },
-        {
-          "k": "占位",
-          "v": "核心数据待提供"
-        }
-      ],
-      "curriculum": [],
-      "whySFK": [
-        {
-          "t": "占位",
-          "d": "优势说明待提供。"
-        },
-        {
-          "t": "占位",
-          "d": "优势说明待提供。"
-        },
-        {
-          "t": "占位",
-          "d": "优势说明待提供。"
-        },
-        {
-          "t": "占位",
-          "d": "优势说明待提供。"
-        }
-      ],
-      "closing": {
-        "cn": "课程内容与图片待补充。",
-        "en": "Content & visuals to be provided."
-      }
-    },
-    {
-      "id": "bizpractice",
-      "badge": "6 个项目",
-      "cover": "",
-      "placeholder": true,
-      "tileVariant": "v3",
-      "levels": [
-        "pg"
-      ],
-      "meta": {
-        "eyebrow": "Practice Track｜真实商业项目实战",
-        "titleEn": "Business Practice Program",
-        "titleCn": "商业实践课程 · 真实商业项目实战",
-        "desc": "以真实企业命题为起点，在导师带领下完成从市场调研、方案设计到路演展示的完整商业实践闭环，锻炼商业思维与团队协作能力。",
-        "chips": [
-          "真实命题",
-          "路演展示",
-          "团队协作",
-          "招募中"
-        ]
-      },
-      "snapshot": [
-        {
-          "k": "占位",
-          "v": "核心数据待提供"
-        },
-        {
-          "k": "占位",
-          "v": "核心数据待提供"
-        },
-        {
-          "k": "占位",
-          "v": "核心数据待提供"
-        },
-        {
-          "k": "占位",
-          "v": "核心数据待提供"
-        }
-      ],
-      "curriculum": [],
-      "whySFK": [
-        {
-          "t": "占位",
-          "d": "优势说明待提供。"
-        },
-        {
-          "t": "占位",
-          "d": "优势说明待提供。"
-        },
-        {
-          "t": "占位",
-          "d": "优势说明待提供。"
-        },
-        {
-          "t": "占位",
-          "d": "优势说明待提供。"
-        }
-      ],
-      "closing": {
-        "cn": "课程内容与图片待补充。",
-        "en": "Content & visuals to be provided."
-      }
-    },
-    {
-      "id": "masterclass",
-      "badge": "11 门课程",
-      "cover": "",
-      "placeholder": true,
-      "tileVariant": null,
-      "levels": [
-        "ug",
-        "pg"
-      ],
-      "meta": {
-        "eyebrow": "Academic Track｜海外教授大师课",
-        "titleEn": "Overseas Masterclass",
-        "titleCn": "海外大师课程 · 教授视角与方法论",
-        "desc": "由海外院校教授亲自授课，围绕特定学术方向展开深度方法论训练，为学生带来教授视角的专业指导与推荐信资源。",
-        "chips": [
-          "教授亲授",
-          "方法论训练",
-          "推荐信资源",
-          "招募中"
-        ]
-      },
-      "snapshot": [
-        {
-          "k": "占位",
-          "v": "核心数据待提供"
-        },
-        {
-          "k": "占位",
-          "v": "核心数据待提供"
-        },
-        {
-          "k": "占位",
-          "v": "核心数据待提供"
-        },
-        {
-          "k": "占位",
-          "v": "核心数据待提供"
-        }
-      ],
-      "curriculum": [],
-      "whySFK": [
-        {
-          "t": "占位",
-          "d": "优势说明待提供。"
-        },
-        {
-          "t": "占位",
-          "d": "优势说明待提供。"
-        },
-        {
-          "t": "占位",
-          "d": "优势说明待提供。"
-        },
-        {
-          "t": "占位",
-          "d": "优势说明待提供。"
-        }
-      ],
-      "closing": {
-        "cn": "课程内容与图片待补充。",
-        "en": "Content & visuals to be provided."
-      }
-    }
-  ],
-  "overseas": [
-    {
-      "id": "overseas-program",
-      "badge": "5 门课程",
-      "cover": "",
-      "placeholder": true,
-      "tileVariant": null,
-      "levels": [
-        "ug",
-        "pg"
-      ],
-      "meta": {
-        "eyebrow": "Overseas Programs｜境外项目",
-        "titleEn": "Overseas Program",
-        "titleCn": "境外项目",
-        "desc": "共 5 门境外项目课程，分为境外访校（新加坡 / 英国 / 美国）与境外夏校（RISD / UAL）两类，行程 7–14 天。",
-        "chips": [
-          "5 门课程",
-          "境外访校 3 · 境外夏校 2",
-          "本科 / 研究生"
-        ]
-      },
-      "snapshot": [],
-      "curriculum": [],
-      "whySFK": [],
-      "closing": {},
-      "detail": {
-        "curriculumFacets": {
-          "searchPlaceholder": "搜索项目 / 国家 / 城市院校…",
-          "searchFields": ["role_or_course", "university", "professor"],
-          "groups": [
-            {"value": "境外访校", "label": "境外访校"},
-            {"value": "境外夏校", "label": "境外夏校"},
-            {"value": "境外冬校", "label": "境外冬校"},
-            {"value": "境外研学", "label": "境外研学"},
-            {"value": "家长团", "label": "家长团"}
-          ]
-        },
-        "curriculum": [
-          {
-            "tab": "oversea",
-            "program_type": "境外访校",
-            "category": "艺术人文",
-            "role_or_course": "2027寒假-新加坡名校探访团",
-            "suitable_for": "全科系专业",
-            "location": "7天",
-            "level": "本科/研究生",
-            "outcomes": "2027.1.24-1.30",
-            "poster": "assets/img/courses/2027寒假-新加坡名校探访团.jpg",
-            "university": "新加坡",
-            "professor": "新加坡",
-            "type": "境外项目",
-            "cat": "境外访校",
-            "eyebrow": "境外项目",
-            "title": "2027寒假-新加坡名校探访团",
-            "program": "新加坡",
-            "tags": ["全科系专业", "本科/研究生", "7天", "2027.1.24-1.30"],
-            "desc": "新加坡",
-            "facets": {"program_type": "境外访校", "category": "艺术人文"},
-            "searchText": "2027寒假-新加坡名校探访团 新加坡 新加坡"
-          },
-          {
-            "tab": "oversea",
-            "program_type": "境外访校",
-            "category": "艺术人文",
-            "role_or_course": "2027寒假-英国名校探访团",
-            "suitable_for": "全科系专业",
-            "location": "10天",
-            "level": "本科/研究生",
-            "outcomes": "2027.2.11-2.20",
-            "poster": "assets/img/courses/2027寒假-英国名校探访团.jpg",
-            "university": "英国",
-            "professor": "伦敦、剑桥、提赛德、拉夫堡、利兹、爱丁堡、格拉斯哥",
-            "type": "境外项目",
-            "cat": "境外访校",
-            "eyebrow": "境外项目",
-            "title": "2027寒假-英国名校探访团",
-            "program": "英国",
-            "tags": ["全科系专业", "本科/研究生", "10天", "2027.2.11-2.20"],
-            "desc": "伦敦、剑桥、提赛德、拉夫堡、利兹、爱丁堡、格拉斯哥",
-            "facets": {"program_type": "境外访校", "category": "艺术人文"},
-            "searchText": "2027寒假-英国名校探访团 英国 伦敦、剑桥、提赛德、拉夫堡、利兹、爱丁堡、格拉斯哥"
-          },
-          {
-            "tab": "oversea",
-            "program_type": "境外访校",
-            "category": "艺术人文",
-            "role_or_course": "2027暑假-美国访校访企团",
-            "suitable_for": "全科系专业",
-            "location": "10天",
-            "level": "本科/研究生",
-            "outcomes": "2027.7",
-            "poster": "assets/img/courses/2027暑假-美国访校访企团.jpg",
-            "university": "美国",
-            "professor": "纽约、波士顿、洛杉矶",
-            "type": "境外项目",
-            "cat": "境外访校",
-            "eyebrow": "境外项目",
-            "title": "2027暑假-美国访校访企团",
-            "program": "美国",
-            "tags": ["全科系专业", "本科/研究生", "10天", "2027.7"],
-            "desc": "纽约、波士顿、洛杉矶",
-            "facets": {"program_type": "境外访校", "category": "艺术人文"},
-            "searchText": "2027暑假-美国访校访企团 美国 纽约、波士顿、洛杉矶"
-          },
-          {
-            "tab": "oversea",
-            "program_type": "境外夏校",
-            "category": "艺术人文",
-            "role_or_course": "2027暑假- RISD官方夏校",
-            "suitable_for": "全科系专业",
-            "location": "14天",
-            "level": "本科/研究生",
-            "outcomes": "2027.7.11-7.24",
-            "poster": "assets/img/courses/2027暑假- RISD官方夏校.jpg",
-            "university": "美国",
-            "professor": "普罗维登斯",
-            "type": "境外项目",
-            "cat": "境外夏校",
-            "eyebrow": "境外项目",
-            "title": "2027暑假- RISD官方夏校",
-            "program": "美国",
-            "tags": ["全科系专业", "本科/研究生", "14天", "2027.7.11-7.24"],
-            "desc": "普罗维登斯",
-            "facets": {"program_type": "境外夏校", "category": "艺术人文"},
-            "searchText": "2027暑假- risd官方夏校 美国 普罗维登斯"
-          },
-          {
-            "tab": "oversea",
-            "program_type": "境外夏校",
-            "category": "艺术人文",
-            "role_or_course": "2027暑假- UAL伦艺本科官方夏校",
-            "suitable_for": "全科系专业",
-            "location": "11天",
-            "level": "本科/研究生",
-            "outcomes": "",
-            "poster": "assets/img/courses/2027暑假- UAL伦艺本科官方夏校.jpg",
-            "university": "英国",
-            "professor": "",
-            "type": "境外项目",
-            "cat": "境外夏校",
-            "eyebrow": "境外项目",
-            "title": "2027暑假- UAL伦艺本科官方夏校",
-            "program": "英国",
-            "tags": ["全科系专业", "本科/研究生", "11天"],
-            "desc": "",
-            "facets": {"program_type": "境外夏校", "category": "艺术人文"},
-            "searchText": "2027暑假- ual伦艺本科官方夏校 英国 "
-          }
-        ]
-      }
-    },
-    {
-      "id": "overseas-anxinban",
-      "badge": "安心伴",
-      "cover": "",
-      "placeholder": true,
-      "tileVariant": null,
-      "levels": [
-        "ug",
-        "pg"
-      ],
-      "meta": {
-        "eyebrow": "Overseas Programs｜安心伴",
-        "titleEn": "Anxinban",
-        "titleCn": "安心伴",
-        "desc": "占位：安心伴项目整体定位、服务内容与申请引导待后续填充。",
-        "chips": [
-          "安心伴",
-          "毕无忧",
-          "本科 / 研究生"
-        ]
-      },
-      "snapshot": [],
-      "curriculum": [],
-      "whySFK": [],
-      "closing": {},
-      "detail": {
-        "curriculumFacets": {
-          "searchPlaceholder": "搜索课程模块…",
-          "groups": [
-            {"value": "安心伴", "label": "安心伴"},
-            {"value": "毕无忧", "label": "毕无忧"}
-          ]
-        },
-        "curriculum": [
-          {
-            "cat": "安心伴",
-            "eyebrow": "MODULE 01",
-            "title": "课程模块标题占位 01",
-            "program": "所属项目 / 院校占位",
-            "tags": ["标签占位一", "标签占位二"],
-            "desc": "课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。",
-            "poster": "",
-            "pdf": "",
-            "_ph": true,
-            "facets": {"program_type": "安心伴"},
-            "searchText": "课程模块标题占位 01 所属项目 / 院校占位 课程模块简介占位 标签占位一 标签占位二 安心伴"
-          },
-          {
-            "cat": "毕无忧",
-            "eyebrow": "MODULE 02",
-            "title": "课程模块标题占位 02",
-            "program": "所属项目 / 院校占位",
-            "tags": ["标签占位一", "标签占位二"],
-            "desc": "课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。",
-            "poster": "",
-            "pdf": "",
-            "_ph": true,
-            "facets": {"program_type": "毕无忧"},
-            "searchText": "课程模块标题占位 02 所属项目 / 院校占位 课程模块简介占位 标签占位一 标签占位二 毕无忧"
-          }
-        ]
-      }
-    }
-  ],
-  "frontier": [
-    {
-      "id": "frontier-lecture",
-      "badge": "11 门课程",
-      "cover": "",
-      "placeholder": true,
-      "tileVariant": null,
-      "levels": [
-        "ug",
-        "pg"
-      ],
-      "meta": {
-        "eyebrow": "Art Frontier Lectures｜时尚未来趋势讲座",
-        "titleEn": "Art Frontier Lecture",
-        "titleCn": "时尚未来趋势讲座",
-        "desc": "覆盖 lecture 25 与 lecture 26 两季共 11 门海外院校领航课，由 Camberwell、RCA、CSM、UCL、Stanford、RISD、LCC、Penn 等院校教授线上授课，地方导师总结。",
-        "chips": [
-          "11 门课程",
-          "lecture 25 / lecture 26",
-          "线上",
-          "本科 / 研究生"
-        ]
-      },
-      "snapshot": [],
-      "curriculum": [],
-      "whySFK": [],
-      "closing": {}
-    }
-  ]
+    document.querySelectorAll('#cd-cur-mains .filter-btn').forEach(b =>
+      b.classList.toggle('is-active', b.getAttribute('data-cur-main') === st.main));
+    let shown = 0;
+    document.querySelectorAll('#cd-cur-subs .filter-btn').forEach(b => {
+      b.hidden = !st.main || b.getAttribute('data-cur-parent') !== st.main;
+      if (!b.hidden) shown++;
+      b.classList.toggle('is-active', b.getAttribute('data-cur-sub') === st.sub);
+    });
+    const subs = document.getElementById('cd-cur-subs');
+    if (subs) subs.hidden = shown === 0;
+    this.renderCurriculum();
+  },
+
+  /* 搜索：实时匹配（不区分大小写）；不回写输入框，避免打断输入 */
+  curSearch(value) {
+    const st = this._cur;
+    if (!st) return;
+    st.q = String(value == null ? '' : value).trim().toLowerCase();
+    const clear = document.getElementById('cd-cur-clear');
+    if (clear) clear.hidden = !st.q;
+    this.renderCurriculum();
+  },
+
+  /* 课程模块卡（层级复刻源站）：图片（含左上分类角标）→ 眉标 → 标题 → 项目 → 标签组 → 说明
+     poster / pdf 字段填充后自动可点，弹出海报大图 / PDF 阅读视图（PosterModal）；
+     占位态同样可点，弹窗内展示对应占位 */
+  curriculumCard(c) {
+    const hasMedia = !!(c.poster || c.pdf || c._ph);
+    const img = c.poster ? `<img src="${esc(c.poster)}" alt="" loading="lazy">` : '';
+    const catTag = c.cat ? `<span class="cd-curriculum-card__cat-tag">${esc(c.cat)}</span>` : '';
+    const tags = (c.tags && c.tags.length)
+      ? `<div class="cd-curriculum-card__tags">${c.tags.map(t => `<span class="cd-curriculum-card__tag">${esc(t)}</span>`).join('')}</div>`
+      : '';
+    const split = c.split === 1;   /* 商业实践：海报 + PDF 左右分栏叠加层 */
+    const attr = hasMedia
+      ? ` role="button" tabindex="0"` +
+        (c.pdf ? ` data-pdf="${esc(c.pdf)}"` : '') +
+        (c.posterFull ? ` data-poster-full="${esc(c.posterFull)}"` : '') +
+        (split ? ' data-split="1"' : '') +
+        ` data-poster="${esc(c.poster || '')}" data-poster-title="${esc(c.title)}" data-poster-sub="${esc(c.program || '')}" aria-label="${esc(c.title)}${esc(c.pdf || split ? T.courseDetail.viewPdfAria : T.courseDetail.viewPosterAria)}"`
+      : '';
+    return `<div class="cd-curriculum-card cd-curriculum-card--dark${hasMedia ? ' is-clickable' : ''}" style="--poster:url('${esc(c.poster || '')}')"${attr}>
+      <div class="cd-curriculum-card__img${c.poster ? ' cd-curriculum-card__img--photo' : ''}"${hasMedia ? '' : ' aria-hidden="true"'}>${img}${catTag}</div>
+      <div class="cd-curriculum-card__body">
+        ${c.eyebrow ? `<div class="cd-curriculum-card__eyebrow u-en">${esc(c.eyebrow)}</div>` : ''}
+        <h4 class="cd-curriculum-card__title">${esc(c.program || c.title)}</h4>
+        ${c.title ? `<div class="cd-curriculum-card__program">${esc(c.title)}</div>` : ''}
+        ${tags}
+        ${c.desc ? `<p class="cd-curriculum-card__desc" title="${esc(c.desc)}">${esc(c.desc)}</p>` : ''}
+      </div>
+    </div>`;
+  },
+
+  open(id) {
+    const d = this.data(); if (!d) return;
+    const p = [d.longform, d.elite, d.catalog, d.overseas, d.frontier]
+      .reduce((f, l) => f || ((l || []).filter(x => x.id === id)[0]), null);
+    if (!p) return;
+    document.getElementById('app-overlay').innerHTML = `
+      <div class="course-overlay is-open">
+        <div class="course-overlay__backdrop" onclick="CourseProducts.close()"></div>
+        <div class="course-overlay__panel">
+          <button class="course-overlay__close" onclick="CourseProducts.close()" aria-label="${esc(T.common.closeAria)}">${esc(T.common.closeSym)}</button>
+          ${this.heroHTML(p)}
+          <div class="course-overlay__body course-overlay__body--wide">${this.detailBody(p)}</div>
+        </div>
+      </div>`;
+    /* 展开页内交互：分类 / 子分类 / 清除按钮 + 搜索输入 + 模块卡（海报 / PDF 弹窗），事件委托 */
+    const body = document.querySelector('.course-overlay__body');
+    body.addEventListener('click', e => {
+      const main = e.target.closest && e.target.closest('[data-cur-main]');
+      if (main) return this.curFacet('main', main);
+      const sub = e.target.closest && e.target.closest('[data-cur-sub]');
+      if (sub) return this.curFacet('sub', sub);
+      if (e.target.closest && e.target.closest('#cd-cur-clear')) return this.curSearch('');
+      const card = e.target.closest && e.target.closest('.cd-curriculum-card.is-clickable');
+      if (card) return PosterModal.open(card);
+    });
+    body.addEventListener('input', e => {
+      if (e.target && e.target.id === 'cd-cur-search') this.curSearch(e.target.value);
+    });
+    body.addEventListener('keydown', e => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const card = e.target.closest && e.target.closest('.cd-curriculum-card.is-clickable');
+      if (!card) return;
+      e.preventDefault();
+      PosterModal.open(card);
+    });
+    this.renderCurriculum();
+    /* 登记到统一弹层：Esc / 滚动锁 / 焦点归位统一由 Modal 处理 */
+    Modal.open({ el: document.querySelector('.course-overlay'), close: () => this.close(), trigger: document.activeElement });
+  },
+  close() {
+    const el = document.querySelector('.course-overlay');
+    if (el) { Modal.close(el); el.remove(); }
+    Modal.sync();
+  },
+
+  /* 本科 / 研究生 筛选：单击选中、再击取消（取消后展示全部） */
+  setLevel(lv) {
+    this._level = this._level === lv ? '' : lv;
+    const wrap = document.getElementById('cp-zones');
+    if (wrap) wrap.innerHTML = this.zonesHtml();
+    document.querySelectorAll('#cp-level-bar [data-level]').forEach(b => {
+      b.classList.toggle('is-active', b.getAttribute('data-level') === this._level);
+    });
+  }
+};
+
+/* ── 课程海报 / PDF 二级弹窗：结构复刻 art-humanities_demo 的 PosterModal ──
+   海报视图（poster 填充后显示图片，未填充显示占位）↔ PDF 视图（pdf 填充后用内嵌
+   框架预览，未填充显示占位）；关闭钮 / 点遮罩 / Esc 关闭，Esc 优先于课程详情浮层 */
+const PosterModal = {
+  _el: null,
+  build() {
+    if (this._el) return this._el;
+    const el = document.createElement('div');
+    el.className = 'poster-modal';
+    el.setAttribute('role', 'dialog');
+    el.setAttribute('aria-modal', 'true');
+    el.innerHTML = `
+      <div class="poster-modal__backdrop"></div>
+      <div class="poster-modal__flipper"><div class="poster-modal__inner">
+        <button class="poster-modal__close" type="button" aria-label="${esc(T.common.closeAria)}">${esc(T.common.closeSym)}</button>
+        <div class="poster-modal__pane poster-modal__pane--poster">
+          <img class="poster-modal__img" src="" alt="">
+          <div class="poster-modal__poster-info" hidden>
+            <div class="poster-modal__poster-title"></div>
+            <div class="poster-modal__poster-sub"></div>
+          </div>
+          <div class="poster-modal__ph" hidden><span>${esc(T.poster.phTitle)}</span><small>${esc(T.poster.phDesc)}</small></div>
+        </div>
+        <div class="poster-modal__pane poster-modal__pane--pdf">
+          <div class="poster-modal__pdf-ph"><span>${esc(T.poster.pdfPhTitle)}</span><small>${esc(T.poster.pdfPhDesc)}</small></div>
+          <iframe class="poster-modal__pdf-frame" src="" title="${esc(T.poster.pdfFrameTitle)}"></iframe>
+        </div>
+      </div></div>`;
+    document.body.appendChild(el);
+    el.querySelector('.poster-modal__backdrop').addEventListener('click', () => this.close());
+    el.querySelector('.poster-modal__close').addEventListener('click', () => this.close());
+    this._el = el;
+    return el;
+  },
+  isOpen() { return !!this._el && this._el.classList.contains('is-visible'); },
+  open(cardEl) {
+    if (!cardEl) return;
+    /* posterFull：点击后弹出的大图（如「课程名 PDF.jpg」），缺省则弹出卡片海报本身 */
+    const poster = cardEl.getAttribute('data-poster-full') || cardEl.getAttribute('data-poster') || '';
+    const pdf = cardEl.getAttribute('data-pdf') || '';
+    const split = cardEl.getAttribute('data-split') === '1';   /* 左海报 + 右 PDF 分栏 */
+    const el = this.build();
+    const title = cardEl.getAttribute('data-poster-title') || '';
+    const sub = cardEl.getAttribute('data-poster-sub') || '';
+    const img = el.querySelector('.poster-modal__img');
+    const ph = el.querySelector('.poster-modal__ph');
+    const info = el.querySelector('.poster-modal__poster-info');
+    const infoTitle = el.querySelector('.poster-modal__poster-title');
+    const infoSub = el.querySelector('.poster-modal__poster-sub');
+    const pdfPh = el.querySelector('.poster-modal__pdf-ph');
+    const frame = el.querySelector('.poster-modal__pdf-frame');
+
+    if (poster) { img.src = poster; img.alt = title; img.hidden = false; ph.hidden = true; }
+    else { img.removeAttribute('src'); img.hidden = true; ph.hidden = false; }
+    infoTitle.textContent = title;
+    infoSub.textContent = sub;
+    info.hidden = !split;                      /* 标题信息区仅分栏模式展示 */
+    if (pdf) { frame.src = pdf; pdfPh.hidden = true; }
+    else { frame.removeAttribute('src'); pdfPh.hidden = false; }
+
+    el.classList.toggle('is-split', split);
+    if (!split) el.classList.toggle('is-pdf', !!pdf);   /* 有 PDF 文档的课程模块直接弹出文档 */
+
+    el.setAttribute('aria-label', (title ? title + ' ' : '') + (split ? T.poster.ariaSplit : (pdf ? T.courseDetail.pdfAria : T.courseDetail.posterAria)));
+    el.style.display = 'flex';
+    el.offsetHeight;                                   /* 强制回流，确保入场过渡生效 */
+    el.classList.add('is-visible');
+    el.querySelector('.poster-modal__close').focus();
+    /* 压入弹层栈（位于课程详情浮层之上）：Esc 只关本层，关闭后焦点回到模块卡 */
+    Modal.open({ el, close: () => this.close(), trigger: cardEl, lockScroll: false });
+  },
+  close() {
+    if (!this._el) return;
+    const el = this._el;
+    el.classList.remove('is-visible');
+    el.querySelector('.poster-modal__pdf-frame').removeAttribute('src');   /* 释放文档，避免下次复用加载旧文件 */
+    setTimeout(() => { if (!this.isOpen()) el.style.display = 'none'; }, 340);   /* 等退场过渡结束再隐藏 */
+    Modal.close(el);   /* 出栈 + 焦点归还触发卡片 */
+  }
 };
