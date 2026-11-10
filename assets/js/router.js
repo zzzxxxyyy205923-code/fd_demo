@@ -69,6 +69,7 @@ function route() {
   else if (a === 'whats-on' && !b) html = renderWhatsOnIndex();
   else if (a === 'whats-on') { view = 'whats-on'; html = renderEvent(b); }
   else if (a === 'offer') { view = 'offer'; html = OfferSection.page(); }
+  else if (a === 'resources') { view = 'resources'; html = renderResources(); }
   else if (a === 'search') { view = 'search'; html = renderSearch(query); }
   else if (C.nav_main.some(x => x.id === a)) html = renderPlaceholder(a);
   else html = renderNotFound();
@@ -82,6 +83,7 @@ function route() {
   BackTab.render(a && a !== 'home' ? (c ? `#/${a}/${b}` : (b ? `#/${a}` : '#/home')) : '');
   if (view === 'home') { HeroCarousel.mount(C.hero_slides); StoriesReel.mount(C.stories); requestAnimationFrame(equalizeHomeBands); } else { HeroCarousel.stop(); StoriesReel.stop(); }
   if (view === 'offer') OfferSection.init();
+  if (view === 'resources') ResourcesSection.init(); else ResourcesSection.stop();
   if (restoreY != null) {
     requestAnimationFrame(() => window.scrollTo(0, restoreY));   /* 后退：回到离开时的位置 */
   } else if (!location.hash.includes('#/home') || segs.length) {

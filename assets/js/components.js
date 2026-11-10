@@ -6,6 +6,7 @@
 /* ─────────── 页头 ─────────── */
 const Header = {
   build() {
+    const D = T.session || {};
     document.getElementById('app-header').innerHTML = `
       <nav class="navbar" id="navbar">
         <a class="navbar__logo" href="#/home" aria-label="${esc(T.nav.brandAria)}">
@@ -17,17 +18,28 @@ const Header = {
         </a>
         <div class="navbar__nav" id="nav-links">
           ${C.nav_main.map(it => `<a class="nav-link" data-view="${it.id}" href="#/${it.id}">${esc(it.label)}</a>`).join('')}
+          <button class="nav-session__logout" data-nav-logout type="button" hidden>${esc(D.logoutLabel)}</button>
         </div>
-        <div style="display:flex;align-items:center;gap:14px;">
+        <div class="navbar__actions">
           <form id="search-form" action="#/search" method="get" class="nav-search">
             <svg class="nav-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
             <input class="nav-search__input" type="search" name="query" id="search-input" placeholder="${esc(T.nav.searchPlaceholder)}" autocomplete="off" aria-label="${esc(T.nav.searchAria)}">
             <input type="hidden" name="in" value="">
           </form>
+          <a class="navbar__user-btn" data-admin-entry data-admin-aria="${esc(D.adminAria)}"
+             href="admin" aria-label="${esc(D.adminAria)}" hidden>
+            <span class="navbar__user-btn__avatar" data-user-initial aria-hidden="true"></span>
+            <span class="navbar__user-btn__name" data-user-name></span>
+            <span class="navbar__user-btn__arrow" aria-hidden="true"></span>
+          </a>
           <button class="navbar__menu-btn" id="menu-toggle" aria-label="${esc(T.nav.menuAria)}"><span></span><span></span><span></span></button>
         </div>
       </nav>
     `;
+    /* 页头是动态渲染的：登录态可能比页头先返回，渲染完成后主动同步一次后台入口 */
+    if (window.SFKAuth && typeof window.SFKAuth.syncSessionActions === 'function') {
+      window.SFKAuth.syncSessionActions();
+    }
     /* 导航栏内嵌搜索：输入后回车直接跳转搜索结果页（空关键词不跳转） */
     document.getElementById('search-form').addEventListener('submit', e => {
       e.preventDefault();
@@ -72,36 +84,18 @@ const Header = {
   }
 };
 
-/* ─────────── 页脚（参照 art-humanities_demo） ─────────── */
+/* ─────────── 页脚 ───────────
+   DOM 由共享组件 assets/js/site-footer.js 生成：
+   主页与后台管理系统调用同一份 SiteFooter.render() + site-footer.css，
+   两处页脚在结构、间距、字体、颜色与响应式上完全一致。
+   这里只负责把 DATA 加载好的站点内容传给共享组件。 */
 const Footer = {
   build() {
-    document.getElementById('app-footer').innerHTML = `
-      <footer class="site-footer">
-        <div class="site-footer__inner">
-          <div>
-            <div class="site-footer__brand">
-              <img src="${esc(C.meta.logo)}" alt="">
-              <span>${esc(C.meta.brand)}</span>
-            </div>
-            <p class="site-footer__desc">${esc(C.meta.subtitle)}</p>
-          </div>
-          <div>
-            <h3 class="site-footer__col-title">${esc(T.footer.colMain)}</h3>
-            ${C.nav_main.filter(it => ['subjects', 'colleges', 'courses'].includes(it.id)).map(it => `<a href="#/${it.id}">${esc(it.label)}</a>`).join('')}
-          </div>
-          <div>
-            <h3 class="site-footer__col-title">${esc(T.footer.colSubject)}</h3>
-            ${C.nav_main.filter(it => !['subjects', 'colleges', 'courses'].includes(it.id)).map(it => `<a href="#/${it.id}">${esc(it.label)}</a>`).join('')}
-          </div>
-          <div>
-            <h3 class="site-footer__col-title">${esc(T.footer.colPlan)}</h3>
-            <a href="mailto:${esc(C.meta.footer.contact.email)}">${esc(C.meta.footer.contact.email)}</a>
-            <a href="tel:${esc(C.meta.footer.contact.tel)}">${esc(C.meta.footer.contact.tel)}</a>
-          </div>
-        </div>
-        <div class="site-footer__bottom">${esc(C.meta.footer.copyright)}</div>
-      </footer>
-    `;
+    SiteFooter.render(document.getElementById('app-footer'), {
+      meta: C.meta,
+      navMain: C.nav_main,
+      ui: T.footer
+    });
   }
 };
 
@@ -169,3 +163,8 @@ const Modal = {
     }, true);
   }
 };
+
+/* 目录页（CONTENTS 全屏浮层）与其底部会话组已整体移除：
+   后台入口改为导航栏右上角显示用户姓名的按钮，退出入口保留在导航栏与移动下拉菜单。 */
+
+

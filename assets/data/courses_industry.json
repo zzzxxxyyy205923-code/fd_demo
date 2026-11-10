@@ -213,7 +213,12 @@
           "value": "线上带训",
           "label": "行业导师带训"
         }
-      ]
+      ],
+      "collapsible": {
+        "limit": 8,
+        "tabletLimit": 4,
+        "mobileLimit": 3
+      }
     },
     "curriculum": [
       {

@@ -31,6 +31,7 @@ FILES = [
     ('coursesIndustry', 'courses_industry'),
     ('coursesAcademic', 'courses_academic'),
     ('offers', 'offers'),
+    ('resources', 'resources'),
 ]
 
 HEADER = """/* ═══════════════════════════════════════════════════════════

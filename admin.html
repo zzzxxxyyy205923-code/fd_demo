@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="assets/img/brand/logo-fashion.png">
+  <title>后台 · 账号与权限｜SFK 时尚科系</title>
+  <!-- 受保护页面：仅登录用户可打开；数据范围由服务端 /api/accounts 决定。
+       版式骨架完整复用 art-humanities_demo 的 admin.html，
+       品牌与设计令牌由 admin-fashion.css 换成 SFK 时尚科系粉黑体系。
+       顶栏 / 底部标签由服务端从 server/views/ 注入；
+       页脚直接复用主页的共享组件（site-footer.css + site-footer.js），
+       服务端从同一份 site-content.json 注入页脚数据。 -->
+  <link rel="stylesheet" href="assets/css/fonts.css?v=20261109v">
+  <link rel="stylesheet" href="assets/css/admin-site.css?v=20261109v">
+  <link rel="stylesheet" href="assets/css/admin.css?v=20261109v">
+  <link rel="stylesheet" href="assets/css/admin-fashion.css?v=20261109v">
+  <!-- 必须排在后台样式之后：统一焦点态，覆盖 .admin-page a:focus-visible -->
+  <link rel="stylesheet" href="assets/css/site-footer.css?v=20261109v">
+  <script src="assets/js/auth-guard.js?v=20261109v"></script>
+</head>
+<body class="admin-page">
+
+  <!-- admin:topbar -->
+
+  <main class="admin-shell">
+    <!-- admin:nav -->
+
+    <section class="admin-hero">
+      <div>
+        <p class="admin-kicker">ADMIN CONSOLE</p>
+        <h1>账号与权限</h1>
+      </div>
+      <dl class="admin-stats" id="admin-stats">
+        <div><dt>导师总数</dt><dd id="admin-stat-accounts">—</dd></div>
+        <div><dt>管理员</dt><dd id="admin-stat-admins">—</dd></div>
+        <div><dt>账号来源</dt><dd id="admin-stat-source">—</dd></div>
+      </dl>
+    </section>
+
+    <p class="admin-toast" id="admin-toast" role="status" aria-live="polite"></p>
+
+    <!-- 添加导师：仅「管理员」可见（默认 hidden，由 admin.js 按角色显示 —— 失败时保持隐藏更安全） -->
+    <section class="admin-block" id="admin-create-block" hidden>
+      <div class="admin-block__head">
+        <h2>添加导师</h2>
+      </div>
+      <!-- 与「导师列表」同一套信息结构与布局：同一列宽、同一表头顺序，输入控件直接落在对应单元格里 -->
+      <form id="admin-create" autocomplete="off">
+        <div class="admin-table-wrap">
+          <table class="admin-table admin-table--add">
+            <colgroup>
+              <col style="width: 4%"><col style="width: 10%"><col style="width: 10%"><col style="width: 22%">
+              <col style="width: 13%"><col style="width: 12%"><col style="width: 17%"><col style="width: 12%">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">№</th>
+                <th scope="col">地区</th>
+                <th scope="col">姓名</th>
+                <th scope="col">公司邮箱（登录名）</th>
+                <th scope="col">职位</th>
+                <th scope="col">角色</th>
+                <th scope="col">生效权限</th>
+                <th scope="col">操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="admin-idx" data-label="№">＋</td>
+                <td data-label="地区"><select name="region" id="admin-create-region" aria-label="地区"></select></td>
+                <td data-label="姓名"><input name="name" type="text" required maxlength="40" placeholder="手动填写" aria-label="姓名"></td>
+                <td data-label="公司邮箱（登录名）"><input name="email" type="email" required maxlength="80" placeholder="name@xdf.cn" aria-label="公司邮箱（登录名）"></td>
+                <td data-label="职位"><select name="position" id="admin-create-position" aria-label="职位"></select></td>
+                <td data-label="角色"><select name="role" id="admin-create-role" aria-label="角色"></select></td>
+                <td class="admin-perms" data-label="生效权限" id="admin-create-perms"></td>
+                <td data-label="操作">
+                  <div class="admin-actions">
+                    <button class="admin-btn admin-btn--primary" type="submit" id="admin-create-submit">添加导师</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </form>
+      <!-- 新建成功后服务端会回传一次自动生成的初始密码，显示在这里（刷新即消失） -->
+      <p class="admin-created" id="admin-create-result" hidden></p>
+    </section>
+
+    <section class="admin-block" id="admin-list-block">
+      <div class="admin-block__head">
+        <h2 id="admin-list-title">
+          <button class="admin-list-toggle" type="button" id="admin-list-toggle"
+                  aria-expanded="true" aria-controls="admin-list-body">
+            <span>导师列表</span>
+            <span class="admin-list-count" id="admin-list-count">0 位</span>
+            <span class="admin-list-chevron" aria-hidden="true"></span>
+          </button>
+        </h2>
+        <!-- 两种提示互斥出现：环境变量只读 / 普通角色只能看到本人 -->
+        <p class="admin-block__hint" id="admin-readonly" hidden>当前账号来自 <code>AUTH_STAFF_JSON</code> 环境变量，运行期只读：请在部署环境改配置后重启服务。</p>
+        <p class="admin-block__hint" id="admin-scope-hint" hidden>当前角色仅可查看与修改<strong>本人</strong>的账号信息，其余导师信息不显示；如需管理他人账号，请联系管理员调整角色。</p>
+      </div>
+      <!-- 导师筛选：地区 / 姓名 / 职位 / 角色，可组合使用，选择或输入即实时过滤下方列表 -->
+      <div class="tutor-filter" id="tutor-filter">
+        <div class="tutor-filter__item">
+          <label class="tutor-filter__label" for="tutor-filter-region">地区</label>
+          <select class="tutor-filter__select" id="tutor-filter-region" aria-label="按地区筛选">
+            <option value="">全部地区</option>
+          </select>
+        </div>
+        <div class="tutor-filter__item">
+          <label class="tutor-filter__label" for="tutor-filter-name">姓名</label>
+          <input class="tutor-filter__input" id="tutor-filter-name" type="search"
+                 placeholder="输入姓名关键词…" autocomplete="off" aria-label="按姓名筛选">
+        </div>
+        <div class="tutor-filter__item">
+          <label class="tutor-filter__label" for="tutor-filter-position">职位</label>
+          <select class="tutor-filter__select" id="tutor-filter-position" aria-label="按职位筛选">
+            <option value="">全部职位</option>
+          </select>
+        </div>
+        <div class="tutor-filter__item">
+          <label class="tutor-filter__label" for="tutor-filter-role">角色</label>
+          <select class="tutor-filter__select" id="tutor-filter-role" aria-label="按角色筛选">
+            <option value="">全部角色</option>
+          </select>
+        </div>
+        <button class="admin-btn admin-btn--ghost" type="button" id="tutor-filter-clear">清除</button>
+        <span class="tutor-filter__count" id="tutor-filter-count" role="status" aria-live="polite"></span>
+      </div>
+
+      <div class="admin-table-wrap" id="admin-list-body">
+        <table class="admin-table">
+          <!-- 列宽用百分比固定（table-layout: fixed）→ 任何视口都横向铺满、不需要手动拖动 -->
+          <colgroup>
+            <col style="width: 4%"><col style="width: 10%"><col style="width: 10%"><col style="width: 22%">
+            <col style="width: 13%"><col style="width: 12%"><col style="width: 17%"><col style="width: 12%">
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">№</th>
+              <th scope="col">地区</th>
+              <th scope="col">姓名</th>
+              <th scope="col">公司邮箱（登录名）</th>
+              <th scope="col">职位</th>
+              <th scope="col">角色</th>
+              <th scope="col">生效权限</th>
+              <th scope="col">操作</th>
+            </tr>
+          </thead>
+          <tbody id="admin-accounts">
+            <tr><td colspan="8" class="admin-empty">加载中…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 角色与权限矩阵：仅「管理员」可见（默认 hidden，同上由 admin.js 按角色显示） -->
+    <section class="admin-block" id="admin-roles-block" hidden>
+      <div class="admin-block__head">
+        <h2>角色与权限</h2>
+      </div>
+      <div class="admin-table-wrap">
+        <table class="admin-table admin-table--roles">
+          <colgroup><col style="width: 18%"><col style="width: 47%"><col style="width: 35%"></colgroup>
+          <thead>
+            <tr><th scope="col">角色</th><th scope="col">说明</th><th scope="col">权限</th></tr>
+          </thead>
+          <tbody id="admin-roles"></tbody>
+        </table>
+      </div>
+      <div class="admin-perm-note">
+        <h3>权限说明</h3>
+        <ul id="admin-permissions"></ul>
+      </div>
+    </section>
+
+    <!-- 活跃地图（页面最底部、页脚之上）：面向**所有角色**，展示全站口径的活跃数据。
+         数据来源为服务端 GET api/activity：以账号库全部已录入用户为数据集合（含从未活跃用户），
+         按自然月 / 自然年聚合全站使用埋点，只返回聚合数字、不含个人身份信息。 -->
+    <section class="admin-block" id="active-map-block">
+      <div class="admin-block__head">
+        <h2 id="active-map-title">月活跃地图</h2>
+        <p class="admin-block__hint" id="active-map-summary">—</p>
+      </div>
+
+      <!-- 矩阵本体：切换「月 / 年」时只换这里面的内容，容器本身不动 -->
+      <div class="active-map" id="active-map">
+        <div class="active-map__head" id="active-map-weekdays" hidden></div>
+        <div class="active-map__grid" id="active-map-grid" role="grid" aria-labelledby="active-map-title"></div>
+        <div class="active-map__foot">
+          <p class="active-map__caption" id="active-map-caption"></p>
+          <div class="active-map__legend" aria-hidden="true">
+            <span>少</span>
+            <div class="active-map__legend-scale" id="active-map-legend-scale"></div>
+            <span>多</span>
+          </div>
+        </div>
+        <p class="active-map__legend-note">每格用一条横向进度条表达活跃度，方向左 → 右；活跃度等级 L0–L20 对应进度 0%、5%、10% … 100%（每级 5% 活跃率）：L0 = 0% 空轨道，L5 = 25%，L10 = 50%，L15 = 75%，L20 = 100% 满格（全员活跃）。</p>
+      </div>
+
+      <!-- 矩阵下方的标签：点它在当前矩阵 div 内直接切换月 / 年视图 -->
+      <div class="active-map__tabs" role="tablist" aria-label="活跃地图视图">
+        <button class="admin-tab is-active" type="button" role="tab" aria-selected="true"
+                data-map-mode="month" id="active-map-tab-month">月活跃地图</button>
+        <button class="admin-tab" type="button" role="tab" aria-selected="false"
+                data-map-mode="year" id="active-map-tab-year">年活跃地图</button>
+      </div>
+    </section>
+
+    <!-- 网站使用概览：**仅「管理员」角色可见**（默认 hidden，前端确认当前账号 role=admin 后才显示；
+         服务端 /api/usage/overview|export 同样只认 role=admin —— 科系教研导师也不行）。
+         数据来自 auth-guard.js 的埋点（板块浏览 / 停留时长 / 导师信息访问 / 课程海报访问）。 -->
+    <section class="admin-block" id="usage-overview-block" hidden>
+      <div class="admin-block__head">
+        <h2>网站使用概览</h2>
+        <p class="admin-block__hint" id="usage-summary">加载中…</p>
+      </div>
+
+      <div class="usage-toolbar">
+        <div class="usage-range" role="tablist" aria-label="统计时间范围">
+          <button class="admin-tab is-active" type="button" role="tab" aria-selected="true" data-usage-range="7">近 7 天</button>
+          <button class="admin-tab" type="button" role="tab" aria-selected="false" data-usage-range="30">近 30 天</button>
+          <button class="admin-tab" type="button" role="tab" aria-selected="false" data-usage-range="0">全部</button>
+        </div>
+        <a class="admin-btn admin-btn--primary usage-export" id="usage-export"
+           href="api/usage/export?days=7">下载 Excel（.xlsx）</a>
+      </div>
+
+      <div class="usage-grid">
+        <section class="usage-panel">
+          <h3>板块页面访问量</h3>
+          <div class="usage-bars" id="usage-pages"></div>
+        </section>
+        <section class="usage-panel">
+          <h3>各板块平均停留时长</h3>
+          <div class="usage-bars" id="usage-dwell"></div>
+        </section>
+        <section class="usage-panel">
+          <h3>课程信息排行</h3>
+          <p class="usage-panel__hint">热度 = 课程海报访问次数 + 查看停留秒数</p>
+          <div class="usage-courses" id="usage-courses"></div>
+        </section>
+      </div>
+
+      <!-- 账号明细：按地区 / 姓名 / 职位 / 角色 实时筛选，下方为各账号使用明细 -->
+      <div class="admin-block__head usage-accounts-head">
+        <h2>
+          <button class="admin-list-toggle" type="button" id="usage-accounts-toggle"
+                  aria-expanded="true" aria-controls="usage-accounts-body">
+            <span>账号使用明细</span>
+            <span class="admin-list-count" id="usage-accounts-count">0 条</span>
+            <span class="admin-list-chevron" aria-hidden="true"></span>
+          </button>
+        </h2>
+      </div>
+      <div id="usage-accounts-body">
+      <div class="usage-filter" id="usage-filter">
+        <div class="usage-filter__item">
+          <label class="usage-filter__label" for="usage-filter-region">地区</label>
+          <select class="usage-filter__select" id="usage-filter-region" aria-label="按地区筛选">
+            <option value="">全部地区</option>
+          </select>
+        </div>
+        <div class="usage-filter__item">
+          <label class="usage-filter__label" for="usage-filter-name">姓名</label>
+          <input class="usage-filter__input" id="usage-filter-name" type="search"
+                 placeholder="输入姓名关键词…" autocomplete="off" aria-label="按姓名筛选">
+        </div>
+        <div class="usage-filter__item">
+          <label class="usage-filter__label" for="usage-filter-position">职位</label>
+          <select class="usage-filter__select" id="usage-filter-position" aria-label="按职位筛选">
+            <option value="">全部职位</option>
+          </select>
+        </div>
+        <div class="usage-filter__item">
+          <label class="usage-filter__label" for="usage-filter-role">角色</label>
+          <select class="usage-filter__select" id="usage-filter-role" aria-label="按角色筛选">
+            <option value="">全部角色</option>
+          </select>
+        </div>
+        <button class="admin-btn admin-btn--ghost" type="button" id="usage-filter-clear">清除</button>
+        <span class="usage-filter__count" id="usage-filter-count" role="status" aria-live="polite"></span>
+      </div>
+
+      <div class="admin-table-wrap usage-table-wrap">
+        <table class="admin-table">
+          <colgroup>
+            <col style="width: 17%"><col style="width: 8%"><col style="width: 8%"><col style="width: 8%">
+            <col style="width: 9%"><col style="width: 9%"><col style="width: 9%"><col style="width: 11%">
+            <col style="width: 11%"><col style="width: 12%">
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">账号</th><th scope="col">部门</th><th scope="col">地区</th><th scope="col">姓名</th>
+              <th scope="col">职位</th><th scope="col">角色</th>
+              <th scope="col">访问次数</th><th scope="col">总停留</th><th scope="col">最后活跃</th><th scope="col">访问过的导师</th>
+            </tr>
+          </thead>
+          <tbody id="usage-users">
+            <tr><td colspan="10" class="admin-empty">加载中…</td></tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+      <p class="usage-note" id="usage-note"></p>
+    </section>
+
+    <!-- 操作日志（仅超级管理员）：账号与权限变更的审计轨迹。
+         版面顺序：标题 → 筛选（何时 / 什么 / 谁 / 哪条）→ 高密度表格 → 分页 → 口径说明。
+         筛选与主体之间只用间距分组，不额外套卡片，避免「卡片里嵌卡片」。 -->
+    <section class="admin-block" id="audit-block" hidden>
+      <div class="admin-block__head">
+        <h2>操作日志</h2>
+        <p class="admin-block__hint" id="audit-summary">加载中…</p>
+      </div>
+
+      <div class="audit-filters">
+        <div class="audit-range" role="group" aria-label="时间范围">
+          <button class="admin-tab is-active" type="button" data-audit-days="7">近 7 天</button>
+          <button class="admin-tab" type="button" data-audit-days="30">近 30 天</button>
+          <button class="admin-tab" type="button" data-audit-days="0">全部</button>
+        </div>
+        <div class="audit-fields">
+          <label class="audit-field">
+            <span>操作类型</span>
+            <select id="audit-action" aria-label="操作类型"></select>
+          </label>
+          <label class="audit-field">
+            <span>操作人</span>
+            <select id="audit-actor" aria-label="操作人"></select>
+          </label>
+          <label class="audit-field audit-field--search">
+            <span>受影响的账号 / 权限项</span>
+            <input id="audit-q" type="search" placeholder="账号、姓名、字段名或前后内容…" autocomplete="off">
+          </label>
+          <button class="admin-btn admin-btn--ghost" type="button" id="audit-reset">重置</button>
+        </div>
+      </div>
+
+      <div class="admin-table-wrap audit-table-wrap">
+        <table class="admin-table audit-table">
+          <colgroup>
+            <col style="width: 13%"><col style="width: 12%"><col style="width: 16%">
+            <col style="width: 11%"><col style="width: 38%"><col style="width: 10%">
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">更改时间</th>
+              <th scope="col">操作者</th>
+              <th scope="col">更改对象</th>
+              <th scope="col">操作类型</th>
+              <th scope="col">更改前后</th>
+              <th scope="col">结果</th>
+            </tr>
+          </thead>
+          <tbody id="audit-rows">
+            <tr><td colspan="6" class="admin-empty">加载中…</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="audit-empty" id="audit-empty" hidden>
+        <p class="audit-empty__title">还没有符合条件的更改记录</p>
+        <p class="audit-empty__hint">新建账号、修改资料、调整角色 / 权限、重置密码或删除账号都会自动留痕。可以放宽时间范围，或清除筛选条件后再看。</p>
+        <button class="admin-btn admin-btn--ghost" type="button" id="audit-empty-reset">清除筛选</button>
+      </div>
+
+      <div class="audit-pager">
+        <p class="audit-pager__count" id="audit-count" role="status" aria-live="polite"></p>
+        <div class="audit-pager__pages" id="audit-pages" role="group" aria-label="日志分页"></div>
+      </div>
+      <p class="audit-note" id="audit-note"></p>
+    </section>
+
+    <!-- admin:tabs -->
+
+  </main>
+
+  <!-- admin:footer -->
+
+  <script src="assets/js/site-footer.js?v=20261109v"></script>
+  <script src="assets/js/admin-options.js?v=20261109v"></script>
+  <script src="assets/js/admin-shell.js?v=20261109v"></script>
+  <script src="assets/js/admin.js?v=20261109v"></script>
+</body>
+</html>

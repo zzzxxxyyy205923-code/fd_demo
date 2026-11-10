@@ -1,0 +1,75 @@
+/* ═══════════════════════════════════════════════════════════
+   后台 / 登录页 · SFK 时尚科系品牌覆写
+   复用 art-humanities_demo 的 auth.css / admin.css / admin-site.css 版式骨架，
+   只把设计令牌换成本站 style.css 的粉黑体系（#FF0080 × #000000），
+   保证后台与前台的视觉语言、字体与交互反馈完全一致。
+   本文件必须加载在三个源站样式之后。
+═══════════════════════════════════════════════════════════ */
+:root {
+  /* 登录页 */
+  --auth-signal: #FF59A8;
+  --auth-fill: #FF0080;
+  --auth-fill-hover: #FF59A8;
+  --auth-canvas: #000000;
+  --auth-ink: #FFFFFF;
+  --auth-ash: rgba(255, 255, 255, .90);
+  --auth-muted: rgba(255, 255, 255, .78);
+  --auth-line: rgba(255, 255, 255, .18);
+  --auth-font-cn: "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+  --auth-font-en: "Helvetica Neue", Arial, sans-serif;
+
+  /* 后台 */
+  --admin-signal: #FF59A8;
+  --admin-fill: #FF0080;
+  --admin-fill-hover: #FF59A8;
+  --admin-canvas: #000000;
+  --admin-surface: #141414;
+  --admin-line: rgba(255, 255, 255, .16);
+  --admin-ink: #FFFFFF;
+  --admin-ash: rgba(255, 255, 255, .88);
+  --admin-muted: rgba(255, 255, 255, .72);
+  --admin-danger: #FF8A8A;
+  --admin-font-cn: "PingFang SC", "Helvetica Neue", "Microsoft YaHei", sans-serif;
+  --admin-font-en: "Helvetica Neue", Arial, sans-serif;
+
+  /* admin-site.css 的页脚与徽标令牌 */
+  --color-primary: #FF0080;
+  --color-accent: #FF59A8;
+  --color-accent-bright: #FF59A8;
+  --color-void: #000000;
+  --color-bg: #000000;
+}
+
+.auth-page .auth-backdrop::after {
+  background: linear-gradient(90deg, rgba(0, 0, 0, .88) 0%, rgba(0, 0, 0, .62) 57%, rgba(0, 0, 0, .60) 100%);
+}
+
+.admin-page {
+  background:
+    radial-gradient(120% 70% at 82% -10%, rgba(255, 0, 128, .26), rgba(0, 0, 0, 0) 62%),
+    var(--admin-canvas);
+}
+
+/* 主按钮：粉底 + 深色字（本站 logo 粉的对比度最优组合） */
+.admin-btn--primary,
+.auth-submit { color: #0A0A0A; }
+
+.admin-btn--primary:hover,
+.auth-submit:hover { background: var(--admin-fill-hover); }
+
+.admin-nav a[aria-current="page"],
+.admin-tab.is-active { border-color: var(--admin-fill); color: var(--admin-signal); }
+
+.admin-topbar { background: rgba(0, 0, 0, .82); }
+
+/* 焦点可见：与前台一致的主色描边 */
+.auth-page a:focus-visible,
+.auth-page button:focus-visible,
+.auth-page input:focus-visible,
+.admin-page a:focus-visible,
+.admin-page button:focus-visible,
+.admin-page input:focus-visible,
+.admin-page select:focus-visible {
+  outline: 2px solid #FF59A8;
+  outline-offset: 2px;
+}

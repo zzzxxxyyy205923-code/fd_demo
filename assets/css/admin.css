@@ -1,0 +1,755 @@
+/* ═══════════════════════════════════════════
+   艺术人文科系 · 后台（账号与权限）样式
+   沿用登录页/站点深色「舞台」语言与艺术人文 VI：
+     舞台底 #0A0A0A（--color-void）/ 纸白 #FFFFFF / 金琥珀 #FF59A8（深底强调，10.79:1）/
+     梅子紫 #FF59A8（主按钮填充，白字 7.0:1）。
+   本页只加载 fonts.css + admin.css，不引站点 style.css，故自带 reset。
+   字重上限 700（站内自托管 Noto Sans SC 最高 700，写 800/900 会合成假粗体）。
+═══════════════════════════════════════════ */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html,
+body { margin: 0; padding: 0; }
+
+html { background: #0A0A0A; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img { display: block; max-width: 100%; }
+
+:root {
+  --admin-signal: #FF59A8;
+  --admin-fill: #FF59A8;
+  --admin-fill-hover: #FF8AC3;
+  --admin-canvas: #0A0A0A;
+  --admin-surface: #141414;
+  --admin-line: rgba(255, 255, 255, .14);
+  --admin-ink: #FFFFFF;
+  --admin-ash: rgba(255, 255, 255, .86);
+  --admin-muted: rgba(255, 255, 255, .72);
+  --admin-danger: #FF8A8A;
+  --admin-font-cn: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  --admin-font-en: 'Space Grotesk', 'Noto Sans SC', sans-serif;
+}
+
+.admin-page {
+  min-height: 100vh;
+  color: var(--admin-ink);
+  background:
+    radial-gradient(120% 70% at 82% -10%, rgba(255, 89, 168, .34), rgba(10, 10, 10, 0) 62%),
+    var(--admin-canvas);
+  font-family: var(--admin-font-cn);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ── 顶栏 ─────────────────────────────────── */
+.admin-topbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px clamp(20px, 4vw, 48px);
+  border-bottom: 1px solid var(--admin-line);
+  background: rgba(10, 10, 10, .78);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.admin-topbar__brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.admin-topbar__mark { width: 18px; height: 18px; object-fit: contain; flex-shrink: 0; }
+.admin-topbar__title { font-weight: 700; letter-spacing: .01em; white-space: nowrap; }
+.admin-topbar__sep { width: 1px; height: 14px; background: var(--admin-line); }
+.admin-topbar__sub { color: var(--admin-muted); font-family: var(--admin-font-en); font-size: 11px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; }
+
+.admin-topbar__right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.admin-account { color: var(--admin-signal); font-family: var(--admin-font-en); font-size: 12px; font-weight: 500; letter-spacing: .04em; }
+
+/* ── 后台导航（账号与权限 / 导师 / 课程产品 / 作品集案例 / 校企资源 / OFFER 院校），由服务端按角色渲染 ── */
+.admin-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 clamp(20px, 3vw, 32px); border-bottom: 1px solid var(--admin-line); }
+.admin-nav a { padding: 12px 16px; color: var(--admin-muted); text-decoration: none; border-bottom: 2px solid transparent; margin-bottom: -1px; font-weight: 700; transition: color .2s ease; }
+.admin-nav a:hover { color: var(--admin-ink); }
+.admin-nav a[aria-current="page"] { color: var(--admin-signal); border-color: var(--admin-signal); }
+
+/* ── 主体 ─────────────────────────────────── */
+/* 本页同时加载了站点 style.css（为了页脚与设计令牌）：它的 body::before 是 z-index:0 的固定纹理层，
+   会把静态定位的内容压在下层，故主体抬一层（topbar 已是 sticky + z-index:10）。 */
+.admin-shell {
+  position: relative; z-index: 1;
+  padding: clamp(28px, 4vw, 56px) clamp(20px, 4vw, 48px) 0;
+  max-width: 1240px; margin: 0 auto;
+}
+
+/* ── 顶部网格背景的剪裁 ──────────────────────
+   网格本体来自站点 style.css 的 body::before（64px 细网格 + 两团品牌光晕 + 向下渐隐 mask）。
+   这里**只改几何**，纹理、透明度、渐隐 mask 全部沿用原定义：
+     · position: fixed → absolute  ⇒ 由「钉在视口上」改为「随页面滚动」，与标题保持固定相对关系；
+     · inset:0（铺满视口）→ 顶部一条，高度 = --admin-grid-clip
+       = 「账号与权限」标题底部（文档坐标）+ 一行「导师列表」的字体高度（由 admin.js 实测写入）。 */
+.admin-page::before {
+  position: absolute;
+  inset: auto;
+  top: 0; left: 0; right: 0;
+  height: var(--admin-grid-clip, 220px);
+}
+
+.admin-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(220px, .8fr);
+  gap: 28px;
+  align-items: end;
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--admin-line);
+  margin-bottom: 34px;
+}
+
+.admin-kicker { margin: 0 0 12px; color: var(--admin-signal); font-family: var(--admin-font-en); font-size: 10px; font-weight: 700; letter-spacing: .22em; }
+.admin-hero h1 { margin: 0; font-size: clamp(30px, 4vw, 52px); font-weight: 700; line-height: 1.04; letter-spacing: -.03em; }
+.admin-lead { max-width: 46em; margin: 16px 0 0; color: var(--admin-ash); }
+.admin-lead code,
+.admin-block__hint code { padding: 1px 6px; background: rgba(255, 255, 255, .09); font-family: var(--admin-font-en); font-size: 12px; }
+
+.admin-stats { display: grid; gap: 10px; margin: 0; }
+.admin-stats > div { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--admin-line); }
+.admin-stats dt { color: var(--admin-muted); font-size: 12px; letter-spacing: .06em; }
+.admin-stats dd { margin: 0; color: var(--admin-signal); font-size: 18px; font-weight: 700; }
+
+.admin-toast { min-height: 22px; margin: 0 0 6px; color: var(--admin-signal); font-size: 13px; }
+.admin-toast.is-error { color: var(--admin-danger); }
+
+.admin-block { margin-top: 44px; }
+.admin-block__head { display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: baseline; justify-content: space-between; margin-bottom: 16px; }
+.admin-block__head h2 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: -.02em; }
+.admin-block__hint { margin: 0; color: var(--admin-muted); font-size: 12.5px; }
+
+/* ── 「导师列表」折叠标签 ──────────────────────────
+   标题本身即开合控件：徽章显示当前已录入导师数量，箭头指示展开 / 收起。
+   折叠体用 hidden 属性切换，不改变表格内部的列宽与窄屏堆叠规则。 */
+.admin-list-toggle {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin: 0; padding: 0; border: 0; background: none;
+  color: inherit; font: inherit; letter-spacing: inherit;
+  cursor: pointer;
+}
+.admin-list-toggle:hover { color: var(--admin-signal); }
+.admin-list-toggle:focus-visible { outline: 2px solid var(--admin-signal); outline-offset: 5px; }
+.admin-list-count {
+  display: inline-block; padding: 2px 10px;
+  color: var(--admin-signal);
+  border: 1px solid rgba(255, 89, 168, .45); border-radius: 999px;
+  font-family: var(--admin-font-cn);
+  font-size: 12px; font-weight: 700; letter-spacing: .04em;
+  vertical-align: middle; white-space: nowrap;
+}
+.admin-list-chevron {
+  flex: none;
+  width: 0; height: 0;
+  border-left: 5px solid transparent; border-right: 5px solid transparent;
+  border-top: 6px solid currentColor;
+  transition: transform .2s ease;
+}
+.admin-list-toggle[aria-expanded="false"] { color: var(--admin-muted); }
+.admin-list-toggle[aria-expanded="false"]:hover { color: var(--admin-signal); }
+.admin-list-toggle[aria-expanded="false"] .admin-list-chevron { transform: rotate(-90deg); }
+#admin-list-body[hidden] { display: none; }
+#usage-accounts-body[hidden] { display: none; }
+
+/* ── 导师筛选：地区 / 姓名 / 职位 / 角色，可组合使用 ──
+   每个维度带文字标签；上下与标题、列表各拉开一档间距。
+   控件与「账号明细筛选」同一套观感（深底、线框、信号色焦点）。 */
+.tutor-filter {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px;
+  margin: clamp(12px, 1.6vw, 18px) 0;
+  padding: clamp(10px, 1.2vw, 14px);
+  border: 1px solid var(--admin-line);
+  background: rgba(255, 255, 255, .02);
+}
+.tutor-filter__item { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.tutor-filter__label { color: var(--admin-muted); font-size: 12px; font-weight: 700; letter-spacing: .06em; white-space: nowrap; }
+.tutor-filter__select,
+.tutor-filter__input {
+  min-height: 32px; padding: 0 10px;
+  color: var(--admin-ink); background: rgba(10, 10, 10, .72);
+  border: 1px solid var(--admin-line); border-radius: 0;
+  font-family: inherit; font-size: 12.5px; outline: none;
+}
+.tutor-filter__select { min-width: 120px; }
+.tutor-filter__input { width: 180px; }
+.tutor-filter__select:focus,
+.tutor-filter__input:focus { border-color: var(--admin-signal); }
+.tutor-filter__select option { color: #FFFFFF; background: #141414; }
+.tutor-filter .admin-btn { min-height: 32px; padding: 0 12px; font-size: 12.5px; }
+.tutor-filter__count { margin-left: auto; color: var(--admin-muted); font-size: 12px; white-space: nowrap; }
+@media (max-width: 760px) {
+  .tutor-filter__item { flex: 1 1 100%; }
+  .tutor-filter__select, .tutor-filter__input { flex: 1 1 auto; width: auto; }
+  .tutor-filter__count { margin-left: 0; }
+}
+
+/* ── 表格：横向铺满、无需手动拖动、字级随视口自适应 ──
+   列宽由 HTML 里的 <colgroup> 百分比固定（table-layout: fixed），
+   故任何视口都一屏显示全部列；表头与正文用 clamp() 随宽度收缩，
+   超长内容（邮箱、权限名）在单元格内换行而不是撑开表格。
+   ≤760px 时整表转为「每条记录一块、单元格带标签」的堆叠排布（仍不出现横向拖动）。 */
+.admin-table-wrap { border: 1px solid var(--admin-line); background: rgba(255, 255, 255, .02); }
+.admin-table { width: 100%; table-layout: fixed; border-collapse: collapse; }
+.admin-table th,
+.admin-table td {
+  padding: clamp(6px, .55vw, 12px) clamp(5px, .65vw, 14px);
+  text-align: left; vertical-align: middle;
+  border-bottom: 1px solid var(--admin-line);
+  overflow-wrap: anywhere;
+}
+.admin-table tbody tr:last-child td { border-bottom: 0; }
+.admin-table thead th {
+  color: var(--admin-muted); font-family: var(--admin-font-en);
+  font-size: clamp(9.5px, .67vw, 11px); line-height: 1.35; font-weight: 700;
+  letter-spacing: clamp(.02em, .07vw, .16em); text-transform: uppercase;
+}
+.admin-table tbody td { font-size: clamp(10.5px, .8vw, 13px); }
+.admin-table tbody tr:hover { background: rgba(255, 89, 168, .05); }
+.admin-idx { color: var(--admin-signal); font-family: var(--admin-font-en); font-size: clamp(9.5px, .7vw, 11px); font-weight: 700; letter-spacing: .1em; }
+.admin-login { font-family: var(--admin-font-en); font-size: clamp(10px, .76vw, 13px); line-height: 1.45; }
+.admin-self { display: inline-block; margin-left: 6px; padding: 1px 5px; color: var(--admin-signal); border: 1px solid rgba(255, 89, 168, .5); font-family: var(--admin-font-cn); font-size: 10px; }
+.admin-perms { color: var(--admin-muted); font-family: var(--admin-font-en); font-size: clamp(9.5px, .67vw, 11px); line-height: 1.5; }
+.admin-empty { color: var(--admin-muted); text-align: center; }
+.admin-actions { display: flex; flex-wrap: wrap; gap: clamp(4px, .4vw, 8px); }
+
+/* 「添加导师」行：与列表同一套列宽/表头，输入控件直接落在单元格里 */
+.admin-table--add tbody td { padding-top: clamp(6px, .6vw, 12px); padding-bottom: clamp(6px, .6vw, 12px); }
+.admin-table--add .admin-actions { justify-content: flex-start; }
+
+.admin-table input,
+.admin-table select,
+.admin-form input,
+.admin-form select {
+  width: 100%;
+  min-width: 0;
+  padding: clamp(4px, .42vw, 9px) clamp(4px, .45vw, 11px);
+  color: var(--admin-ink);
+  background: rgba(10, 10, 10, .72);
+  border: 1px solid var(--admin-line);
+  border-radius: 0;
+  font-family: inherit;
+  font-size: clamp(10px, .78vw, 13px);
+  outline: none;
+  transition: border-color .2s ease, background .2s ease;
+}
+
+.admin-table input:focus,
+.admin-table select:focus,
+.admin-form input:focus,
+.admin-form select:focus { border-color: var(--admin-signal); }
+
+.admin-table input::placeholder,
+.admin-form input::placeholder { color: rgba(255, 255, 255, .34); }
+
+.admin-table select option,
+.admin-form select option { color: #FFFFFF; background: #141414; }
+
+.admin-table :is(input, select):disabled,
+.admin-table button:disabled,
+.admin-form :is(input, select, button):disabled { opacity: .55; cursor: not-allowed; }
+
+/* 表格内的按钮随列宽收紧（三枚操作键在窄列里自动折行） */
+.admin-table .admin-btn {
+  min-height: 0;
+  padding: clamp(4px, .4vw, 9px) clamp(6px, .55vw, 12px);
+  font-size: clamp(9.5px, .62vw, 12.5px);
+}
+.admin-table .admin-btn--primary { padding: clamp(5px, .45vw, 10px) clamp(8px, .7vw, 16px); }
+
+@media (max-width: 760px) {
+  /* 单条记录一块：每个单元格左侧显示自己的列名（data-label），依旧不出现横向拖动 */
+  .admin-table,
+  .admin-table tbody,
+  .admin-table tr,
+  .admin-table th,
+  .admin-table td { display: block; width: auto; }
+  .admin-table colgroup { display: none; }
+  .admin-table thead {
+    position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+    overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+  }
+  .admin-table tr { padding: 10px 12px; border-bottom: 1px solid var(--admin-line); }
+  .admin-table tbody tr:last-child { border-bottom: 0; }
+  .admin-table td {
+    display: grid; grid-template-columns: minmax(80px, 32%) minmax(0, 1fr);
+    gap: 10px; align-items: center;
+    padding: 4px 0; border-bottom: 0;
+  }
+  .admin-table td::before {
+    content: attr(data-label);
+    color: var(--admin-muted); font-family: var(--admin-font-en);
+    font-size: 10px; font-weight: 700; letter-spacing: .06em;
+  }
+  .admin-table td:not(:has(input, select, button)):empty { display: none; }
+  .admin-table input,
+  .admin-table select { font-size: 12.5px; padding: 6px 8px; }
+  .admin-table .admin-btn { font-size: 12px; padding: 6px 10px; }
+  .admin-empty::before { content: none; }
+  .list-more-row td { display: block; padding: 8px 12px; }
+  .list-more-row td::before { content: none; }
+  .list-more-row .list-showmore { width: 100%; justify-content: center; }
+}
+
+/* ── 表单 / 按钮（沿用全站按钮交互语言：过渡 .2s，hover 提亮，不缩放不位移） ── */
+.admin-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px 18px; align-items: end; }
+.admin-field { display: grid; gap: 8px; min-width: 0; }
+.admin-field span { color: var(--admin-ash); font-size: 12px; letter-spacing: .06em; }
+.admin-form__actions { display: flex; justify-content: flex-end; }
+
+.admin-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 0 14px;
+  color: var(--admin-ink);
+  background: transparent;
+  border: 1px solid var(--admin-line);
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  cursor: pointer;
+  transition: color .2s ease, background .2s ease, border-color .2s ease, filter .2s ease;
+}
+
+.admin-btn:hover,
+.admin-btn:focus-visible { color: #FFFFFF; background: rgba(255, 255, 255, .08); border-color: var(--admin-signal); }
+.admin-btn--ghost { min-height: 34px; color: var(--admin-muted); text-decoration: none; }
+.admin-btn--primary { min-height: 42px; padding: 0 22px; color: #0A0A0A; background: var(--admin-fill); border-color: transparent; }
+.admin-btn--primary:hover,
+.admin-btn--primary:focus-visible { background: var(--admin-fill-hover); border-color: transparent; filter: brightness(1.04); }
+.admin-btn--danger { color: var(--admin-danger); border-color: rgba(240, 138, 128, .4); }
+.admin-btn--danger:hover,
+.admin-btn--danger:focus-visible { background: rgba(240, 138, 128, .12); border-color: var(--admin-danger); color: #FFFFFF; }
+
+.admin-page :is(input, select, button):focus-visible { outline: 2px solid var(--admin-signal); outline-offset: 3px; }
+
+/* 添加导师成功后的回执（含一次性初始密码） */
+.admin-created {
+  display: block; margin: 18px 0 0; padding: 14px 16px;
+  color: var(--admin-ash); border: 1px solid rgba(255, 89, 168, .45); background: rgba(255, 89, 168, .07);
+  font-size: 13px; line-height: 1.8;
+}
+.admin-created[hidden] { display: none; }
+.admin-created strong { color: var(--admin-ink); }
+.admin-created code {
+  padding: 2px 8px; margin: 0 2px; color: var(--admin-signal); background: rgba(0, 0, 0, .32);
+  font-family: var(--admin-font-en); font-size: 14px; letter-spacing: .06em;
+}
+.admin-created em { color: var(--admin-muted); font-style: normal; }
+
+.admin-perm-note { margin-top: 18px; }
+.admin-perm-note h3 { margin: 0 0 10px; font-size: 13px; font-weight: 700; color: var(--admin-muted); letter-spacing: .08em; }
+.admin-perm-note ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.admin-perm-note li { color: var(--admin-ash); font-size: 13px; }
+.admin-perm-note code { padding: 1px 6px; margin-right: 8px; background: rgba(255, 255, 255, .09); font-family: var(--admin-font-en); font-size: 12px; color: var(--admin-signal); }
+
+/* ── 活跃地图（月 / 年）：矩阵式热力格，所有角色可见 ──
+   强度阶梯沿用 VI：0 级 = 极淡浮层，1–4 级 = 梅子紫 #FF59A8 由浅到深，
+   4 级改用更亮的 #FF8AC3（与主按钮 hover 同色）保证「最活跃」一眼可辨；
+   「今日 / 本月」用金琥珀描边标出（深底强调色，和后台其它强调一致）。 */
+.active-map {
+  padding: clamp(14px, 2vw, 22px);
+  border: 1px solid var(--admin-line);
+  background: rgba(255, 255, 255, .02);
+}
+
+.active-map__head,
+.active-map__grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(4px, .5vw, 8px); }
+.active-map__head { margin-bottom: clamp(4px, .5vw, 8px); }
+.active-map__head[hidden] { display: none; }
+.active-map__wd {
+  color: var(--admin-muted); font-family: var(--admin-font-en); font-size: clamp(9px, .65vw, 11px);
+  font-weight: 700; letter-spacing: .12em; text-align: center;
+}
+
+/* 年视图：12 个月铺 6 列两行（窄屏收成 4 / 3 列），格子做成横向矩形以便放「9月 / 12 天」两行字 */
+.active-map__grid--year { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(6px, .8vw, 12px); }
+
+/* 每个格子用一条横向进度条表达活跃度：轨道铺满格子内边距，填充宽度 = 半份数 ÷ 20 × 100%，
+   方向左 → 右，0%（空轨道）~ 100%（满格）为边界，保留 21 档分辨率。
+   进度条随格子当前宽度自适应（inset 定位），无 JS resize 监听、无舍入累计误差。
+   格内日期 / 月份文字叠加在进度条之上，用 text-shadow 保证在填充色上仍可读。 */
+.active-cell {
+  position: relative; display: block;
+  height: clamp(26px, 2.3vw, 40px); min-width: 0;
+  color: #FFFFFF;
+  border: 1px solid var(--admin-line);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, .03);
+  font-family: var(--admin-font-en); font-size: clamp(9px, .68vw, 12px); font-weight: 700;
+  overflow: hidden;
+}
+.active-cell__track {
+  position: absolute; inset: 3px;
+  display: block;
+  border-radius: clamp(1px, .2vw, 3px);
+  background: rgba(255, 255, 255, .09);
+  overflow: hidden;
+}
+.active-cell__fill {
+  display: block; height: 100%;
+  border-radius: inherit;
+  background: #FF8AC3;
+  transition: width .3s ease;
+}
+.active-cell__label {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center; gap: 2px;
+  color: #FFFFFF;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .9), 0 0 2px rgba(0, 0, 0, .85);
+  pointer-events: none;
+}
+.active-cell.is-void { visibility: hidden; }              /* 当月首日之前的占位格 */
+.active-cell.is-future { background: transparent; border-style: dashed; border-color: rgba(255, 255, 255, .1); }
+.active-cell.is-future .active-cell__track { opacity: .35; }
+.active-cell.is-future .active-cell__label { color: rgba(255, 255, 255, .35); text-shadow: none; }
+.active-cell.is-today { outline: 2px solid var(--admin-signal); outline-offset: 1px; }
+
+/* 年视图格子：略高以容纳「×月 / N 人 · N 天」两行，分段仍占满格子当前宽度 */
+.active-cell--month { height: clamp(36px, 3.4vw, 54px); border-radius: 9px; }
+.active-cell--month .active-cell__label { flex-direction: column; gap: 1px; }
+.active-cell--month .active-cell__num { font-weight: 700; letter-spacing: .02em; }
+.active-cell--month .active-cell__meta { font-size: clamp(8.5px, .6vw, 11px); opacity: .9; }
+
+.active-map__foot {
+  display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; justify-content: space-between;
+  margin-top: clamp(10px, 1.4vw, 16px);
+}
+.active-map__caption { margin: 0; color: var(--admin-muted); font-size: 12px; }
+.active-map__legend { display: flex; align-items: center; gap: 8px; margin: 0; color: var(--admin-muted); font-size: 11.5px; }
+.active-map__legend-scale { display: flex; align-items: center; gap: 6px; }
+.active-map__legend-scale .active-cell {
+  width: clamp(38px, 5vw, 68px); height: 14px; border-radius: 4px; font-size: 0;
+}
+.active-map__legend-scale .active-cell__track { inset: 2px; }
+.active-map__legend-note { margin: 10px 0 0; color: var(--admin-muted); font-size: 11px; line-height: 1.7; }
+
+/* 矩阵下方的视图标签：复用底部标签行的 pill 语言，整组居中 */
+.active-map__tabs { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: clamp(14px, 2vw, 20px); }
+
+/* ── 网站使用概览（仅管理员可见）：工具条 + 三块条形图 + 用户明细表 ──
+   条形图用纯 CSS（宽度百分比）画，不引任何图表库：稳定、无依赖、随视口自适应。 */
+.usage-toolbar {
+  display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between;
+  margin-bottom: clamp(12px, 1.6vw, 18px);
+}
+.usage-range { display: flex; flex-wrap: wrap; gap: 8px; }
+.usage-range .admin-tab { min-height: 32px; padding: 0 14px; font-size: 12.5px; }
+.usage-export { text-decoration: none; }
+
+.usage-grid {
+  display: grid; gap: clamp(12px, 1.6vw, 18px);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+.usage-panel {
+  padding: clamp(12px, 1.6vw, 18px);
+  border: 1px solid var(--admin-line);
+  background: rgba(255, 255, 255, .02);
+}
+.usage-panel h3 {
+  margin: 0 0 12px; color: var(--admin-muted);
+  font-size: 12px; font-weight: 700; letter-spacing: .1em;
+}
+
+.usage-bars { display: grid; gap: 9px; }
+.usage-bar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 10px; }
+.usage-bar__head { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+.usage-bar__label { color: var(--admin-ink); font-size: 12.5px; overflow-wrap: anywhere; }
+.usage-bar__value { color: var(--admin-signal); font-family: var(--admin-font-en); font-size: 12px; font-weight: 700; white-space: nowrap; }
+.usage-bar__track { grid-column: 1 / -1; height: 8px; background: rgba(255, 255, 255, .07); border-radius: 4px; overflow: hidden; }
+.usage-bar__fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, rgba(255, 89, 168, .95), #FF8AC3); }
+.usage-empty { margin: 0; color: var(--admin-muted); font-size: 12.5px; }
+.usage-panel__hint { margin: -6px 0 12px; color: var(--admin-muted); font-size: 11px; }
+
+/* 账号明细筛选：地区 / 姓名 / 职位 / 角色 四维组合，文字标签在筛选框上方，与「添加导师」筛选栏同观感 */
+.usage-filter {
+  display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px 16px;
+  margin-top: clamp(12px, 1.6vw, 18px);
+}
+.usage-filter__item { display: flex; flex-direction: column; align-items: stretch; gap: 6px; min-width: 0; }
+.usage-filter__label { color: var(--admin-muted); font-size: 12px; font-weight: 700; letter-spacing: .06em; white-space: nowrap; }
+.usage-filter__select,
+.usage-filter__input {
+  min-height: 32px; padding: 0 10px;
+  color: var(--admin-ink); background: rgba(10, 10, 10, .72);
+  border: 1px solid var(--admin-line); border-radius: 0;
+  font-family: inherit; font-size: 12.5px; outline: none;
+}
+.usage-filter__select { min-width: 132px; }
+.usage-filter__input { width: 180px; }
+.usage-filter__select:focus,
+.usage-filter__input:focus { border-color: var(--admin-signal); }
+.usage-filter__select option { color: #FFFFFF; background: #141414; }
+.usage-filter .admin-btn { min-height: 32px; padding: 0 12px; font-size: 12.5px; align-self: flex-end; }
+.usage-filter__count { margin-left: auto; color: var(--admin-muted); font-size: 12px; white-space: nowrap; align-self: flex-end; }
+@media (max-width: 760px) {
+  .usage-filter__item { flex: 1 1 100%; }
+  .usage-filter__select, .usage-filter__input { flex: 1 1 auto; width: auto; }
+  .usage-filter__count { margin-left: 0; align-self: flex-end; }
+}
+
+/* 「账号使用明细」与上方「网站使用概览」之间的分隔：加大垂直间距，
+   用 clamp 随视口平滑缩放（小屏不低于 40px、大屏封顶 72px），响应式下保持一致且美观 */
+.usage-accounts-head { margin-top: clamp(40px, 6vw, 72px); }
+
+/* 课程信息排行：目录汇总 + 名次 + 海报缩略图 + 课程信息 + 热度条 */
+.usage-catalogs { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 12px; }
+.usage-catalogs__label { color: var(--admin-muted); font-size: 10.5px; font-weight: 700; letter-spacing: .06em; }
+.usage-catalog {
+  display: inline-flex; align-items: center; gap: 5px; padding: 2px 7px;
+  border: 1px solid var(--admin-line); border-radius: 999px;
+  color: var(--admin-muted); font-size: 10.5px; overflow-wrap: anywhere;
+}
+.usage-catalog strong { color: var(--admin-signal); font-family: var(--admin-font-en); font-size: 11px; }
+.usage-course-list { display: grid; gap: 10px; }
+.usage-course { display: grid; grid-template-columns: auto 44px minmax(0, 1fr); gap: 10px; align-items: start; }
+.usage-course__rank {
+  padding-top: 2px; color: var(--admin-signal);
+  font-family: var(--admin-font-en); font-size: 11px; font-weight: 700; letter-spacing: .06em;
+}
+.usage-course__poster {
+  display: block; width: 44px; height: 58px; object-fit: cover;
+  border: 1px solid var(--admin-line); background: rgba(255, 255, 255, .04);
+}
+.usage-course__poster--void { border-style: dashed; }
+.usage-course__main { min-width: 0; }
+.usage-course__title { color: var(--admin-ink); font-size: 12.5px; font-weight: 700; overflow-wrap: anywhere; }
+.usage-course__meta { margin-top: 2px; color: var(--admin-muted); font-size: 11px; overflow-wrap: anywhere; }
+.usage-course__stats { margin-top: 3px; color: var(--admin-signal); font-family: var(--admin-font-en); font-size: 11px; }
+.usage-course__track { height: 6px; margin-top: 6px; background: rgba(255, 255, 255, .07); border-radius: 3px; overflow: hidden; }
+.usage-course__fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, rgba(255, 89, 168, .95), #FF8AC3); }
+
+.usage-table-wrap { margin-top: clamp(12px, 1.6vw, 18px); }
+/* 完全没用过站点的账号：整行压暗，一眼看出「谁还没用过」 */
+.usage-idle td { color: var(--admin-muted); }
+
+/* 账号明细：每个账号「具体使用情况」可折叠标签控件 + 详情面板。
+   标签默认折叠（▸），点击展开（▾）；箭头旋转 + aria-expanded 双重指示状态，
+   与整页 VI 一致（信号色描边、金琥珀点缀）。详情面板铺在摘要行正下方。 */
+.usage-user-detail-row td { padding-top: 0; background: rgba(255, 255, 255, .015); }
+.usage-user__toggle {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin: 2px 0 0; padding: 6px 10px;
+  color: var(--admin-ink); background: rgba(10, 10, 10, .55);
+  border: 1px solid var(--admin-line); border-radius: 6px;
+  font-family: var(--admin-font-cn); font-size: 12px; font-weight: 600;
+  cursor: pointer; transition: background .15s ease, border-color .15s ease;
+}
+.usage-user__toggle:hover { border-color: var(--admin-signal); background: rgba(255, 89, 168, .1); }
+.usage-user__toggle:focus-visible { outline: 2px solid var(--admin-signal); outline-offset: 2px; }
+.usage-user__arrow {
+  display: inline-block; color: var(--admin-signal);
+  font-size: 11px; line-height: 1; transition: transform .2s ease;
+}
+.usage-user__toggle[aria-expanded="true"] .usage-user__arrow { transform: rotate(90deg); }
+.usage-user__detail { margin: 8px 0 12px; }
+.usage-user-detail__grid {
+  display: grid; gap: clamp(8px, 1vw, 14px);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.usage-user-detail__item {
+  padding: clamp(8px, 1vw, 12px);
+  border: 1px solid var(--admin-line); border-radius: 7px;
+  background: rgba(255, 255, 255, .02);
+}
+.usage-user-detail__k {
+  display: block; margin-bottom: 4px;
+  color: var(--admin-muted); font-family: var(--admin-font-en);
+  font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+}
+.usage-user-detail__v {
+  display: block; color: var(--admin-ink);
+  font-size: 12.5px; line-height: 1.6; overflow-wrap: anywhere;
+}
+/* 窄屏堆叠：详情行内的标签与面板同样满宽，不出现横向拖动 */
+@media (max-width: 760px) {
+  .usage-user-detail-row td { display: block; padding-left: clamp(5px, .65vw, 14px); padding-right: clamp(5px, .65vw, 14px); }
+  .usage-user-detail-row td::before { content: none; }
+  .usage-user__toggle { width: 100%; justify-content: flex-start; }
+  .list-more-row td { display: block; padding-left: clamp(5px, .65vw, 14px); padding-right: clamp(5px, .65vw, 14px); }
+  .list-more-row td::before { content: none; }
+  .list-more-row .list-showmore { justify-content: center; }
+}
+.usage-note { margin: 12px 0 0; color: var(--admin-muted); font-size: 12px; }
+.usage-note[hidden] { display: none; }
+
+/* 列表底部「展开全部 / 收起」折叠控件所在行：与逐账号详情控件共用 .usage-user__toggle 视觉 */
+.list-more-row td { padding-top: 8px; padding-bottom: 10px; text-align: center; background: rgba(255, 255, 255, .015); }
+.list-more-row .list-showmore { margin: 0 auto; }
+
+/* ── 操作日志（审计轨迹）─────────────────────────────────────
+   版面：筛选条（紧凑分组）→ 高密度表格 → 分页 → 口径说明。
+   不额外套卡片，靠间距与分隔线建立层次；关键变更用左侧色条 + 文字徽章
+   双重提示（不依赖颜色单独传达信息）。 */
+.audit-filters {
+  display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between;
+  gap: clamp(10px, 1.4vw, 18px);
+  margin-bottom: clamp(12px, 1.6vw, 18px);
+}
+.audit-range { display: flex; flex-wrap: wrap; gap: 8px; }
+.audit-range .admin-tab { min-height: 32px; padding: 0 14px; font-size: 12.5px; }
+.audit-fields { display: flex; flex-wrap: wrap; align-items: end; gap: 8px 10px; }
+.audit-field { display: grid; gap: 5px; min-width: 0; }
+.audit-field > span {
+  color: var(--admin-muted); font-size: 10.5px; font-weight: 700; letter-spacing: .08em;
+}
+.audit-field select,
+.audit-field input {
+  min-height: 32px; padding: 0 10px;
+  color: var(--admin-ink); background: rgba(10, 10, 10, .72);
+  border: 1px solid var(--admin-line); border-radius: 0;
+  font-family: inherit; font-size: 12.5px; outline: none;
+}
+.audit-field select { min-width: 138px; }
+.audit-field--search input { width: 100%; min-width: 230px; }
+.audit-field select:focus,
+.audit-field input:focus { border-color: var(--admin-signal); }
+.audit-field select option { color: #FFFFFF; background: #141414; }
+.audit-fields .admin-btn { min-height: 32px; padding: 0 12px; font-size: 12.5px; }
+
+.audit-table-wrap { border: 1px solid var(--admin-line); background: rgba(255, 255, 255, .02); }
+.audit-table-wrap[hidden],
+.audit-empty[hidden] { display: none; }
+.audit-table tbody td { vertical-align: top; }
+.audit-row { position: relative; }
+.audit-row.is-critical td:first-child { box-shadow: inset 3px 0 0 var(--admin-danger); }
+.audit-row.is-failed { background: rgba(240, 138, 128, .05); }
+
+/* 时间列：日期 + 精确到秒的时刻，形成可追溯的时间线感 */
+.audit-when { white-space: nowrap; }
+.audit-when__date { display: block; color: var(--admin-ink); font-family: var(--admin-font-en); font-size: 11.5px; font-weight: 700; }
+.audit-when__time { display: block; color: var(--admin-muted); font-family: var(--admin-font-en); font-size: 10.5px; letter-spacing: .06em; }
+.audit-actor, .audit-target { display: block; color: var(--admin-ink); font-size: 12px; font-weight: 700; overflow-wrap: anywhere; }
+.audit-sub { display: block; margin-top: 2px; color: var(--admin-muted); font-family: var(--admin-font-en); font-size: 10px; overflow-wrap: anywhere; }
+.audit-action { display: inline-block; color: var(--admin-ash); font-size: 12px; }
+
+.audit-critical {
+  display: inline-block; margin-top: 5px; padding: 1px 6px;
+  color: var(--admin-danger); border: 1px solid rgba(240, 138, 128, .5);
+  font-size: 10px; font-weight: 700; letter-spacing: .04em; white-space: nowrap;
+}
+.audit-status {
+  display: inline-block; padding: 2px 8px; border: 1px solid var(--admin-line);
+  font-size: 10.5px; font-weight: 700; letter-spacing: .04em; white-space: nowrap;
+}
+.audit-status--success { color: var(--admin-signal); border-color: rgba(255, 89, 168, .45); }
+.audit-status--failed { color: var(--admin-danger); border-color: rgba(240, 138, 128, .55); background: rgba(240, 138, 128, .08); }
+.audit-reason { display: block; margin-top: 5px; color: var(--admin-muted); font-size: 10.5px; line-height: 1.5; }
+
+/* 前后对比：字段标签 + 旧值(弱化删除线) + 箭头 + 新值(金琥珀)，网格对齐便于横向扫描 */
+.audit-changes { padding-top: 8px !important; padding-bottom: 8px !important; }
+.audit-diff {
+  display: grid; grid-template-columns: minmax(56px, auto) minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: baseline; gap: 4px 8px;
+  padding: 3px 0; border-bottom: 1px dashed rgba(255, 255, 255, .07);
+}
+.audit-diff:last-child { border-bottom: 0; }
+.audit-diff__label { color: var(--admin-muted); font-size: 10.5px; white-space: nowrap; }
+.audit-diff__before,
+.audit-diff__after { font-family: var(--admin-font-en); font-size: 11px; overflow-wrap: anywhere; }
+.audit-diff__before { color: var(--admin-muted); text-decoration: line-through; text-decoration-color: rgba(255, 255, 255, .35); }
+.audit-diff__after { color: var(--admin-signal); font-weight: 700; }
+.audit-diff__arrow { color: var(--admin-muted); font-size: 11px; }
+.audit-diff__none { color: var(--admin-muted); font-size: 11px; }
+
+/* 空状态：说明「为什么空」以及「怎样才会有数据」 */
+.audit-empty { padding: clamp(20px, 3vw, 34px); border: 1px dashed var(--admin-line); background: rgba(255, 255, 255, .02); }
+.audit-empty__title { margin: 0 0 8px; color: var(--admin-ink); font-size: 14px; font-weight: 700; }
+.audit-empty__hint { margin: 0 0 16px; max-width: 62ch; color: var(--admin-muted); font-size: 12.5px; line-height: 1.8; }
+
+.audit-pager,
+.admin-pager {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 10px 16px; margin-top: clamp(10px, 1.4vw, 16px);
+}
+.audit-pager__count, .admin-pager__count { margin: 0; color: var(--admin-muted); font-size: 12px; }
+.audit-pager__pages, .admin-pager__pages { display: flex; flex-wrap: wrap; gap: 6px; }
+.audit-pager__pages .admin-tab, .admin-pager__pages .admin-tab { min-height: 30px; padding: 0 11px; font-size: 12px; }
+.audit-pager__pages .admin-tab:disabled, .admin-pager__pages .admin-tab:disabled { opacity: .4; cursor: not-allowed; }
+.audit-note { margin: 12px 0 0; color: var(--admin-muted); font-size: 11.5px; line-height: 1.7; }
+
+@media (max-width: 1100px) {
+  .audit-filters { align-items: stretch; }
+  .audit-fields { width: 100%; }
+  .audit-field--search { flex: 1 1 220px; }
+}
+@media (max-width: 760px) {
+  .audit-diff { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
+  .audit-diff__label { grid-column: 1 / -1; }
+}
+
+@media (max-width: 560px) {
+  .usage-range .admin-tab { min-height: 30px; padding: 0 12px; font-size: 12px; }
+  .usage-export { width: 100%; justify-content: center; }
+}
+
+/* ── 底部标签行：账号与权限 + 登出（整组水平居中） ── */
+.admin-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: clamp(30px, 5vh, 60px) 0 0;
+}
+
+.admin-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 18px;
+  color: var(--admin-muted);
+  background: transparent;
+  border: 1px solid var(--admin-line);
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  cursor: pointer;
+  transition: color .2s ease, background .2s ease, border-color .2s ease;
+}
+
+/* 当前页标签：主色描边 + 提亮文字（与站内 tab 语言一致） */
+.admin-tab.is-active { color: var(--admin-ink); border-color: rgba(255, 89, 168, .55); }
+.admin-tab--action:hover,
+.admin-tab--action:focus-visible { color: #FFFFFF; background: rgba(255, 255, 255, .08); border-color: var(--admin-signal); }
+
+@media (max-width: 900px) {
+  .admin-hero { grid-template-columns: 1fr; }
+  .admin-stats { margin-top: 8px; }
+}
+
+/* 活跃地图在窄屏：年视图 12 格改为 4 列 / 3 列，格子保持长方形（高度按视口收一档） */
+@media (max-width: 900px) {
+  .active-map__grid--year { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .active-map__grid--year { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .active-map__grid { gap: 5px; }
+  .active-cell { height: 24px; border-radius: 5px; font-size: 9px; }
+  .active-cell--month { height: 38px; border-radius: 7px; }
+  /* 窄屏格子变窄时进度条仍铺满格内边距，只收紧内边距 */
+  .active-cell__track { inset: 2px; }
+}
+
+.admin-btn[hidden] { display: none; }
+/* 后台弹窗（内容编辑）居中：admin-site.css 的全局 margin:0 会覆盖 <dialog> 默认的 margin:auto */
+.admin-page dialog { margin: auto; }

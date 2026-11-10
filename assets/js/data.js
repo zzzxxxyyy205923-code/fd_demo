@@ -15,30 +15,33 @@
 
 const DATA = (() => {
   const BASE = 'assets/data/';
-  const BUNDLE = 'assets/js/data.bundle.js?v=20261031a';   /* 本地镜像，由 tools/build_data_bundle.py 生成 */
+  const BUNDLE = 'assets/js/data.bundle.js?v=20261109v';   /* 本地镜像，由 tools/build_data_bundle.py 生成 */
 
   /* 逻辑名 → JSON 文件（不含扩展名）→ 消费方 JS
      site            → site-content.json      → main.js（页头 / 页脚 / 首页 / 学科 / 学院 / 故事 / 活动 / 搜索 / 占位页）
      courseProducts  → course-products.json   → course-products.js（课程产品分区与详情）、main.js（首页 Find a course）
      coursesIndustry → courses_industry.json  → course-products.js（商业实践 / 就业实习详情）
      coursesAcademic → courses_academic.json  → course-products.js（海外冬夏校 / 大师课详情）
-     offers          → offers.json            → main.js（Offer 成果） */
-  const FILES = {
-    site: 'site-content',
-    courseProducts: 'course-products',
-    coursesAcademic: 'courses_academic',
-    coursesIndustry: 'courses_industry',
-    offers: 'offers'
-  };
+     offers          → offers.json            → main.js（Offer 成果）
+     resources       → resources.json         → pages/resources.js（校企资源页） */
+     const FILES = {
+     site: 'site-content',
+     courseProducts: 'course-products',
+     coursesAcademic: 'courses_academic',
+     coursesIndustry: 'courses_industry',
+     offers: 'offers',
+     resources: 'resources'
+     };
 
-  /* 必需字段：缺任意一项即视为数据结构异常，避免半渲染 */
-  const REQUIRED = {
-    site: ['data', 'ui'],
-    courseProducts: ['hero', 'zones'],
-    coursesAcademic: [],
-    coursesIndustry: [],
-    offers: ['hero', 'filters', 'groups']
-  };
+     /* 必需字段：缺任意一项即视为数据结构异常，避免半渲染 */
+     const REQUIRED = {
+     site: ['data', 'ui'],
+     courseProducts: ['hero', 'zones'],
+     coursesAcademic: [],
+     coursesIndustry: [],
+     offers: ['hero', 'filters', 'groups'],
+     resources: ['title', 'partners']
+     };
 
   const cache = {};
   let source = '';

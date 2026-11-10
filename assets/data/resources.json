@@ -1,0 +1,218 @@
+{
+  "eyebrow": "RESOURCES",
+  "title": "校企资源",
+  "intro": "汇集品牌、美术馆与独立设计师工作室等合作资源；滑动浏览 logo，悬停查看合作内容。",
+  "countLabel": "{n} 家合作品牌与机构",
+  "marqueeEyebrow": "PARTNERS",
+  "marqueeTitle": "合作品牌与机构",
+  "directoryEyebrow": "DIRECTORY",
+  "directoryTitle": "资源名录",
+  "logoPlaceholder": "LOGO",
+  "logoAlt": "{name} Logo",
+  "cardAria": "查看 {name} 合作内容",
+  "hoverEyebrow": "COOPERATION",
+  "introFallback": "合作内容整理中",
+  "speedPxPerSec": 46,
+  "partners": [
+    {
+      "id": "kz-ksiezyc",
+      "nameEn": "KZ.KSIEZYC",
+      "nameCn": "小月亮",
+      "logo": "",
+      "intro": "2018年由设计师孟月明创立，品牌名取自波兰语“月亮”，主打去性别化设计与未来感廓形。",
+      "collab": []
+    },
+    {
+      "id": "urban-revivo",
+      "nameEn": "URBAN REVIVO",
+      "nameCn": "UR",
+      "logo": "assets/img/resources/urban-revivo.png",
+      "intro": "2006年创立于广州的快时尚品牌，隶属快尚时装（广州）有限公司，门店覆盖多个国家。",
+      "collab": []
+    },
+    {
+      "id": "alor-valley",
+      "nameEn": "Alor Valley",
+      "nameCn": "十里芳菲",
+      "logo": "assets/img/resources/alor-valley.png",
+      "intro": "杭州西溪的度假村落品牌，以村落式住宿与自然生活场景运营为主。",
+      "collab": []
+    },
+    {
+      "id": "today-art-museum",
+      "nameEn": "Today Art Museum",
+      "nameCn": "今日美术馆",
+      "logo": "assets/img/resources/today-art-museum.png",
+      "intro": "2002年成立于北京的民营当代艺术馆，专注中国当代艺术的展览与研究。",
+      "collab": []
+    },
+    {
+      "id": "hermes",
+      "nameEn": "HERMÈS",
+      "nameCn": "爱马仕",
+      "logo": "assets/img/resources/hermes.png",
+      "intro": "1837年创立于巴黎的法国奢侈品集团，以皮具、丝巾与马具工艺起家。",
+      "collab": []
+    },
+    {
+      "id": "gucci",
+      "nameEn": "GUCCI",
+      "nameCn": "古驰",
+      "logo": "assets/img/resources/gucci.png",
+      "intro": "1921年创立于佛罗伦萨的意大利奢侈品牌，现属开云集团。",
+      "collab": []
+    },
+    {
+      "id": "eden-tan",
+      "nameEn": "Eden Tan",
+      "nameCn": "",
+      "logo": "assets/img/resources/eden-tan.png",
+      "intro": "伦敦设计师 Eden Tan 的同名品牌，以零废弃剪裁与再造面料实验为特色。",
+      "collab": []
+    },
+    {
+      "id": "wed",
+      "nameEn": "WED",
+      "nameCn": "",
+      "logo": "assets/img/resources/wed.png",
+      "intro": "位于伦敦、备受赞誉的时尚品牌，主打非传统风格的婚纱与晚礼服。该品牌由中央圣马丁艺术与设计学院（Central Saint Martins）校友 Amy Trinh 和 Evan Phillips 于 2019 年创立，因重塑了传统礼服的既定规则，而深受时尚圈内人士青睐。",
+      "collab": []
+    },
+    {
+      "id": "patrick-mcdowell",
+      "nameEn": "Patrick McDowell",
+      "nameCn": "",
+      "logo": "assets/img/resources/patrick-mcdowell.png",
+      "intro": "英国设计师 Patrick McDowell 的同名品牌，以可持续材料与循环设计实践著称。",
+      "collab": []
+    },
+    {
+      "id": "nicholas-daley",
+      "nameEn": "Nicholas Daley",
+      "nameCn": "",
+      "logo": "assets/img/resources/nicholas-daley.png",
+      "intro": "伦敦设计师 Nicholas Daley 的同名品牌，关注黑人音乐文化与纺织工艺。",
+      "collab": []
+    },
+    {
+      "id": "paria-farzaneh",
+      "nameEn": "paria FARZANEH",
+      "nameCn": "",
+      "logo": "assets/img/resources/paria-farzaneh.png",
+      "intro": "伦敦设计师 Paria Farzaneh 的同名品牌，将伊朗印花语言与功能服装结合。",
+      "collab": []
+    },
+    {
+      "id": "harri",
+      "nameEn": "HARRI",
+      "nameCn": "",
+      "logo": "assets/img/resources/harri.png",
+      "intro": "图为字标局部（仅存HARRI），据字标特征推断为英国设计师品牌Harris Reed，待确认。",
+      "collab": []
+    },
+    {
+      "id": "anciela",
+      "nameEn": "ANCIELA",
+      "nameCn": "",
+      "logo": "assets/img/resources/anciela.png",
+      "intro": "总部位于伦敦、屡获殊荣的可持续奢侈时尚品牌，成立于2019年。在哥伦比亚与智利混血的跨学科设计师Jennifer Droguett Espinosa的带领下，该品牌将南美民间传说、历史服饰与实验性剪裁巧妙融合，并坚定致力于推动循环与再生时尚。",
+      "collab": []
+    },
+    {
+      "id": "sabirah",
+      "nameEn": "SABIRAH",
+      "nameCn": "",
+      "logo": "assets/img/resources/sabirah.png",
+      "intro": "英国设计师 Deborah Latouche 创立的品牌，主打包容性尺码与可持续面料。",
+      "collab": []
+    },
+    {
+      "id": "labrum",
+      "nameEn": "LABRUM",
+      "nameCn": "",
+      "logo": "assets/img/resources/labrum.png",
+      "intro": "2014年由 Foday Dumbuya 在伦敦创立，融合西非文化与英式剪裁的男装品牌。",
+      "collab": []
+    },
+    {
+      "id": "jawara-alleyne",
+      "nameEn": "Jawara Alleyne",
+      "nameCn": "",
+      "logo": "assets/img/resources/jawara-alleyne.png",
+      "intro": "伦敦设计师 Jawara Alleyne 的同名品牌，以解构手法与加勒比文化为线索。",
+      "collab": []
+    },
+    {
+      "id": "liberty-rose",
+      "nameEn": "Liberty Rose",
+      "nameCn": "",
+      "logo": "assets/img/resources/liberty-rose.png",
+      "intro": "未找到官方信息（金色手写体字标，未能确认对应主体）。",
+      "collab": []
+    },
+    {
+      "id": "feben",
+      "nameEn": "FEBEN",
+      "nameCn": "",
+      "logo": "assets/img/resources/feben.png",
+      "intro": "伦敦设计师 Feben 创立的同名品牌，以针织工艺与身体叙事为特色。",
+      "collab": []
+    },
+    {
+      "id": "olubiyi-thomas",
+      "nameEn": "Olubiyi Thomas",
+      "nameCn": "",
+      "logo": "assets/img/resources/olubiyi-thomas.png",
+      "intro": "设计师 Olubiyi Thomas 的同名品牌（标识 0/3），融合尼日利亚与苏格兰工艺传统。",
+      "collab": []
+    },
+    {
+      "id": "saul",
+      "nameEn": "SAUL",
+      "nameCn": "",
+      "logo": "assets/img/resources/saul.png",
+      "intro": "伦敦设计师 Saul Nash 的同名品牌，以舞蹈与运动服装语言见长（版面中字标为镜像）。",
+      "collab": []
+    },
+    {
+      "id": "monad-london",
+      "nameEn": "Monad London",
+      "nameCn": "",
+      "logo": "assets/img/resources/monad-london.png",
+      "intro": "伦敦设计师品牌 Monad，以手工针织与雕塑感廓形为主要设计语言。",
+      "collab": []
+    },
+    {
+      "id": "aaron-esh",
+      "nameEn": "AARON ESH",
+      "nameCn": "",
+      "logo": "assets/img/resources/aaron-esh.png",
+      "intro": "伦敦设计师 Aaron Esh 的同名品牌，以利落剪裁与青年文化语汇见长。",
+      "collab": []
+    },
+    {
+      "id": "supriya-lele",
+      "nameEn": "SUPRIYA LELE",
+      "nameCn": "",
+      "logo": "assets/img/resources/supriya-lele.png",
+      "intro": "英国设计师 Supriya Lele 的同名品牌，融合印度传统元素与极简剪裁。",
+      "collab": []
+    },
+    {
+      "id": "tolu-coker",
+      "nameEn": "Tolu Coker",
+      "nameCn": "",
+      "logo": "assets/img/resources/tolu-coker.png",
+      "intro": "英籍尼日利亚裔时装设计师、纺织艺术家兼插画师现居伦敦。该品牌以注重可持续发展、中性剪裁，以及围绕文化认同和社会议题展开叙事而著称",
+      "collab": []
+    },
+    {
+      "id": "standing-ground",
+      "nameEn": "standing ground",
+      "nameCn": "",
+      "logo": "assets/img/resources/standing-ground.png",
+      "intro": "由Michael Stewart创立的时尚品牌。这位爱尔兰设计师于2017年毕业于英国皇家艺术学院，并于2021年创立了Standing Ground。Standing Ground被Fashion East选中后，在伦敦时装周上首次亮相。",
+      "collab": []
+    }
+  ]
+}

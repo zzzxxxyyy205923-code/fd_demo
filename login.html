@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="assets/img/brand/logo-fashion.png">
+  <title>登录｜SFK 时尚科系 · Fashion Design</title>
+  <!-- 页面架构与交互逻辑完整复用 art-humanities_demo 的登录闸门：
+       main.auth-split → .auth-backdrop + .auth-stage + .auth-panel，表单与 ?next= 回跳逻辑不变；
+       视觉层换为 SFK 时尚科系品牌（粉黑体系 + 本站首屏影像 + 本站 logo）。 -->
+  <link rel="stylesheet" href="assets/css/fonts.css?v=20261109v">
+  <link rel="stylesheet" href="assets/css/auth.css?v=20261109v">
+  <link rel="stylesheet" href="assets/css/admin-fashion.css?v=20261109v">
+  <script src="assets/js/auth-guard.js?v=20261109v"></script>
+</head>
+<body class="auth-page">
+  <main class="auth-split">
+    <div class="auth-backdrop" aria-hidden="true">
+      <img class="auth-backdrop-video" src="assets/img/hero/slide-01.jpeg" alt="">
+    </div>
+    <section class="auth-stage" aria-labelledby="auth-home-title">
+      <div class="auth-stage-copy">
+        <p class="hero-kicker">SFK FASHION DESIGN DEPARTMENT</p>
+        <h1 class="hero-title" id="auth-home-title">以时装语言<br><span class="hero-title-accent">塑造</span><br>未来设计人才</h1>
+        <p class="hero-desc">从时装设计、时尚商业到时尚传媒与纺织材料，时尚科系帮助学生建立一条能被名校看见、能被行业理解的成长路径。</p>
+        <div class="hero-disciplines" aria-label="科系专业方向"><span>FASHION DESIGN</span><span>FASHION BUSINESS</span><span>FASHION COMMUNICATION</span><span>TEXTILES</span><span>PORTFOLIO</span></div>
+      </div>
+    </section>
+    <section class="auth-panel" aria-labelledby="auth-login-title">
+      <div class="auth-panel-inner">
+      <div class="auth-brand">
+        <img src="assets/img/brand/logo-fashion.png" alt="SFK 时尚科系">
+        <span>STAFF ACCESS · 后台登录</span>
+      </div>
+      <h2 id="auth-login-title">登录后台管理系统</h2>
+      <p class="auth-lead">请使用内部账号登录，进入后可管理账号与权限。</p>
+      <form class="auth-form" id="loginForm" novalidate>
+        <label class="auth-field">
+          <span>账号或邮箱</span>
+          <input id="username" name="username" type="text" autocomplete="username" required maxlength="80">
+        </label>
+        <label class="auth-field">
+          <span>密码</span>
+          <input id="password" name="password" type="password" autocomplete="current-password" required maxlength="64">
+        </label>
+        <p class="auth-error" id="loginError" role="alert"></p>
+        <div class="auth-form-actions">
+          <button class="auth-submit" type="submit">
+            <span>登录</span>
+            <svg width="18" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 9 9-9 9"/></svg>
+          </button>
+          <button class="auth-forgot" id="forgotPassword" type="button">忘记密码？</button>
+        </div>
+      </form>
+      </div>
+    </section>
+  </main>
+  <script src="assets/js/auth-login.js?v=20261109v"></script>
+</body>
+</html>

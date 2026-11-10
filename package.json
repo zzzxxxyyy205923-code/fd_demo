@@ -1,0 +1,25 @@
+{
+  "name": "sfk-fashion-design",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SFK 时尚科系站点 · 复用 art-humanities_demo 的后台账号与权限管理系统",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js",
+    "account": "node server/scripts/account.js",
+    "account:add": "node server/scripts/account.js add",
+    "account:list": "node server/scripts/account.js list",
+    "account:remove": "node server/scripts/account.js remove",
+    "account:passwd": "node server/scripts/account.js passwd",
+    "account:hash": "node server/scripts/account.js hash"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "express": "^4.21.2"
+  }
+}

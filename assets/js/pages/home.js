@@ -34,18 +34,16 @@ function renderHome() {
         </div>
         <a class="more-link" href="#/courses">${esc(T.findCourse.more)} <span class="arr">→</span></a>
       </div>
-      <div class="card-grid">
-        ${C.home_courses.map((id, i) => {
+      <div class="cp-grid cp-grid--featured">
+        ${C.home_courses.map(id => {
+          /* 与「课程产品」页完全同源的卡片：CourseProducts.card() 输出同款
+             cp-card（封面 / 角标 / 眉标 / 中英标题 / 简介 / chips），
+             点击由 main.js 的全局委托打开同一详情浮层 */
           const cp = DATA.courseProducts || {};
-          const p = (cp.longform || []).concat(cp.catalog || []).filter(x => x.id === id)[0];
+          const zone = (CourseProducts.ZONES || []).find(z => (cp[z.key] || []).some(x => x.id === id));
+          const p = zone ? (cp[zone.key] || []).filter(x => x.id === id)[0] : null;
           if (!p) return '';
-          return `
-        <div class="course-card" role="button" tabindex="0" data-cp-id="${esc(p.id)}" aria-label="${esc(p.meta.titleCn)}">
-          ${ph(T.common.courseLabelPrefix + (i + 1))}
-          <h3>${esc(p.meta.titleCn)}</h3>
-          <div class="course-card__en u-en">${esc(p.meta.titleEn)}</div>
-          <span class="subject-tile__line" aria-hidden="true"></span>
-        </div>`;
+          return CourseProducts.card(p, zone.group);
         }).join('')}
       </div>
     </div>

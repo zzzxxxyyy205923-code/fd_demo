@@ -30,7 +30,7 @@
     {
       "id": "elite-incubator",
       "badge": "孵化计划",
-      "cover": "",
+      "cover": "assets/img/products/青年艺术家孵化计划.png",
       "placeholder": true,
       "tileVariant": null,
       "levels": [
@@ -62,7 +62,7 @@
     {
       "id": "changemakers",
       "badge": "长线内容",
-      "cover": "",
+      "cover": "assets/img/products/美国研究生未来精英计划.png",
       "placeholder": false,
       "tileVariant": null,
       "levels": [
@@ -72,12 +72,12 @@
         "eyebrow": "US Graduate Admissions｜研究生申请 · 作品集 + 科研双轨",
         "titleEn": "US Graduate Elite Program",
         "titleCn": "美国研究生未来精英计划",
-        "desc": "面向冲刺美国顶尖艺术院校、藤校及综合大学艺术设计/跨学科创意方向的长期规划型产品：以作品集为核心，整合 AI 前沿技术、科研论文、海外教授项目与商业实践，建立更完整、更有说服力的美研申请竞争力。",
+        "desc": "面向计划申请美国时尚设计及相关研究生的学生，建立从专业定位、研究深化、材料实验到申请表达的完整成长路径。",
         "chips": [
-          "TOP1 – TOP10 五层级",
-          "AI全线覆盖",
-          "科研论文双收获",
-          "招募中"
+          "Interdisciplinary",
+          "Research",
+          "Innovation",
+          "Technology"
         ]
       },
       "snapshot": [
@@ -141,12 +141,873 @@
       "closing": {
         "cn": "用作品集与科研，同时回答「你是谁」。",
         "en": "Portfolio and research, answering who you are."
+      },
+      "detail": {
+        "sections": [
+          {
+            "type": "deckNav",
+            "id": "deck-p2",
+            "no": "01",
+            "kicker": "产品总览 / SNAPSHOT",
+            "title": "Think Across Disciplines.",
+            "subtitle": "Research Through Design. Create What’s Next.",
+            "aside": {
+              "eyebrow": "US POSTGRADUATE PROGRAM",
+              "lines": [
+                "跨越专业边界，",
+                "用设计研究未来。"
+              ]
+            },
+            "items": [
+              {
+                "no": "01 / Positioning",
+                "title": "产品定位",
+                "note": "从完成作品，到提出问题",
+                "target": "deck-p3"
+              },
+              {
+                "no": "02 / Why US",
+                "title": "为什么选择美国",
+                "note": "重视文化、创新与社会议题",
+                "target": "deck-p4"
+              },
+              {
+                "no": "03 / SFK Method",
+                "title": "八步成长方法",
+                "note": "POSITION → FUTURE",
+                "target": "deck-p5"
+              },
+              {
+                "no": "04 / Advantages",
+                "title": "五大培养优势",
+                "note": "跨学科 · Research · Critique",
+                "target": "deck-p6"
+              },
+              {
+                "no": "05 / Core Courses",
+                "title": "重点课程与项目",
+                "note": "方向探索与项目落地",
+                "target": "deck-p7-8"
+              },
+              {
+                "no": "06 / Meta Lab",
+                "title": "Meta Lab研究",
+                "note": "Studio · Research · Critique",
+                "target": "deck-p9"
+              },
+              {
+                "no": "07 / Programs",
+                "title": "七大特色专业",
+                "note": "七大赛道 · 院校匹配",
+                "target": "deck-p12-18"
+              },
+              {
+                "no": "08 / Journey",
+                "title": "美研成长路径",
+                "note": "完整申请准备",
+                "target": "deck-p19"
+              }
+            ]
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p1",
+            "no": "02",
+            "kicker": "US Graduate Elite Program",
+            "title": "从时尚创作，到跨学科研究与创新实践",
+            "variant": "stats",
+            "columns": 4,
+            "items": [
+              {
+                "value": "7",
+                "title": "特色赛道"
+              },
+              {
+                "value": "5",
+                "title": "核心培养优势"
+              },
+              {
+                "value": "8",
+                "title": "申请成长步骤"
+              },
+              {
+                "value": "20",
+                "title": "内容页"
+              }
+            ]
+          },
+          {
+            "type": "deckSplit",
+            "id": "deck-p3",
+            "no": "03",
+            "kicker": "产品定位 / POSITIONING",
+            "title": "从设计项目，到跨学科研究与创新实践",
+            "intro": "美国的时尚研究生教育鼓励学生将设计、技术、社会、文化与商业议题联系起来。",
+            "note": "SFK培养路径：以专业定位为起点，以可验证的研究方法为支撑，通过实验、原型和反思，呈现个人独立创作立场。",
+            "arrow": "→",
+            "cols": [
+              {
+                "eyebrow": "BEFORE · 作品导向",
+                "bullets": [
+                  "• 关注“做出什么”",
+                  "• 仅展示造型与视觉结果",
+                  "• 在单一设计领域寻找答案"
+                ]
+              },
+              {
+                "eyebrow": "AFTER · 研究导向",
+                "bullets": [
+                  "✓ 提出值得探索的问题",
+                  "✓ 研究路径明确，开展实验与实践",
+                  "✓ 跨学科视角，形成个人创作方案"
+                ]
+              }
+            ],
+            "footer": "不止创造一个系列，更要回答一个值得探索的问题。"
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p4",
+            "no": "04",
+            "kicker": "WHY US / 申请美国",
+            "title": "在跨学科教育中，重新定义时尚的边界",
+            "intro": "时尚与技术、材料、影像、社会议题及品牌商业互相影响。美国院校强调研究、实验、个体表达与协作。",
+            "columns": 2,
+            "items": [
+              {
+                "no": "01",
+                "en": "INTERDISCIPLINARY",
+                "title": "跨学科",
+                "desc": "打通服装、面料、影像、科技、商业与文化研究。"
+              },
+              {
+                "no": "02",
+                "en": "RESEARCH",
+                "title": "研究能力",
+                "desc": "从研究问题、案例分析、田野观察到证据建构。"
+              },
+              {
+                "no": "03",
+                "en": "TECHNOLOGY",
+                "title": "技术探索",
+                "desc": "数字打样、3D、可持续材料、交互与生产技术。"
+              },
+              {
+                "no": "04",
+                "en": "INNOVATION",
+                "title": "创新实践",
+                "desc": "让个人观点与真实场景结合，形成可讨论的结果。"
+              }
+            ]
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p5",
+            "no": "05",
+            "kicker": "SFK METHOD / 培养方法",
+            "title": "我们如何培养一个美研申请者？",
+            "intro": "从 Portfolio Building，到 Research & Innovation.",
+            "columns": 4,
+            "items": [
+              {
+                "no": "1",
+                "en": "POSITION",
+                "title": "专业定位",
+                "desc": "识别背景与个人优势"
+              },
+              {
+                "no": "2",
+                "en": "BUILD",
+                "title": "跨学科建构",
+                "desc": "建立 Design / Art / Business"
+              },
+              {
+                "no": "3",
+                "en": "QUESTION",
+                "title": "提出问题",
+                "desc": "从现象、社会与文化出发"
+              },
+              {
+                "no": "4",
+                "en": "CREATE",
+                "title": "设计实践",
+                "desc": "构建实验与原型"
+              },
+              {
+                "no": "5",
+                "en": "RESEARCH",
+                "title": "研究深化",
+                "desc": "数据与方法验证"
+              },
+              {
+                "no": "6",
+                "en": "CONNECT",
+                "title": "国际连接",
+                "desc": "Critique 与国际反馈"
+              },
+              {
+                "no": "7",
+                "en": "PRESENT",
+                "title": "申请表达",
+                "desc": "作品集、文书、面试"
+              },
+              {
+                "no": "8",
+                "en": "FUTURE",
+                "title": "升学职业",
+                "desc": "明确学术与就业方向"
+              }
+            ],
+            "footer": "核心逻辑：QUESTION → CREATE → RESEARCH"
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p6",
+            "no": "06",
+            "kicker": "核心优势 / CORE ADVANTAGES",
+            "title": "五大培养优势",
+            "intro": "以跨学科研究、技术实验与批判反馈，构建申请的长期竞争力。",
+            "columns": 2,
+            "items": [
+              {
+                "no": "01",
+                "title": "跨学科创新能力",
+                "desc": "突破专业边界，形成问题意识",
+                "note": "Design / Art / Technology / Humanity / Business"
+              },
+              {
+                "no": "02",
+                "title": "AI与新技术实践",
+                "desc": "让AI工具赋能创新与交互",
+                "note": "3D制作、生成式AI与数字设计"
+              },
+              {
+                "no": "03",
+                "title": "Meta Lab革新机制",
+                "desc": "从创作到Research-based Practice",
+                "note": "Studio → 研究问题 → 实验 → 反馈"
+              },
+              {
+                "no": "04",
+                "title": "项目+科研双线成果",
+                "desc": "一个问题，两条成果形式",
+                "note": "设计原型、研究方法、证据与结论"
+              },
+              {
+                "no": "05",
+                "title": "多国国际学术反馈",
+                "desc": "国际导师与专业研究讨论",
+                "note": "Lecture / Critique / 作品表达"
+              }
+            ]
+          },
+          {
+            "type": "deckRow",
+            "id": "deck-p7-8",
+            "no": "07 / 08",
+            "pages": [
+              {
+                "no": "07",
+                "kicker": "重点课程 / CORE COURSES",
+                "title": "重点课程与项目",
+                "intro": "五个核心模块，从申请需求到研究结果，逐层建立升学竞争力。",
+                "cards": [
+                  {
+                    "en": "STUDIO",
+                    "title": "专业规划与方向探索",
+                    "note": "定位背景｜专业选择｜目标院校",
+                    "desc": "建立七赛道申请路径"
+                  },
+                  {
+                    "en": "RESEARCH",
+                    "title": "跨学科创新能力",
+                    "note": "Design｜Art｜Tech｜Humanity｜Business",
+                    "desc": "形成跨领域问题意识"
+                  },
+                  {
+                    "en": "PRACTICE",
+                    "title": "自主命题 & 商业实践",
+                    "note": "Research｜设计实验｜真实Brief",
+                    "desc": "建立独立判断与实践能力"
+                  }
+                ]
+              },
+              {
+                "no": "08",
+                "kicker": "CORE COURSES / PROGRAMS",
+                "title": "重点课程与项目（续）",
+                "intro": "围绕Meta Lab、国际反馈与申请表达建立可呈现的过程证据。",
+                "cards": [
+                  {
+                    "en": "META LAB",
+                    "title": "Meta Lab革新机制",
+                    "note": "Studio｜Research｜Methodology｜Critique",
+                    "desc": "建立可追溯的实验记录"
+                  },
+                  {
+                    "en": "GLOBAL CRITIQUE",
+                    "title": "国际学术与申请表达",
+                    "note": "海外教授｜作品集网站｜SP｜面试",
+                    "desc": "让研究能被清晰说明"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p9",
+            "no": "09",
+            "kicker": "META LAB / RESEARCH LAB",
+            "title": "不止 Studio，更是一场研究实验",
+            "intro": "从设计项目走向 Research-based Practice：研究问题、方法、证据与讨论。",
+            "header": {
+              "eyebrow": "META LAB",
+              "title": "STUDIO + RESEARCH + CRITIQUE",
+              "desc": "将项目推进到研究问题、方法、实验、数据、证据与讨论。"
+            },
+            "columns": 3,
+            "items": [
+              {
+                "en": "STUDIO",
+                "title": "从创意进入跨学科制作",
+                "desc": "设计、技术、人文与商业"
+              },
+              {
+                "en": "RESEARCH",
+                "title": "把设计过程转化为可被讨论的研究",
+                "desc": "Question · Method · Evidence"
+              },
+              {
+                "en": "CRITIQUE",
+                "title": "在多重视角中持续修正",
+                "desc": "海外教授、行业导师与团队反馈"
+              }
+            ]
+          },
+          {
+            "type": "deckSplit",
+            "id": "deck-p10",
+            "no": "10",
+            "kicker": "项目+科研 / PROJECT + RESEARCH",
+            "title": "一个项目，可以走得更远",
+            "intro": "围绕同一个研究问题，同时发展设计实践与学术研究两条成果路径。",
+            "cols": [
+              {
+                "eyebrow": "DESIGN PRACTICE",
+                "title": "设计实践",
+                "sub": "设计概念与实体结果",
+                "bullets": [
+                  "✓ Research Process",
+                  "✓ Prototype / Collection",
+                  "✓ Interaction / Material",
+                  "✓ Final Outcome"
+                ]
+              },
+              {
+                "eyebrow": "ACADEMIC RESEARCH",
+                "title": "学术研究",
+                "sub": "研究论证与验证",
+                "bullets": [
+                  "✓ Research Question",
+                  "✓ Methodology",
+                  "✓ Experiment / Evidence",
+                  "✓ Analysis / Paper"
+                ]
+              }
+            ],
+            "footer": "Design makes an idea tangible. Research makes an idea arguable."
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p11",
+            "no": "11",
+            "kicker": "国际学术 / GLOBAL CRITIQUE",
+            "title": "从 Studio，到国际学术现场",
+            "intro": "通过海外教授、冬夏校、国际Lecture / Critique与多元专业反馈，学习如何阐述设计、研究与创新。",
+            "header": {
+              "tags": [
+                "GLOBAL / LECTURE",
+                "INTERNATIONAL / CRITIQUE"
+              ]
+            },
+            "columns": 5,
+            "items": [
+              {
+                "en": "LEARN",
+                "title": "海外教授授课"
+              },
+              {
+                "en": "DISCUSS",
+                "title": "Lecture / Critique"
+              },
+              {
+                "en": "EXPERIENCE",
+                "title": "冬夏校与国际项目"
+              },
+              {
+                "en": "REVIEW",
+                "title": "多维专业反馈"
+              },
+              {
+                "en": "CONNECT",
+                "title": "国际导师与同行交流"
+              }
+            ]
+          },
+          {
+            "type": "deckTracks",
+            "id": "deck-p12-18",
+            "no": "12",
+            "kicker": "院校与专业推荐 / SCHOOL & PROGRAM RECOMMENDATIONS",
+            "title": "七大赛道，匹配代表性美研项目",
+            "intro": "按七大时尚赛道匹配项目，具体选校结合学生背景与作品方向个性化规划。",
+            "tabs": [
+              {
+                "no": "01",
+                "name": "男装设计"
+              },
+              {
+                "no": "02",
+                "name": "女装设计"
+              },
+              {
+                "no": "03",
+                "name": "戏服设计"
+              },
+              {
+                "no": "04",
+                "name": "面料设计"
+              },
+              {
+                "no": "05",
+                "name": "珠宝配饰"
+              },
+              {
+                "no": "06",
+                "name": "时尚传媒"
+              },
+              {
+                "no": "07",
+                "name": "时尚管理"
+              }
+            ],
+            "tracks": [
+              {
+                "no": "01",
+                "name": "男装设计",
+                "en": "Menswear Design",
+                "theme": "身体结构 · 男装廓形 · 文化身份",
+                "schools": [
+                  {
+                    "cn": "帕森斯设计学院",
+                    "en": "Parsons School of Design",
+                    "abbr": "P",
+                    "program": "MFA Fashion Design and Society",
+                    "tag": "适配方向",
+                    "desc": "以服装设计研究为基础，将男装作为个人系列与研究命题进行发展。"
+                  },
+                  {
+                    "cn": "普瑞特艺术学院",
+                    "en": "Pratt Institute",
+                    "abbr": "PR",
+                    "program": "MFA Fashion Collection + Communication",
+                    "tag": "适配方向",
+                    "desc": "通过系列创作与视觉传播建立个人时尚设计语言。"
+                  }
+                ]
+              },
+              {
+                "no": "02",
+                "name": "女装设计",
+                "en": "Womenswear Design",
+                "theme": "女性身体 · 系列实验 · 文化叙事",
+                "schools": [
+                  {
+                    "cn": "帕森斯设计学院",
+                    "en": "Parsons School of Design",
+                    "abbr": "P",
+                    "program": "MFA Fashion Design and Society",
+                    "tag": "适配方向",
+                    "desc": "围绕个人美学与社会文化议题，发展原创女装系列。"
+                  },
+                  {
+                    "cn": "纽约时装技术学院",
+                    "en": "Fashion Institute of Technology",
+                    "abbr": "FIT",
+                    "program": "MFA Fashion Design",
+                    "tag": "适配方向",
+                    "desc": "注重研究、设计实验与创作实践，适合深化个人系列方向。"
+                  }
+                ]
+              },
+              {
+                "no": "03",
+                "name": "戏服设计",
+                "en": "Costume Design",
+                "theme": "角色塑造 · 戏剧叙事 · 表演语境",
+                "schools": [
+                  {
+                    "cn": "纽约大学",
+                    "en": "New York University",
+                    "abbr": "NYU",
+                    "program": "MFA Design for Stage and Film",
+                    "tag": "适配方向",
+                    "desc": "以戏剧与影视制作语境进行角色、服装与舞台视觉设计。"
+                  },
+                  {
+                    "cn": "卡内基梅隆大学",
+                    "en": "Carnegie Mellon University",
+                    "abbr": "CMU",
+                    "program": "MFA Costume Design",
+                    "tag": "适配方向",
+                    "desc": "针对表演与戏剧创作，发展服装研究、设计表达及制作能力。"
+                  }
+                ]
+              },
+              {
+                "no": "04",
+                "name": "面料设计",
+                "en": "Textile Design",
+                "theme": "纤维研究 · 材料创新 · 表面语言",
+                "schools": [
+                  {
+                    "cn": "罗德岛设计学院",
+                    "en": "Rhode Island School of Design",
+                    "abbr": "RISD",
+                    "program": "MFA Textiles",
+                    "tag": "适配方向",
+                    "desc": "通过材料、织造、印花与纤维实验探索当代面料表达。"
+                  },
+                  {
+                    "cn": "萨凡纳艺术与设计学院",
+                    "en": "Savannah College of Art and Design",
+                    "abbr": "SCAD",
+                    "program": "MFA Fibers",
+                    "tag": "适配方向",
+                    "desc": "面向纤维艺术、面料开发及跨媒介材料实践的进阶研究。"
+                  }
+                ]
+              },
+              {
+                "no": "05",
+                "name": "珠宝配饰",
+                "en": "Jewelry & Accessories",
+                "theme": "材料工艺 · 身体佩戴 · 物件表达",
+                "schools": [
+                  {
+                    "cn": "罗德岛设计学院",
+                    "en": "Rhode Island School of Design",
+                    "abbr": "RISD",
+                    "program": "MFA Jewelry + Metalsmithing",
+                    "tag": "适配方向",
+                    "desc": "以金属、物件、身体与材料研究发展个人珠宝语言。"
+                  },
+                  {
+                    "cn": "萨凡纳艺术与设计学院",
+                    "en": "Savannah College of Art and Design",
+                    "abbr": "SCAD",
+                    "program": "MFA Jewelry",
+                    "tag": "适配方向",
+                    "desc": "融合设计方法、制作工艺与系列呈现，适合当代珠宝方向。"
+                  }
+                ]
+              },
+              {
+                "no": "06",
+                "name": "时尚传媒",
+                "en": "Fashion Communication",
+                "theme": "视觉叙事 · 时尚影像 · 传播策略",
+                "schools": [
+                  {
+                    "cn": "普瑞特艺术学院",
+                    "en": "Pratt Institute",
+                    "abbr": "PR",
+                    "program": "MFA Fashion Collection + Communication",
+                    "tag": "适配方向",
+                    "desc": "将时尚系列与传播语言连接，强调创意表达与视觉叙事。"
+                  },
+                  {
+                    "cn": "萨凡纳艺术与设计学院",
+                    "en": "Savannah College of Art and Design",
+                    "abbr": "SCAD",
+                    "program": "MFA Photography（跨方向匹配）",
+                    "tag": "适配方向",
+                    "desc": "可通过摄影与视觉创作发展时尚影像作品；并非独立的时尚传媒学位。"
+                  }
+                ]
+              },
+              {
+                "no": "07",
+                "name": "时尚管理",
+                "en": "Fashion Management",
+                "theme": "品牌战略 · 市场研究 · 商业创新",
+                "schools": [
+                  {
+                    "cn": "纽约时装技术学院",
+                    "en": "Fashion Institute of Technology",
+                    "abbr": "FIT",
+                    "program": "MPS Global Fashion Management",
+                    "tag": "适配方向",
+                    "desc": "聚焦全球时尚产业战略、领导力与管理；官网有职业经验条件。"
+                  },
+                  {
+                    "cn": "萨凡纳艺术与设计学院",
+                    "en": "Savannah College of Art and Design",
+                    "abbr": "SCAD",
+                    "program": "MFA Luxury and Brand Management",
+                    "tag": "适配方向",
+                    "desc": "研究奢侈品牌定位、消费者体验与品牌策略。"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p19",
+            "no": "13",
+            "kicker": "成长路径 / LEARNING JOURNEY",
+            "title": "你的美研成长路径",
+            "intro": "专业定位 → 跨学科建构 → 独立研究 → 商业实践 → Meta Lab → 国际反馈 → 申请表达 → 未来发展",
+            "columns": 4,
+            "items": [
+              {
+                "no": "01",
+                "title": "专业定位",
+                "desc": "背景洞察与目标规划"
+              },
+              {
+                "no": "02",
+                "title": "跨学科建构",
+                "desc": "Design × Art × Business"
+              },
+              {
+                "no": "03",
+                "title": "独立研究",
+                "desc": "研究命题与方法"
+              },
+              {
+                "no": "04",
+                "title": "商业实践",
+                "desc": "真实Brief与设计产出"
+              },
+              {
+                "no": "05",
+                "title": "Meta Lab",
+                "desc": "Studio / Research / Critique"
+              },
+              {
+                "no": "06",
+                "title": "国际反馈",
+                "desc": "海外教授与多维评价"
+              },
+              {
+                "no": "07",
+                "title": "申请表达",
+                "desc": "Portfolio / SP / 面试"
+              },
+              {
+                "no": "08",
+                "title": "未来发展",
+                "desc": "升学与职业衔接"
+              }
+            ],
+            "footer": {
+              "statement": "美研申请，不止一套作品集",
+              "keywords": "跨学科 · 研究能力 · 技术探索 · 创新实践 · 学术表达 · 国际视野 · 职业实践"
+            }
+          },
+          {
+            "type": "deckStatement",
+            "id": "deck-p20",
+            "no": "14",
+            "kicker": "US GRADUATE / CREATE WHAT’S NEXT",
+            "title": "跨越专业边界，用设计研究未知。",
+            "subtitle": "Think across disciplines. Research through design. Create what’s next.",
+            "note": "在美国时尚研究生申请中，作品集不只体现完成度，更呈现设计思考、文化研究、材料实验、研究方法以及未来的发展潜力。",
+            "pillars": [
+              "How I Think",
+              "What I Investigate",
+              "What I Can Create Next"
+            ],
+            "footer": "美国时尚研究生 · 七大赛道"
+          },
+          {
+            "type": "courseCards",
+            "id": "deck-curriculum",
+            "groups": [
+              {
+                "source": "summerwinter",
+                "label": "海外冬夏校课程 · 顶尖院校在地学习",
+                "note": "共 5 门 · 招募中 · 适配研究生申请者",
+                "emptyNote": "「海外冬夏校课程 · 顶尖院校在地学习」下暂无同时满足「招募中」与适配研究生申请者的课程。",
+                "cards": [
+                  {
+                    "cat": "海外冬夏校",
+                    "eyebrow": "冬校 ｜ 27",
+                    "title": "27冬校-上海时装周 X LCF 时尚传媒班",
+                    "program": "LCF ｜ Avril",
+                    "tags": [
+                      "本科/研究生",
+                      "北京今日美术馆",
+                      "大师共创"
+                    ],
+                    "desc": "时尚传媒、虚拟时尚",
+                    "poster": "assets/img/courses/academic/academic_006.jpg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "时尚传媒",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "pdf": "assets/pdf/courses/academic/academic_006.pdf",
+                    "searchText": "27冬校-上海时装周 x lcf 时尚传媒班 lcf ｜ avril 时尚传媒、虚拟时尚 冬校 ｜ 27 大师共创 北京今日美术馆 本科/研究生"
+                  },
+                  {
+                    "cat": "海外冬夏校",
+                    "eyebrow": "冬校 ｜ 27",
+                    "title": "27冬校-上海时装周 X LCF 时尚管理班",
+                    "program": "LCF ｜ Jenny",
+                    "tags": [
+                      "本科/研究生",
+                      "北京今日美术馆",
+                      "大师共创"
+                    ],
+                    "desc": "时尚管理、买手管理",
+                    "poster": "assets/img/courses/academic/academic_007.jpg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "时尚管理",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "pdf": "assets/pdf/courses/academic/academic_007.pdf",
+                    "searchText": "27冬校-上海时装周 x lcf 时尚管理班 lcf ｜ jenny 时尚管理、买手管理 冬校 ｜ 27 大师共创 北京今日美术馆 本科/研究生"
+                  },
+                  {
+                    "cat": "海外冬夏校",
+                    "eyebrow": "冬校 ｜ 27",
+                    "title": "27冬校-上海时装周 X UAL 时尚设计班",
+                    "program": "LCF ｜ Lilia",
+                    "tags": [
+                      "本科/研究生",
+                      "北京今日美术馆",
+                      "大师共创"
+                    ],
+                    "desc": "时尚设计、珠宝设计、纺织品设计",
+                    "poster": "assets/img/courses/academic/academic_008.jpg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "时尚设计",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "pdf": "assets/pdf/courses/academic/academic_008.pdf",
+                    "searchText": "27冬校-上海时装周 x ual 时尚设计班 lcf ｜ lilia 时尚设计、珠宝设计、纺织品设计 冬校 ｜ 27 大师共创 北京今日美术馆 本科/研究生"
+                  },
+                  {
+                    "cat": "海外冬夏校",
+                    "eyebrow": "冬校 ｜ 27",
+                    "title": "27冬校-时装周 X LCF 青年设计师10人联合秀场班",
+                    "program": "LCF ｜ Lilia",
+                    "tags": [
+                      "本科/研究生",
+                      "北京今日美术馆",
+                      "实战产学研"
+                    ],
+                    "desc": "时尚设计、珠宝设计、纺织品设计",
+                    "poster": "assets/img/courses/academic/academic_009.jpg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "时尚设计",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "posterFull": "assets/img/courses/academic/academic_010.jpg",
+                    "searchText": "27冬校-时装周 x lcf 青年设计师10人联合秀场班 lcf ｜ lilia 时尚设计、珠宝设计、纺织品设计 冬校 ｜ 27 实战产学研 北京今日美术馆 本科/研究生"
+                  },
+                  {
+                    "cat": "海外冬夏校",
+                    "eyebrow": "冬校 ｜ 27",
+                    "title": "27冬校-时装周 X LCF 青年设计师5人菁英联秀班",
+                    "program": "LCF ｜ Lilia",
+                    "tags": [
+                      "本科/研究生",
+                      "北京今日美术馆",
+                      "实战产学研"
+                    ],
+                    "desc": "时尚设计、珠宝设计、纺织品设计",
+                    "poster": "assets/img/courses/academic/academic_011.jpg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "时尚设计",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "posterFull": "assets/img/courses/academic/academic_012.jpg",
+                    "searchText": "27冬校-时装周 x lcf 青年设计师5人菁英联秀班 lcf ｜ lilia 时尚设计、珠宝设计、纺织品设计 冬校 ｜ 27 实战产学研 北京今日美术馆 本科/研究生"
+                  }
+                ]
+              },
+              {
+                "source": "masterclass",
+                "label": "海外大师课程 · 教授视角与方法论",
+                "note": "共 2 门 · 招募中 · 适配研究生申请者",
+                "emptyNote": "「海外大师课程 · 教授视角与方法论」下暂无同时满足「招募中」与适配研究生申请者的课程。",
+                "cards": [
+                  {
+                    "cat": "海外大师课",
+                    "eyebrow": "大师课 ｜ 26",
+                    "title": "26F-NYU跨学科大师课-Jonathan",
+                    "program": "NYU ｜ Jonathan",
+                    "tags": [
+                      "跨学科",
+                      "线上"
+                    ],
+                    "desc": "跨学科大师课",
+                    "poster": "assets/img/courses/academic/26F-NYU跨学科大师课-Jonathan.jpeg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "跨学科",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "pdf": "assets/pdf/courses/academic/26F-NYU跨学科大师课-Jonathan.pdf",
+                    "searchText": "26f-nyu跨学科大师课-jonathan nyu ｜ jonathan 跨学科大师课 大师课 ｜ 26 跨学科 线上"
+                  },
+                  {
+                    "cat": "海外大师课",
+                    "eyebrow": "大师课 ｜ 26",
+                    "title": "26F-服装设计本研大师课-PolyU-Caijun",
+                    "program": "PolyU ｜ Caijun",
+                    "tags": [
+                      "本科/研究生",
+                      "线上",
+                      "秋季大师课1V20+"
+                    ],
+                    "desc": "服装设计、珠宝设计、时尚传媒等",
+                    "poster": "assets/img/courses/academic/academic_013.jpg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "服装设计",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "pdf": "assets/pdf/courses/academic/academic_013.pdf",
+                    "searchText": "26f-服装设计本研大师课-polyu-caijun polyu ｜ caijun 服装设计、珠宝设计、时尚传媒等 大师课 ｜ 26 秋季大师课1v20+ 线上 本科/研究生"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
       "id": "longform2",
       "badge": "长线内容",
-      "cover": "",
+      "cover": "assets/img/products/英国研究生未来成长计划.png",
       "placeholder": false,
       "tileVariant": "v2",
       "levels": [
@@ -156,12 +1017,12 @@
         "eyebrow": "UK Graduate Admissions｜研究生申请 · 升学就业一体化",
         "titleEn": "UK Graduate Program",
         "titleCn": "英国研究生未来成长计划",
-        "desc": "同时面向名校申请与长期职业发展的升学就业一体化产品：以个性化作品集和英国研究生申请为基础，向前加入专业定位与项目规划，向后衔接商业实践、岗位制实习、求职作品集与企业内推。",
+        "desc": "作品集沿升学就业一体化的链路，向前连接项目、向后接跨学科实践、岗位实习与内推，使商业设计与传播被名校看见、被行业理解、向未来转化。",
         "chips": [
-          "TOP1 – TOP9 多层级",
-          "升学就业一体化",
-          "5个项目建高匹配作品集",
-          "招募中"
+          "Diversity",
+          "Integrated",
+          "Portfolio",
+          "Career-Oriented"
         ]
       },
       "snapshot": [
@@ -221,12 +1082,854 @@
       "closing": {
         "cn": "不只拿到录取，也拿到下一段起点。",
         "en": "An offer, and the first step after it."
+      },
+      "detail": {
+        "sections": [
+          {
+            "type": "deckNav",
+            "id": "deck-p2",
+            "no": "01",
+            "kicker": "产品速览 / OVERVIEW",
+            "title": "Explore Your Direction. Build Your Practice. Shape Your Future.",
+            "intro": "作品集不是终点，它是专业方向的第一次完整表达。",
+            "aside": {
+              "eyebrow": "UK POSTGRADUATE PROGRAM",
+              "lines": [
+                "Explore Your Direction.",
+                "Build Your Practice.",
+                "Shape Your Future."
+              ]
+            },
+            "items": [
+              {
+                "no": "01 / Positioning",
+                "title": "产品定位",
+                "note": "从专业探索到个人研究方向",
+                "target": "deck-p3"
+              },
+              {
+                "no": "02 / Why UK",
+                "title": "为什么选择英研",
+                "note": "在开放的设计教育中建立坐标",
+                "target": "deck-p4"
+              },
+              {
+                "no": "03 / SFK Method",
+                "title": "7阶段培养路径",
+                "note": "DISCOVER → CONNECT",
+                "target": "deck-p5"
+              },
+              {
+                "no": "04 / Advantages",
+                "title": "五大培养优势",
+                "note": "系统 · 能力 · 项目 · 指导 · 资源",
+                "target": "deck-p6"
+              },
+              {
+                "no": "05 / Core Courses",
+                "title": "重点课程与项目",
+                "note": "五个核心模块",
+                "target": "deck-p7"
+              },
+              {
+                "no": "06 / Projects",
+                "title": "项目不止一种可能",
+                "note": "交互 · 空间 · 跨学科",
+                "target": "deck-p8"
+              },
+              {
+                "no": "07 / Programs",
+                "title": "推荐院校与专业",
+                "note": "7大赛道 · 英国代表项目",
+                "target": "deck-p10-16"
+              },
+              {
+                "no": "08 / Journey",
+                "title": "英研学习路径",
+                "note": "7阶段学习成果",
+                "target": "deck-p18"
+              }
+            ]
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p1",
+            "no": "02",
+            "kicker": "UK POSTGRADUATE PROGRAM",
+            "title": "从作品集，到属于你的专业方向。",
+            "subtitle": "Explore Your Direction.   Build Your Practice.   Shape Your Future.",
+            "variant": "stats",
+            "columns": 4,
+            "items": [
+              {
+                "value": "7",
+                "title": "时尚专业赛道"
+              },
+              {
+                "value": "5",
+                "title": "大核心培养优势"
+              },
+              {
+                "value": "4",
+                "title": "研究发展主线"
+              },
+              {
+                "value": "10",
+                "title": "个性课程与实践项目"
+              }
+            ]
+          },
+          {
+            "type": "deckSplit",
+            "id": "deck-p3",
+            "no": "03",
+            "kicker": "产品定位 / POSITIONING",
+            "title": "从专业探索到个人研究方向",
+            "intro": "英国研究生申请不只是一套作品集，更是申请者对专业立场的清晰回答。",
+            "arrow": "→",
+            "cols": [
+              {
+                "eyebrow": "BEFORE",
+                "title": "学生常问",
+                "bullets": [
+                  "从“我要申请什么／出发”关注“我做几个项目”用专业标签定义自己"
+                ]
+              },
+              {
+                "eyebrow": "AFTER",
+                "title": "培养方向",
+                "bullets": [
+                  "关注什么问题？希望自己的作品回应什么？建立研究深度、实践能力与个人方向"
+                ]
+              }
+            ],
+            "footer": "从“我要申请什么”，到“我想研究什么”。"
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p4",
+            "no": "04",
+            "kicker": "为什么选择英国 / WHY UK",
+            "title": "在开放的设计教育中，建立自己的专业坐标",
+            "intro": "英国的交叉学科与跨媒介课程，为时尚学生提供多元路径。",
+            "columns": 2,
+            "items": [
+              {
+                "no": "01",
+                "en": "RESEARCH DRIVEN",
+                "title": "研究驱动",
+                "desc": "从社会、技术、文化与材料问题出发，建立清晰的研究主线。"
+              },
+              {
+                "no": "02",
+                "en": "INTERDISCIPLINARY",
+                "title": "跨学科",
+                "desc": "设计与科技、艺术、商业及文化研究展开连接。"
+              },
+              {
+                "no": "03",
+                "en": "PRACTICE BASED",
+                "title": "实践导向",
+                "desc": "通过实验、制作与测试，将概念转化为可验证的设计成果。"
+              },
+              {
+                "no": "04",
+                "en": "PERSONAL DIRECTION",
+                "title": "个人方向",
+                "desc": "发展独特议题、视觉语言及独立研究方法。"
+              }
+            ]
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p5",
+            "no": "05",
+            "kicker": "SFK 方法 / SFK METHOD",
+            "title": "我们如何培养一个研究生申请者？",
+            "intro": "从“我要申请什么”，到“我想研究什么”。",
+            "columns": 4,
+            "items": [
+              {
+                "no": "1",
+                "title": "专业探索",
+                "desc": "发掘兴趣与目标"
+              },
+              {
+                "no": "2",
+                "title": "能力建立",
+                "desc": "补足研究、设计、技术工具"
+              },
+              {
+                "no": "3",
+                "title": "项目创作",
+                "desc": "研究转化为真实设计问题"
+              },
+              {
+                "no": "4",
+                "title": "前沿探索",
+                "desc": "进入商业、技术与跨学科"
+              },
+              {
+                "no": "5",
+                "title": "方向形成",
+                "desc": "建立个人研究与创作主线"
+              },
+              {
+                "no": "6",
+                "title": "申请表达",
+                "desc": "完成作品集及申请材料"
+              },
+              {
+                "no": "7",
+                "title": "未来连接",
+                "desc": "衔接升学、就业与行业发展"
+              }
+            ],
+            "footer": "核心逻辑：CREATE → EXPLORE → DEFINE"
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p6",
+            "no": "06",
+            "kicker": "核心优势 / CORE ADVANTAGES",
+            "title": "五大培养优势",
+            "columns": 2,
+            "items": [
+              {
+                "no": "01",
+                "title": "个性化专业规划",
+                "desc": "找到方向，而非被动匹配：建立个人研究问题与申请定位。"
+              },
+              {
+                "no": "02",
+                "title": "跨学科能力底座",
+                "desc": "建立设计、技术、研究、商业与数字媒介的交叉能力。"
+              },
+              {
+                "no": "03",
+                "title": "个性化项目体系",
+                "desc": "每个项目都有独立研究命题、发展路径及评估反馈。"
+              },
+              {
+                "no": "04",
+                "title": "全过程项目指导",
+                "desc": "RESEARCH → INSIGHT → CONCEPT → PROTOTYPE → TEST。"
+              },
+              {
+                "no": "05",
+                "title": "连接国际学术与真实行业",
+                "desc": "通过教授 critique、项目实践及行业资源衔接未来。"
+              }
+            ]
+          },
+          {
+            "type": "deckRow",
+            "id": "deck-p7",
+            "no": "07",
+            "pages": [
+              {
+                "no": "07",
+                "kicker": "重点课程 / CORE COURSES",
+                "title": "重点课程与项目",
+                "intro": "五个核心模块，从方向探索到海外学术 Studio 体验。",
+                "cards": [
+                  {
+                    "en": "01",
+                    "title": "专业规划与方向探索",
+                    "note": "明确目标院校与设计方向；教授研究方法与专业认知。"
+                  },
+                  {
+                    "en": "02",
+                    "title": "专业基础与跨学科能力",
+                    "note": "设计基础、研究方法、数字工具和创新设计实践。"
+                  },
+                  {
+                    "en": "03",
+                    "title": "自主命题项目",
+                    "note": "Research · 概念发展 · 设计实验 · 系列呈现。"
+                  },
+                  {
+                    "en": "04",
+                    "title": "商业实践项目",
+                    "note": "真实 Brief · 行业导师 · 提案迭代 · 成果交付。"
+                  },
+                  {
+                    "en": "05",
+                    "title": "海外教授项目",
+                    "note": "海外教授 Critique · Studio 式教学 · 学术反馈。"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "deckSplit",
+            "id": "deck-p8",
+            "no": "08",
+            "kicker": "重点课程 / CORE COURSES",
+            "title": "商业实践项目 × 海外教授项目",
+            "intro": "连接真实行业工作方式与国际学术反馈。",
+            "cols": [
+              {
+                "eyebrow": "COMMERCIAL PRACTICE",
+                "title": "商业实践项目",
+                "bullets": [
+                  "真实 Brief · 行业导师 · 提案迭代 · 成果交付学习在真实限制条件下研究用户、材料、市场与设计转化。"
+                ]
+              },
+              {
+                "eyebrow": "INTERNATIONAL CRITIQUE",
+                "title": "海外教授项目",
+                "bullets": [
+                  "国际教授 Critique · 研究方法 · Studio 讨论通过批判性对话、过程展示和多轮反馈推进个人项目。"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p9",
+            "no": "09",
+            "kicker": "项目体验 / PROJECT EXPERIENCE",
+            "title": "项目不止一种可能",
+            "intro": "从数字界面到智能硬件、从社会系统到空间体验，让媒介和方法围绕问题展开。",
+            "columns": 3,
+            "items": [
+              {
+                "en": "INTERACTIVE TECHNOLOGY",
+                "title": "交互科技",
+                "desc": "数字体验、互动叙事、人机关系"
+              },
+              {
+                "en": "SPATIAL & EXPERIENCE",
+                "title": "空间与体验",
+                "desc": "展演、身体、服务体验"
+              },
+              {
+                "en": "INTERDISCIPLINARY",
+                "title": "跨学科探索",
+                "desc": "科技、艺术、社会创新"
+              }
+            ]
+          },
+          {
+            "type": "deckTracks",
+            "id": "deck-p10-16",
+            "no": "10",
+            "kicker": "七大赛道 / SEVEN PATHWAYS",
+            "title": "七大赛道，匹配代表性英研项目",
+            "intro": "按专业研究与实际作品集需求匹配英国代表性硕士课程。",
+            "tabs": [
+              {
+                "no": "01",
+                "name": "男装设计"
+              },
+              {
+                "no": "02",
+                "name": "女装设计"
+              },
+              {
+                "no": "03",
+                "name": "戏服设计"
+              },
+              {
+                "no": "04",
+                "name": "面料设计"
+              },
+              {
+                "no": "05",
+                "name": "珠宝配饰"
+              },
+              {
+                "no": "06",
+                "name": "时尚传媒"
+              },
+              {
+                "no": "07",
+                "name": "时尚管理"
+              }
+            ],
+            "tracks": [
+              {
+                "no": "01",
+                "name": "男装设计",
+                "en": "MENSWEAR DESIGN",
+                "theme": "廓形／剪裁／男性身份／材料与制作",
+                "schools": [
+                  {
+                    "cn": "伦敦时装学院",
+                    "en": "",
+                    "abbr": "LCF",
+                    "program": "MA Fashion Design Technology (Menswear)",
+                    "tag": "适配方向",
+                    "desc": "强调男装设计研究、传统男装剪裁、结构开发、工艺与当代技术的结合。"
+                  },
+                  {
+                    "cn": "西敏斯特大学",
+                    "en": "University of Westminster",
+                    "abbr": "UOW",
+                    "program": "Menswear MA",
+                    "tag": "适配方向",
+                    "desc": "以男装创作实践与个人设计语言为核心，关注系列发展及专业表达。"
+                  }
+                ],
+                "note": "作品集建议：展示文化与身体调研、男装版型和样衣实验、面料测试、完整系列与反思。"
+              },
+              {
+                "no": "02",
+                "name": "女装设计",
+                "en": "WOMENSWEAR DESIGN",
+                "theme": "女性身体／廓形实验／材料／可持续",
+                "schools": [
+                  {
+                    "cn": "伦敦时装学院",
+                    "en": "",
+                    "abbr": "LCF",
+                    "program": "MA Fashion Design Technology (Womenswear)",
+                    "tag": "适配方向",
+                    "desc": "以研究驱动女装创作，关注服装技术、设计开发及身体与材料的关系。"
+                  },
+                  {
+                    "cn": "皇家艺术学院",
+                    "en": "",
+                    "abbr": "RCA",
+                    "program": "Fashion MA",
+                    "tag": "适配方向",
+                    "desc": "以批判性、跨学科实践重新思考时尚体系及社会、环境议题；非传统女装专门方向。"
+                  }
+                ],
+                "note": "作品集建议：呈现清晰研究命题、立裁和结构演变、技术测试、系列实现与反思。"
+              },
+              {
+                "no": "03",
+                "name": "戏服设计",
+                "en": "COSTUME & PERFORMANCE",
+                "theme": "角色／身体动作／剧本／舞台与影像",
+                "schools": [
+                  {
+                    "cn": "伦敦时装学院",
+                    "en": "",
+                    "abbr": "LCF",
+                    "program": "MA Costume Design for Performance",
+                    "tag": "适配方向",
+                    "desc": "以表演为中心，将研究、角色叙事、制作、协作及模拟与数字技术结合。"
+                  },
+                  {
+                    "cn": "中央圣马丁",
+                    "en": "",
+                    "abbr": "CSM",
+                    "program": "MA Performance: Design and Practice",
+                    "tag": "适配方向",
+                    "desc": "更强调表演空间、现场实践与跨媒介合作，适合拓展戏服的场景和叙事边界。"
+                  }
+                ],
+                "note": "作品集建议：提供剧本与角色分析、场景研究、材料/服装制作、试装和表演测试记录。"
+              },
+              {
+                "no": "04",
+                "name": "面料设计",
+                "en": "TEXTILES & MATERIALS",
+                "theme": "纤维／织造／针织／表面处理／材料伦理",
+                "schools": [
+                  {
+                    "cn": "皇家艺术学院",
+                    "en": "",
+                    "abbr": "RCA",
+                    "program": "Textiles MA",
+                    "tag": "适配方向",
+                    "desc": "强调“通过制作进行思考”，以材料、工艺和意义的实验形成个人研究方向。"
+                  },
+                  {
+                    "cn": "伦敦时装学院",
+                    "en": "",
+                    "abbr": "LCF",
+                    "program": "MA Fashion Textiles Technologies",
+                    "tag": "适配方向",
+                    "desc": "以时尚面料与技术应用为切入点，联结材料创新与服装实践。"
+                  }
+                ],
+                "note": "作品集建议：呈现材料研究谱系、样本迭代、工艺参数、应用场景和效果评估。"
+              },
+              {
+                "no": "05",
+                "name": "珠宝配饰",
+                "en": "JEWELLERY & ACCESSORIES",
+                "theme": "佩戴行为／材料／金工／身体与物件",
+                "schools": [
+                  {
+                    "cn": "皇家艺术学院",
+                    "en": "",
+                    "abbr": "RCA",
+                    "program": "Jewellery & Metal MA",
+                    "tag": "适配方向",
+                    "desc": "用研究驱动的金工与珠宝实践探讨物件、材料、文化及身体的复杂关系。"
+                  },
+                  {
+                    "cn": "伦敦时装学院",
+                    "en": "",
+                    "abbr": "LCF",
+                    "program": "MA Fashion Artefact",
+                    "tag": "适配方向",
+                    "desc": "通过时尚物件、身体与制作方法探索配饰的概念与形式。"
+                  }
+                ],
+                "note": "作品集建议：展示佩戴观察、草模、材料连接、工艺实验、实物及佩戴测试。"
+              },
+              {
+                "no": "06",
+                "name": "时尚传媒",
+                "en": "FASHION COMMUNICATION",
+                "theme": "影像／文化批判／编辑／数字叙事",
+                "schools": [
+                  {
+                    "cn": "中央圣马丁",
+                    "en": "",
+                    "abbr": "CSM",
+                    "program": "MA Fashion Communication: Fashion Image",
+                    "tag": "适配方向",
+                    "desc": "从文化及社会语境研究时尚影像，通过跨学科实验探索个人视觉语言。"
+                  },
+                  {
+                    "cn": "伦敦时装学院",
+                    "en": "",
+                    "abbr": "LCF",
+                    "program": "MA Fashion Media and Communication",
+                    "tag": "适配方向",
+                    "desc": "关注时尚传播、媒体语言、受众及多平台叙事方式。"
+                  }
+                ],
+                "note": "作品集建议：展示一手视觉调研、受众分析、分镜与拍摄过程、编辑呈现及传播评价。"
+              },
+              {
+                "no": "07",
+                "name": "时尚管理",
+                "en": "FASHION MANAGEMENT",
+                "theme": "品牌定位／消费者／市场／商业模式",
+                "schools": [
+                  {
+                    "cn": "伦敦时装学院",
+                    "en": "",
+                    "abbr": "LCF",
+                    "program": "MA Strategic Fashion Marketing",
+                    "tag": "适配方向",
+                    "desc": "聚焦战略营销、消费者洞察与时尚产业的市场决策。"
+                  },
+                  {
+                    "cn": "伦敦时装学院",
+                    "en": "",
+                    "abbr": "LCF",
+                    "program": "MA Fashion Design Management",
+                    "tag": "适配方向",
+                    "desc": "将设计流程、组织与管理连接，思考创意开发与商业系统。"
+                  }
+                ],
+                "note": "作品集建议：提供明确研究问题、数据与访谈、竞品研究、可操作策略和效果指标。"
+              }
+            ]
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p17",
+            "no": "11",
+            "kicker": "优秀成长案例 / SUCCESS STORIES",
+            "title": "优秀成长案例",
+            "intro": "来自学术规划、跨学科实践与申请成果的案例展示。",
+            "columns": 3,
+            "items": [
+              {
+                "title": "多元探索",
+                "desc": "以独立研究命题建立作品集主线，拓展国际申请路径。"
+              },
+              {
+                "title": "跨学科实践",
+                "desc": "从服装、材料到数字方向，发展可迁移的方法能力。"
+              },
+              {
+                "title": "学术表达",
+                "desc": "通过研究、实践和反思建立有说服力的作品叙事。"
+              }
+            ]
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p18",
+            "no": "12",
+            "kicker": "成长路径 / LEARNING JOURNEY",
+            "title": "你的英研学习路径",
+            "columns": 4,
+            "items": [
+              {
+                "no": "01",
+                "title": "方向探索",
+                "desc": "背景分析、专业定位、院校认知"
+              },
+              {
+                "no": "02",
+                "title": "能力建立",
+                "desc": "基础、研究、软件、AI、跨学科"
+              },
+              {
+                "no": "03",
+                "title": "项目启动",
+                "desc": "自主命题、Research、概念发展"
+              },
+              {
+                "no": "04",
+                "title": "深度实践",
+                "desc": "新知调查、商业实践、海外教授"
+              },
+              {
+                "no": "05",
+                "title": "作品整合",
+                "desc": "项目优化、编辑、视觉呈现"
+              },
+              {
+                "no": "06",
+                "title": "申请冲刺",
+                "desc": "Study Proposal、Video Task、面试"
+              },
+              {
+                "no": "07",
+                "title": "未来连接",
+                "desc": "实习、就业力、职业探索"
+              }
+            ]
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p19",
+            "no": "13",
+            "kicker": "申请收获 / WHAT YOU GAIN",
+            "title": "不止作品集",
+            "columns": 3,
+            "items": [
+              {
+                "no": "01",
+                "en": "DIRECTION",
+                "title": "选择方向",
+                "desc": "建立自己的专业兴趣与研究主线。"
+              },
+              {
+                "no": "02",
+                "en": "ABILITY",
+                "title": "建立能力",
+                "desc": "形成研究、设计、技术和表达能力。"
+              },
+              {
+                "no": "03",
+                "en": "PROJECT",
+                "title": "形成作品",
+                "desc": "完成具有研究逻辑的个人项目体系。"
+              },
+              {
+                "no": "04",
+                "en": "GLOBAL",
+                "title": "理解国际课堂",
+                "desc": "提高跨文化沟通与学术表达能力。"
+              },
+              {
+                "no": "05",
+                "en": "PRACTICE",
+                "title": "进入真实实践",
+                "desc": "通过商业与行业项目拓展职业认知。"
+              },
+              {
+                "no": "06",
+                "en": "FUTURE",
+                "title": "连接未来",
+                "desc": "形成更清晰的专业发展路径。"
+              }
+            ]
+          },
+          {
+            "type": "deckStatement",
+            "id": "deck-p20",
+            "no": "14",
+            "kicker": "YOUR PORTFOLIO IS NOT THE DESTINATION",
+            "title": "作品集不是终点，它是你专业方向的第一次完整表达",
+            "subtitle": "Your portfolio is not the destination.",
+            "note": "在研究、设计、制作与反思中逐渐知道：自己关注什么、擅长什么，以及未来希望继续探索什么。",
+            "pillars": [
+              "Explore Your Direction",
+              "Shape Your Future"
+            ],
+            "footer": "英国研究生未来成长计划"
+          },
+          {
+            "type": "courseCards",
+            "id": "deck-curriculum",
+            "groups": [
+              {
+                "source": "summerwinter",
+                "label": "海外冬夏校课程 · 顶尖院校在地学习",
+                "note": "共 5 门 · 招募中 · 适配研究生申请者",
+                "emptyNote": "「海外冬夏校课程 · 顶尖院校在地学习」下暂无同时满足「招募中」与适配研究生申请者的课程。",
+                "cards": [
+                  {
+                    "cat": "海外冬夏校",
+                    "eyebrow": "冬校 ｜ 27",
+                    "title": "27冬校-上海时装周 X LCF 时尚传媒班",
+                    "program": "LCF ｜ Avril",
+                    "tags": [
+                      "本科/研究生",
+                      "北京今日美术馆",
+                      "大师共创"
+                    ],
+                    "desc": "时尚传媒、虚拟时尚",
+                    "poster": "assets/img/courses/academic/academic_006.jpg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "时尚传媒",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "pdf": "assets/pdf/courses/academic/academic_006.pdf",
+                    "searchText": "27冬校-上海时装周 x lcf 时尚传媒班 lcf ｜ avril 时尚传媒、虚拟时尚 冬校 ｜ 27 大师共创 北京今日美术馆 本科/研究生"
+                  },
+                  {
+                    "cat": "海外冬夏校",
+                    "eyebrow": "冬校 ｜ 27",
+                    "title": "27冬校-上海时装周 X LCF 时尚管理班",
+                    "program": "LCF ｜ Jenny",
+                    "tags": [
+                      "本科/研究生",
+                      "北京今日美术馆",
+                      "大师共创"
+                    ],
+                    "desc": "时尚管理、买手管理",
+                    "poster": "assets/img/courses/academic/academic_007.jpg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "时尚管理",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "pdf": "assets/pdf/courses/academic/academic_007.pdf",
+                    "searchText": "27冬校-上海时装周 x lcf 时尚管理班 lcf ｜ jenny 时尚管理、买手管理 冬校 ｜ 27 大师共创 北京今日美术馆 本科/研究生"
+                  },
+                  {
+                    "cat": "海外冬夏校",
+                    "eyebrow": "冬校 ｜ 27",
+                    "title": "27冬校-上海时装周 X UAL 时尚设计班",
+                    "program": "LCF ｜ Lilia",
+                    "tags": [
+                      "本科/研究生",
+                      "北京今日美术馆",
+                      "大师共创"
+                    ],
+                    "desc": "时尚设计、珠宝设计、纺织品设计",
+                    "poster": "assets/img/courses/academic/academic_008.jpg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "时尚设计",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "pdf": "assets/pdf/courses/academic/academic_008.pdf",
+                    "searchText": "27冬校-上海时装周 x ual 时尚设计班 lcf ｜ lilia 时尚设计、珠宝设计、纺织品设计 冬校 ｜ 27 大师共创 北京今日美术馆 本科/研究生"
+                  },
+                  {
+                    "cat": "海外冬夏校",
+                    "eyebrow": "冬校 ｜ 27",
+                    "title": "27冬校-时装周 X LCF 青年设计师10人联合秀场班",
+                    "program": "LCF ｜ Lilia",
+                    "tags": [
+                      "本科/研究生",
+                      "北京今日美术馆",
+                      "实战产学研"
+                    ],
+                    "desc": "时尚设计、珠宝设计、纺织品设计",
+                    "poster": "assets/img/courses/academic/academic_009.jpg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "时尚设计",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "posterFull": "assets/img/courses/academic/academic_010.jpg",
+                    "searchText": "27冬校-时装周 x lcf 青年设计师10人联合秀场班 lcf ｜ lilia 时尚设计、珠宝设计、纺织品设计 冬校 ｜ 27 实战产学研 北京今日美术馆 本科/研究生"
+                  },
+                  {
+                    "cat": "海外冬夏校",
+                    "eyebrow": "冬校 ｜ 27",
+                    "title": "27冬校-时装周 X LCF 青年设计师5人菁英联秀班",
+                    "program": "LCF ｜ Lilia",
+                    "tags": [
+                      "本科/研究生",
+                      "北京今日美术馆",
+                      "实战产学研"
+                    ],
+                    "desc": "时尚设计、珠宝设计、纺织品设计",
+                    "poster": "assets/img/courses/academic/academic_011.jpg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "时尚设计",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "posterFull": "assets/img/courses/academic/academic_012.jpg",
+                    "searchText": "27冬校-时装周 x lcf 青年设计师5人菁英联秀班 lcf ｜ lilia 时尚设计、珠宝设计、纺织品设计 冬校 ｜ 27 实战产学研 北京今日美术馆 本科/研究生"
+                  }
+                ]
+              },
+              {
+                "source": "masterclass",
+                "label": "海外大师课程 · 教授视角与方法论",
+                "note": "共 2 门 · 招募中 · 适配研究生申请者",
+                "emptyNote": "「海外大师课程 · 教授视角与方法论」下暂无同时满足「招募中」与适配研究生申请者的课程。",
+                "cards": [
+                  {
+                    "cat": "海外大师课",
+                    "eyebrow": "大师课 ｜ 26",
+                    "title": "26F-NYU跨学科大师课-Jonathan",
+                    "program": "NYU ｜ Jonathan",
+                    "tags": [
+                      "跨学科",
+                      "线上"
+                    ],
+                    "desc": "跨学科大师课",
+                    "poster": "assets/img/courses/academic/26F-NYU跨学科大师课-Jonathan.jpeg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "跨学科",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "pdf": "assets/pdf/courses/academic/26F-NYU跨学科大师课-Jonathan.pdf",
+                    "searchText": "26f-nyu跨学科大师课-jonathan nyu ｜ jonathan 跨学科大师课 大师课 ｜ 26 跨学科 线上"
+                  },
+                  {
+                    "cat": "海外大师课",
+                    "eyebrow": "大师课 ｜ 26",
+                    "title": "26F-服装设计本研大师课-PolyU-Caijun",
+                    "program": "PolyU ｜ Caijun",
+                    "tags": [
+                      "本科/研究生",
+                      "线上",
+                      "秋季大师课1V20+"
+                    ],
+                    "desc": "服装设计、珠宝设计、时尚传媒等",
+                    "poster": "assets/img/courses/academic/academic_013.jpg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "服装设计",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "pdf": "assets/pdf/courses/academic/academic_013.pdf",
+                    "searchText": "26f-服装设计本研大师课-polyu-caijun polyu ｜ caijun 服装设计、珠宝设计、时尚传媒等 大师课 ｜ 26 秋季大师课1v20+ 线上 本科/研究生"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
       "id": "longform3",
       "badge": "长线内容",
-      "cover": "",
+      "cover": "assets/img/products/香港研究生升学计划.png",
       "placeholder": false,
       "tileVariant": "v3",
       "levels": [
@@ -236,12 +1939,12 @@
         "eyebrow": "HK Graduate Admissions｜研究生申请 · 常规计划 + 学霸计划",
         "titleEn": "Hong Kong Graduate Program",
         "titleCn": "香港研究生升学计划",
-        "desc": "以作品集为核心，结合目标院校定位、专业能力补强、个性化项目、香港高校夏冬校、商业实践、实习推荐和全流程申请服务的港研升学产品。分为常规计划与学霸计划两条路径：常规计划面向需要系统建立专业与作品集能力的学生，学霸计划面向基础较强、目标明确、时间有限的学生。",
+        "desc": "作品集按常规/学霸、TOP3–8 分层，从前期规划到专业项目，从夏冬校道商业实践，从创意到商业落地，全方位理解理解时尚设计与品牌。",
         "chips": [
-          "常规计划 · 学霸计划",
-          "TOP3 – TOP8 分层",
-          "作品集+商业实践+实习",
-          "招募中"
+          "Targeted",
+          "Practice",
+          "Local Context",
+          "Future"
         ]
       },
       "snapshot": [
@@ -305,19 +2008,912 @@
       "closing": {
         "cn": "两种节奏，同一条港研路径。",
         "en": "Two paces, one Hong Kong pathway."
+      },
+      "detail": {
+        "sections": [
+          {
+            "type": "deckNav",
+            "id": "deck-p2",
+            "no": "01",
+            "kicker": "HONG KONG FASHION / POSTGRADUATE PROGRAM",
+            "title": "TARGET YOUR DIRECTION. BUILD YOUR PRACTICE. STEP INTO YOUR FUTURE.",
+            "aside": {
+              "eyebrow": "HONG KONG POSTGRADUATE PROGRAM",
+              "lines": [
+                "Target Your Direction.",
+                "Build Your Practice.",
+                "Step Into Your Future."
+              ]
+            },
+            "items": [
+              {
+                "no": "01 / 产品定位",
+                "title": "产品定位",
+                "note": "从目标专业出发",
+                "target": "deck-p3"
+              },
+              {
+                "no": "02 / 为什么选择香港",
+                "title": "为什么选择香港",
+                "note": "国际视野＋亚洲市场",
+                "target": "deck-p4"
+              },
+              {
+                "no": "03 / SFK方法",
+                "title": "SFK方法",
+                "note": "8阶段目标路径",
+                "target": "deck-p5"
+              },
+              {
+                "no": "04 / 五大培养优势",
+                "title": "五大培养优势",
+                "note": "定位·能力·项目·在地·衔接",
+                "target": "deck-p6"
+              },
+              {
+                "no": "05 / 重点课程与项目",
+                "title": "重点课程与项目",
+                "note": "5个核心模块",
+                "target": "deck-p7-8"
+              },
+              {
+                "no": "06 / 香港在地学习",
+                "title": "香港在地学习",
+                "note": "Campus·Studio·Feedback",
+                "target": "deck-p9"
+              },
+              {
+                "no": "07 / 项目实践与作品集",
+                "title": "项目实践与作品集",
+                "note": "从研究到呈现",
+                "target": "deck-p10"
+              },
+              {
+                "no": "08 / 七大赛道与成长路径",
+                "title": "七大赛道与成长路径",
+                "note": "专业匹配＋未来发展",
+                "target": "deck-p12-18"
+              }
+            ]
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p1",
+            "no": "02",
+            "kicker": "HONG KONG POSTGRADUATE PROGRAM",
+            "title": "从精准申请，到真正进入香港的时尚学习与发展语境",
+            "subtitle": "Targeted × Practice × Local Context × Future",
+            "variant": "stats",
+            "columns": 4,
+            "items": [
+              {
+                "value": "7",
+                "title": "个时尚赛道"
+              },
+              {
+                "value": "5",
+                "title": "个核心课程模块"
+              },
+              {
+                "value": "4",
+                "title": "类项目呈现"
+              },
+              {
+                "value": "8",
+                "title": "阶段成长路径"
+              }
+            ]
+          },
+          {
+            "type": "deckSplit",
+            "id": "deck-p3",
+            "no": "03",
+            "kicker": "POSITIONING",
+            "title": "从精准申请，到真正进入香港的学习与发展语境",
+            "intro": "不只完成一套作品集，而是建立可迁移的专业能力",
+            "note": "香港时尚研究生申请强调专业方向、实践成果与个人发展逻辑的匹配；除了院校选择，也需要清晰展示研究问题、设计过程、跨学科能力与未来规划。",
+            "arrow": "→",
+            "cols": [
+              {
+                "eyebrow": "BEFORE",
+                "title": "原有逻辑",
+                "bullets": [
+                  "先做作品，再寻找项目",
+                  "强调数量，弱化方向和评估。"
+                ]
+              },
+              {
+                "eyebrow": "AFTER",
+                "title": "目标导向",
+                "bullets": [
+                  "目标专业反推能力",
+                  "研究、实践与申请同步推进",
+                  "积累可延展到香港学习的证据。"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p4",
+            "no": "04",
+            "kicker": "WHY HONG KONG",
+            "title": "在国际教育、前沿产业与城市实践之间建立连接",
+            "intro": "学术探索与真实产业议题并行",
+            "columns": 2,
+            "items": [
+              {
+                "title": "TARGETED",
+                "desc": "根据背景、院校要求和目标方向建立申请组合。",
+                "no": "01"
+              },
+              {
+                "title": "INTERDISCIPLINARY",
+                "desc": "连接服装、纺织、数字时尚、传播、商业和可持续议题。",
+                "no": "02"
+              },
+              {
+                "title": "PRACTICE",
+                "desc": "用调研、材料测试、样衣、影像或品牌方案证明能力。",
+                "no": "03"
+              },
+              {
+                "title": "LOCAL CONTEXT",
+                "desc": "关注香港商业生态、展陈空间、品牌网络与区域消费文化。",
+                "no": "04"
+              }
+            ]
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p5",
+            "no": "05",
+            "kicker": "SFK METHOD",
+            "title": "我们如何培养一个港研申请者？",
+            "intro": "从目标院校出发，反推每一步成长",
+            "columns": 4,
+            "items": [
+              {
+                "no": "01",
+                "title": "明确目标",
+                "desc": "专业 / 学历要求 / 未来方向"
+              },
+              {
+                "no": "02",
+                "title": "诊断差距",
+                "desc": "背景 / 技能 / 项目 / 申请材料"
+              },
+              {
+                "no": "03",
+                "title": "能力补足",
+                "desc": "设计基础 / Research / 软件 / AI / 专业表达"
+              },
+              {
+                "no": "04",
+                "title": "项目建立",
+                "desc": "自主命题 / 方法 / Prototype"
+              },
+              {
+                "no": "05",
+                "title": "在地实践",
+                "desc": "香港教育资源 / 品牌观察 / 产业议题"
+              },
+              {
+                "no": "06",
+                "title": "作品迭代",
+                "desc": "项目深化 / 作品集 / 个人方向"
+              },
+              {
+                "no": "07",
+                "title": "精准申请",
+                "desc": "材料 / 文书 / 作品集 / 面试准备"
+              },
+              {
+                "no": "08",
+                "title": "未来衔接",
+                "desc": "实习 / 就业力 / 职业探索"
+              }
+            ]
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p6",
+            "no": "06",
+            "kicker": "CORE ADVANTAGES",
+            "title": "五大培养优势",
+            "intro": "不是单纯增加作品数量",
+            "columns": 2,
+            "items": [
+              {
+                "no": "01",
+                "title": "目标导向的个性化规划",
+                "desc": "从院校和专业要求反推能力配置。"
+              },
+              {
+                "no": "02",
+                "title": "针对性能力补足",
+                "desc": "围绕设计、面料、数字技能、研究与写作查漏补缺。"
+              },
+              {
+                "no": "03",
+                "title": "项目制作品集训练",
+                "desc": "每个项目建立研究—实验—应用—评估的证据链。"
+              },
+              {
+                "no": "04",
+                "title": "香港本地学术资源",
+                "desc": "从课程、工作室、行业议题理解学习语境。"
+              },
+              {
+                "no": "05",
+                "title": "升学与职业双向衔接",
+                "desc": "申请过程同步建立未来专业叙事。"
+              }
+            ]
+          },
+          {
+            "type": "deckRow",
+            "id": "deck-p7-8",
+            "no": "07 / 08",
+            "pages": [
+              {
+                "no": "07",
+                "kicker": "CORE COURSES",
+                "title": "重点课程与项目",
+                "intro": "五个核心模块，跨赛道匹配",
+                "cards": [
+                  {
+                    "en": "01",
+                    "title": "专业定位与申请规划",
+                    "note": "目标项目筛选、背景评估、时间表与申请策略。"
+                  },
+                  {
+                    "en": "02",
+                    "title": "专业研究与技能提升",
+                    "note": "设计研究、面料/工艺、CLO/3D、数字叙事与商业分析。"
+                  },
+                  {
+                    "en": "03",
+                    "title": "个性化作品集项目",
+                    "note": "自主命题、实物/数字原型、影像呈现与迭代。"
+                  }
+                ]
+              },
+              {
+                "no": "08",
+                "kicker": "CORE COURSES",
+                "title": "在地学术与实践项目 / 申请与就业衔接",
+                "intro": "把作品集转化为学习与发展的准备｜交付重点｜用可展示的研究证据和过程说明“为什么选择这个项目”。",
+                "cards": [
+                  {
+                    "en": "04",
+                    "title": "香港在地学术与实践",
+                    "note": "课程观察、Studio讨论、展览研究、城市与品牌调研。"
+                  },
+                  {
+                    "en": "05",
+                    "title": "申请与就业衔接",
+                    "note": "作品集整合、文书表达、面试演练、职业方向梳理。"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p9",
+            "no": "09",
+            "kicker": "LOCAL ACADEMIC EXPERIENCE",
+            "title": "香港，不只是申请目的地",
+            "intro": "让方向判断与真实学习语境连接",
+            "columns": 2,
+            "items": [
+              {
+                "title": "CAMPUS",
+                "desc": "认识高校课程结构、考核方式与研究文化。",
+                "no": "01"
+              },
+              {
+                "title": "STUDIO",
+                "desc": "以工作室方法开展实验、原型测试和项目讨论。",
+                "no": "02"
+              },
+              {
+                "title": "FEEDBACK",
+                "desc": "根据导师视角模拟批评、反思并迭代。",
+                "no": "03"
+              },
+              {
+                "title": "PORTFOLIO",
+                "desc": "将城市与产业观察转化为个人申请叙事。",
+                "no": "04"
+              }
+            ]
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p10",
+            "no": "10",
+            "kicker": "PROJECT EXPERIENCE",
+            "title": "从数字体验，到时尚空间与实物呈现",
+            "intro": "从屏幕到身体、材料与场景",
+            "subtitle": "从屏幕到产品，从产品到空间",
+            "columns": 3,
+            "items": [
+              {
+                "title": "DIGITAL EXPERIENCE",
+                "desc": "数字服装、3D样衣、数字影像与虚拟展示。"
+              },
+              {
+                "title": "PHYSICAL EXPERIENCE",
+                "desc": "面料测试、版型实验、服装/饰品原型。"
+              },
+              {
+                "title": "SPATIAL EXPERIENCE",
+                "desc": "秀场、展陈、品牌空间与消费行为观察。"
+              }
+            ],
+            "footer": "核心方法：研究 → 实验 → 原型 → 真实情境验证。"
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p11",
+            "no": "11",
+            "kicker": "ONE PORTFOLIO · A COHERENT PROFILE",
+            "title": "不是“多做项目”，而是“做对项目”",
+            "columns": 2,
+            "items": [
+              {
+                "title": "FOUNDATION",
+                "desc": "专业基础：调研、材料/工艺、方法呈现。",
+                "no": "01"
+              },
+              {
+                "title": "DIRECTION",
+                "desc": "个人方向：明确命题及审美、技术或商业判断。",
+                "no": "02"
+              },
+              {
+                "title": "CROSS-DISCIPLINE",
+                "desc": "跨界能力：数字、传播、可持续或管理维度。",
+                "no": "03"
+              },
+              {
+                "title": "PRACTICE",
+                "desc": "真实实践：测试、用户/市场反馈、合作与反思。",
+                "no": "04"
+              }
+            ],
+            "footer": "每一个项目证明一种能力；所有项目共同回答“为什么适合这个专业”。"
+          },
+          {
+            "type": "deckTracks",
+            "id": "deck-p12-18",
+            "no": "12",
+            "kicker": "院校与专业推荐 / SCHOOL & PROGRAM RECOMMENDATIONS",
+            "title": "七大赛道，匹配代表性港研项目",
+            "tabs": [
+              {
+                "no": "01",
+                "name": "男装设计"
+              },
+              {
+                "no": "02",
+                "name": "女装设计"
+              },
+              {
+                "no": "03",
+                "name": "戏服与表演服装"
+              },
+              {
+                "no": "04",
+                "name": "面料与材料创新"
+              },
+              {
+                "no": "05",
+                "name": "珠宝与时尚配饰"
+              },
+              {
+                "no": "06",
+                "name": "时尚传媒"
+              },
+              {
+                "no": "07",
+                "name": "时尚管理"
+              }
+            ],
+            "tracks": [
+              {
+                "no": "01",
+                "name": "男装设计",
+                "en": "MENSWEAR DESIGN",
+                "theme": "男装系列开发、人体结构、材料工艺与数字时装表达",
+                "schools": [
+                  {
+                    "cn": "香港理工大学",
+                    "en": "",
+                    "abbr": "香",
+                    "program": "MA in Fashion Design: Fashion Practice",
+                    "tag": "代表项目",
+                    "desc": ""
+                  },
+                  {
+                    "cn": "香港理工大学",
+                    "en": "",
+                    "abbr": "香",
+                    "program": "MA in Fashion Design: Digital Fashion Innovation",
+                    "tag": "关联项目",
+                    "desc": ""
+                  }
+                ],
+                "note": "作品集建议：研究男性身份、身体动作、市场场景；以系列开发和成衣原型体现设计语言。｜匹配说明：直接设计项目；官方课程不按男装独立命名。"
+              },
+              {
+                "no": "02",
+                "name": "女装设计",
+                "en": "WOMENSWEAR DESIGN",
+                "theme": "女装廓形、立裁、材料实验、系列叙事与数字展示",
+                "schools": [
+                  {
+                    "cn": "香港理工大学",
+                    "en": "",
+                    "abbr": "香",
+                    "program": "MA in Fashion Design: Fashion Practice",
+                    "tag": "代表项目",
+                    "desc": ""
+                  },
+                  {
+                    "cn": "香港理工大学",
+                    "en": "",
+                    "abbr": "香",
+                    "program": "MA in Fashion Design: Digital Fashion Innovation",
+                    "tag": "关联项目",
+                    "desc": ""
+                  }
+                ],
+                "note": "作品集建议：用女性身体与社会文化议题明确研究命题；以立裁、样衣测试呈现论证。｜匹配说明：直接设计项目；女装为作品方向而非独立硕士名称。"
+              },
+              {
+                "no": "03",
+                "name": "戏服与表演服装",
+                "en": "COSTUME & PERFORMANCE",
+                "theme": "角色塑造、表演身体、服装叙事、影像与舞台场景",
+                "schools": [
+                  {
+                    "cn": "香港理工大学",
+                    "en": "",
+                    "abbr": "香",
+                    "program": "MA in Fashion Design: Fashion Practice",
+                    "tag": "代表项目",
+                    "desc": ""
+                  },
+                  {
+                    "cn": "香港城市大学",
+                    "en": "",
+                    "abbr": "香",
+                    "program": "MFA in Creative Media（跨方向，需核课程与要求）",
+                    "tag": "关联项目",
+                    "desc": ""
+                  }
+                ],
+                "note": "作品集建议：通过剧本/角色研究、服装构造、动作测试及拍摄形成作品。｜匹配说明：跨方向匹配；不是官方独立“戏服硕士”。"
+              },
+              {
+                "no": "04",
+                "name": "面料与材料创新",
+                "en": "TEXTILES & MATERIALS",
+                "theme": "纺织材料、循环设计、功能性与智能可穿戴",
+                "schools": [
+                  {
+                    "cn": "香港理工大学",
+                    "en": "",
+                    "abbr": "香",
+                    "program": "MA in Sustainable Fashion and Innovation",
+                    "tag": "代表项目",
+                    "desc": ""
+                  },
+                  {
+                    "cn": "香港理工大学",
+                    "en": "",
+                    "abbr": "香",
+                    "program": "MSc in Intelligent Wearable Technology",
+                    "tag": "关联项目",
+                    "desc": ""
+                  }
+                ],
+                "note": "作品集建议：从材料问题出发建立性能测试、应用情境与原型验证。｜匹配说明：项目偏可持续/科技，非独立纯面料设计硕士。"
+              },
+              {
+                "no": "05",
+                "name": "珠宝与时尚配饰",
+                "en": "JEWELLERY & ACCESSORIES",
+                "theme": "身体与物件关系、佩戴结构、首饰材料、时尚配饰系统",
+                "schools": [
+                  {
+                    "cn": "香港理工大学",
+                    "en": "",
+                    "abbr": "香",
+                    "program": "MA in Fashion Design: Fashion Practice",
+                    "tag": "代表项目",
+                    "desc": ""
+                  },
+                  {
+                    "cn": "香港理工大学",
+                    "en": "",
+                    "abbr": "香",
+                    "program": "MA in Fashion Design: Digital Fashion Innovation",
+                    "tag": "关联项目",
+                    "desc": ""
+                  }
+                ],
+                "note": "作品集建议：通过材料、结构、佩戴体验与数字可视化呈现可迁移设计能力。｜匹配说明：跨方向匹配；不应视作独立珠宝硕士。"
+              },
+              {
+                "no": "06",
+                "name": "时尚传媒",
+                "en": "FASHION COMMUNICATION",
+                "theme": "时尚影像、视觉传播、品牌叙事、数字内容",
+                "schools": [
+                  {
+                    "cn": "香港城市大学",
+                    "en": "",
+                    "abbr": "香",
+                    "program": "MA in Creative Media",
+                    "tag": "代表项目",
+                    "desc": ""
+                  },
+                  {
+                    "cn": "香港浸会大学",
+                    "en": "",
+                    "abbr": "香",
+                    "program": "MA in Communication（传播方向跨界匹配）",
+                    "tag": "关联项目",
+                    "desc": ""
+                  }
+                ],
+                "note": "作品集建议：以受众/文化研究建立明确观点，再通过影像、刊物、互动媒体输出。｜匹配说明：传媒相关项目不等于时尚传媒专门学位。"
+              },
+              {
+                "no": "07",
+                "name": "时尚管理",
+                "en": "FASHION MANAGEMENT",
+                "theme": "时尚商业策略、零售、品牌管理、供应链及可持续",
+                "schools": [
+                  {
+                    "cn": "香港理工大学",
+                    "en": "",
+                    "abbr": "香",
+                    "program": "MA in Global Fashion Management",
+                    "tag": "代表项目",
+                    "desc": ""
+                  },
+                  {
+                    "cn": "香港理工大学",
+                    "en": "",
+                    "abbr": "香",
+                    "program": "MA in Sustainable Fashion and Innovation",
+                    "tag": "关联项目",
+                    "desc": ""
+                  }
+                ],
+                "note": "作品集建议：以品牌/消费者洞察为基础，用市场研究、商业模型及策略提案证明能力。｜匹配说明：注意 Global Fashion Management 有工作经验路径要求。"
+              }
+            ]
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p19",
+            "no": "13",
+            "kicker": "SUCCESS STORIES",
+            "title": "优秀成果与案例展示",
+            "intro": "不以未经核实的录取结果作承诺",
+            "columns": 3,
+            "items": [
+              {
+                "title": "案例展示建议①",
+                "desc": "设计方向：研究—实验—成衣/系列—反馈。"
+              },
+              {
+                "title": "案例展示建议②",
+                "desc": "材料方向：材料问题—测试—原型—验证。"
+              },
+              {
+                "title": "案例展示建议③",
+                "desc": "传媒/管理：研究议题—策略/影像—受众评估。"
+              }
+            ],
+            "note": "正式对外使用时，请替换为获得授权且可核实的真实学生案例。"
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p20",
+            "no": "14",
+            "kicker": "LEARNING JOURNEY",
+            "title": "你的港研成长路径",
+            "intro": "8阶段申请与成长路线",
+            "columns": 4,
+            "items": [
+              {
+                "no": "01",
+                "title": "目标定位",
+                "desc": "背景诊断、院校与专业规划"
+              },
+              {
+                "no": "02",
+                "title": "能力补足",
+                "desc": "核心技能、研究方法和跨学科工具"
+              },
+              {
+                "no": "03",
+                "title": "项目建立",
+                "desc": "命题、Research、Prototype"
+              },
+              {
+                "no": "04",
+                "title": "本地实践",
+                "desc": "课程语境、市场观察、项目验证"
+              },
+              {
+                "no": "05",
+                "title": "香港学术连接",
+                "desc": "Studio、交流与反馈"
+              },
+              {
+                "no": "06",
+                "title": "作品整合",
+                "desc": "叙事、排版、视觉呈现"
+              },
+              {
+                "no": "07",
+                "title": "精准申请",
+                "desc": "作品集、材料、面试"
+              },
+              {
+                "no": "08",
+                "title": "未来衔接",
+                "desc": "升学、实习与就业探索"
+              }
+            ]
+          },
+          {
+            "type": "deckGrid",
+            "id": "deck-p21",
+            "no": "15",
+            "kicker": "SIX KEY POINTS",
+            "title": "港研申请，不止完成一套作品集",
+            "intro": "核心规划",
+            "columns": 3,
+            "items": [
+              {
+                "title": "TARGET",
+                "desc": "明确目标：选对适合自己的专业及院校。",
+                "no": "01"
+              },
+              {
+                "title": "ABILITY",
+                "desc": "精准提升：补足项目要求的核心专业能力。",
+                "no": "02"
+              },
+              {
+                "title": "PORTFOLIO",
+                "desc": "建立证据：让每个项目证明研究与实践能力。",
+                "no": "03"
+              },
+              {
+                "title": "LOCAL",
+                "desc": "进入香港：理解当地学习与产业语境。",
+                "no": "04"
+              },
+              {
+                "title": "PRACTICE",
+                "desc": "连接实践：以真实测试与反馈推进项目。",
+                "no": "05"
+              },
+              {
+                "title": "FUTURE",
+                "desc": "面向未来：把申请与后续发展连接起来。",
+                "no": "06"
+              }
+            ]
+          },
+          {
+            "type": "deckStatement",
+            "id": "deck-p22",
+            "no": "16",
+            "kicker": "HONG KONG POSTGRADUATE PROGRAM",
+            "title": "离目标更近，也离未来更近。",
+            "subtitle": "Target your direction. Build your practice. Step into your future.",
+            "note": "香港研究生申请不仅是完成一轮选校、一套作品集和一份申请材料，而是通过目标院校导向的能力成长、项目实践与专业表达，让学生走向适合的香港学习与发展路径。",
+            "pillars": [
+              "Why This Major?",
+              "Why This Portfolio?",
+              "Why Me?",
+              "What’s Next?"
+            ],
+            "footer": "咨询课程顾问 / Talk to an Advisor"
+          },
+          {
+            "type": "courseCards",
+            "id": "deck-curriculum",
+            "groups": [
+              {
+                "source": "summerwinter",
+                "label": "海外冬夏校课程 · 顶尖院校在地学习",
+                "note": "共 5 门 · 招募中 · 适配研究生申请者",
+                "emptyNote": "「海外冬夏校课程 · 顶尖院校在地学习」下暂无同时满足「招募中」与适配研究生申请者的课程。",
+                "cards": [
+                  {
+                    "cat": "海外冬夏校",
+                    "eyebrow": "冬校 ｜ 27",
+                    "title": "27冬校-上海时装周 X LCF 时尚传媒班",
+                    "program": "LCF ｜ Avril",
+                    "tags": [
+                      "本科/研究生",
+                      "北京今日美术馆",
+                      "大师共创"
+                    ],
+                    "desc": "时尚传媒、虚拟时尚",
+                    "poster": "assets/img/courses/academic/academic_006.jpg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "时尚传媒",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "pdf": "assets/pdf/courses/academic/academic_006.pdf",
+                    "searchText": "27冬校-上海时装周 x lcf 时尚传媒班 lcf ｜ avril 时尚传媒、虚拟时尚 冬校 ｜ 27 大师共创 北京今日美术馆 本科/研究生"
+                  },
+                  {
+                    "cat": "海外冬夏校",
+                    "eyebrow": "冬校 ｜ 27",
+                    "title": "27冬校-上海时装周 X LCF 时尚管理班",
+                    "program": "LCF ｜ Jenny",
+                    "tags": [
+                      "本科/研究生",
+                      "北京今日美术馆",
+                      "大师共创"
+                    ],
+                    "desc": "时尚管理、买手管理",
+                    "poster": "assets/img/courses/academic/academic_007.jpg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "时尚管理",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "pdf": "assets/pdf/courses/academic/academic_007.pdf",
+                    "searchText": "27冬校-上海时装周 x lcf 时尚管理班 lcf ｜ jenny 时尚管理、买手管理 冬校 ｜ 27 大师共创 北京今日美术馆 本科/研究生"
+                  },
+                  {
+                    "cat": "海外冬夏校",
+                    "eyebrow": "冬校 ｜ 27",
+                    "title": "27冬校-上海时装周 X UAL 时尚设计班",
+                    "program": "LCF ｜ Lilia",
+                    "tags": [
+                      "本科/研究生",
+                      "北京今日美术馆",
+                      "大师共创"
+                    ],
+                    "desc": "时尚设计、珠宝设计、纺织品设计",
+                    "poster": "assets/img/courses/academic/academic_008.jpg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "时尚设计",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "pdf": "assets/pdf/courses/academic/academic_008.pdf",
+                    "searchText": "27冬校-上海时装周 x ual 时尚设计班 lcf ｜ lilia 时尚设计、珠宝设计、纺织品设计 冬校 ｜ 27 大师共创 北京今日美术馆 本科/研究生"
+                  },
+                  {
+                    "cat": "海外冬夏校",
+                    "eyebrow": "冬校 ｜ 27",
+                    "title": "27冬校-时装周 X LCF 青年设计师10人联合秀场班",
+                    "program": "LCF ｜ Lilia",
+                    "tags": [
+                      "本科/研究生",
+                      "北京今日美术馆",
+                      "实战产学研"
+                    ],
+                    "desc": "时尚设计、珠宝设计、纺织品设计",
+                    "poster": "assets/img/courses/academic/academic_009.jpg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "时尚设计",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "posterFull": "assets/img/courses/academic/academic_010.jpg",
+                    "searchText": "27冬校-时装周 x lcf 青年设计师10人联合秀场班 lcf ｜ lilia 时尚设计、珠宝设计、纺织品设计 冬校 ｜ 27 实战产学研 北京今日美术馆 本科/研究生"
+                  },
+                  {
+                    "cat": "海外冬夏校",
+                    "eyebrow": "冬校 ｜ 27",
+                    "title": "27冬校-时装周 X LCF 青年设计师5人菁英联秀班",
+                    "program": "LCF ｜ Lilia",
+                    "tags": [
+                      "本科/研究生",
+                      "北京今日美术馆",
+                      "实战产学研"
+                    ],
+                    "desc": "时尚设计、珠宝设计、纺织品设计",
+                    "poster": "assets/img/courses/academic/academic_011.jpg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "时尚设计",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "posterFull": "assets/img/courses/academic/academic_012.jpg",
+                    "searchText": "27冬校-时装周 x lcf 青年设计师5人菁英联秀班 lcf ｜ lilia 时尚设计、珠宝设计、纺织品设计 冬校 ｜ 27 实战产学研 北京今日美术馆 本科/研究生"
+                  }
+                ]
+              },
+              {
+                "source": "masterclass",
+                "label": "海外大师课程 · 教授视角与方法论",
+                "note": "共 2 门 · 招募中 · 适配研究生申请者",
+                "emptyNote": "「海外大师课程 · 教授视角与方法论」下暂无同时满足「招募中」与适配研究生申请者的课程。",
+                "cards": [
+                  {
+                    "cat": "海外大师课",
+                    "eyebrow": "大师课 ｜ 26",
+                    "title": "26F-NYU跨学科大师课-Jonathan",
+                    "program": "NYU ｜ Jonathan",
+                    "tags": [
+                      "跨学科",
+                      "线上"
+                    ],
+                    "desc": "跨学科大师课",
+                    "poster": "assets/img/courses/academic/26F-NYU跨学科大师课-Jonathan.jpeg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "跨学科",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "pdf": "assets/pdf/courses/academic/26F-NYU跨学科大师课-Jonathan.pdf",
+                    "searchText": "26f-nyu跨学科大师课-jonathan nyu ｜ jonathan 跨学科大师课 大师课 ｜ 26 跨学科 线上"
+                  },
+                  {
+                    "cat": "海外大师课",
+                    "eyebrow": "大师课 ｜ 26",
+                    "title": "26F-服装设计本研大师课-PolyU-Caijun",
+                    "program": "PolyU ｜ Caijun",
+                    "tags": [
+                      "本科/研究生",
+                      "线上",
+                      "秋季大师课1V20+"
+                    ],
+                    "desc": "服装设计、珠宝设计、时尚传媒等",
+                    "poster": "assets/img/courses/academic/academic_013.jpg",
+                    "facets": {
+                      "program_type": "招募中",
+                      "category": "服装设计",
+                      "status": "招募中"
+                    },
+                    "split": 0,
+                    "pdf": "assets/pdf/courses/academic/academic_013.pdf",
+                    "searchText": "26f-服装设计本研大师课-polyu-caijun polyu ｜ caijun 服装设计、珠宝设计、时尚传媒等 大师课 ｜ 26 秋季大师课1v20+ 线上 本科/研究生"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       }
     },
     {
       "id": "changemakers-ug",
       "badge": "长线内容",
       "tileVariant": null,
-      "cover": "",
+      "cover": "assets/img/products/美国本科未来精英计划.png",
       "placeholder": true,
       "meta": {
         "eyebrow": "US Undergraduate Admissions｜本科申请 · 作品集 + 科研双轨",
         "titleEn": "US Undergraduate Elite Program",
         "titleCn": "美国本科未来精英计划",
-        "desc": "",
+        "desc": "美本艺术设计长期规划：作品集+科研双轨按 TOP1–10 五档整合探索、手绘版型、AI 与大师课，贯通手绘到系列叙事，被名校看见、被行业理解、向未来转化。",
         "chips": [
           "TOP1 – TOP10 五层级",
           "AI全线覆盖",
@@ -340,13 +2936,13 @@
       "id": "longform2-ug",
       "badge": "长线内容",
       "tileVariant": "v2",
-      "cover": "",
+      "cover": "assets/img/products/英国本科未来成长计划.png",
       "placeholder": true,
       "meta": {
         "eyebrow": "UK Undergraduate Admissions｜本科申请 · 升学就业一体化",
         "titleEn": "UK Undergraduate Program",
         "titleCn": "英国本科未来成长计划",
-        "desc": "",
+        "desc": "英本升学就业一体化：作品集按 TOP1–9 多档向前加探索与项目、向后接跨学科课、夏校、大师课与教研，设计商业传播相连，被名校看见、被行业理解、向未来转化。",
         "chips": [
           "TOP1 – TOP9 多层级",
           "升学就业一体化",
@@ -369,13 +2965,13 @@
       "id": "longform3-ug",
       "badge": "长线内容",
       "tileVariant": "v3",
-      "cover": "",
+      "cover": "assets/img/products/香港本科升学计划.png",
       "placeholder": true,
       "meta": {
         "eyebrow": "HK Undergraduate Admissions｜本科申请 · 常规计划 + 学霸计划",
         "titleEn": "Hong Kong Undergraduate Program",
         "titleCn": "香港本科升学计划",
-        "desc": "",
+        "desc": "港本升学：作品集按常规/学霸、TOP3–8 分层含定位、补强、项目、夏冬校、大师课与申请，手绘到系列叙事、理解亚洲品牌，被名校看见、被行业理解、向未来转化。",
         "chips": [
           "常规计划 · 学霸计划",
           "TOP3 – TOP8 分层",
@@ -399,7 +2995,7 @@
     {
       "id": "internship",
       "badge": "56 个岗位",
-      "cover": "",
+      "cover": "assets/img/products/就业实习课程 · 岗位实习与导师带训.png",
       "placeholder": true,
       "tileVariant": null,
       "levels": [
@@ -462,7 +3058,7 @@
     {
       "id": "summerwinter",
       "badge": "11 门课程",
-      "cover": "",
+      "cover": "assets/img/products/海外冬夏校课程 · 顶尖院校在地学习.png",
       "placeholder": true,
       "tileVariant": "v2",
       "levels": [
@@ -526,7 +3122,7 @@
     {
       "id": "bizpractice",
       "badge": "6 个项目",
-      "cover": "",
+      "cover": "assets/img/products/商业实践课程 · 真实商业项目实战.png",
       "placeholder": true,
       "tileVariant": "v3",
       "levels": [
@@ -589,7 +3185,7 @@
     {
       "id": "masterclass",
       "badge": "11 门课程",
-      "cover": "",
+      "cover": "assets/img/products/海外大师课程 · 教授视角与方法论.png",
       "placeholder": true,
       "tileVariant": null,
       "levels": [
@@ -655,7 +3251,7 @@
     {
       "id": "overseas-program",
       "badge": "5 门课程",
-      "cover": "",
+      "cover": "assets/img/products/境外项目.png",
       "placeholder": true,
       "tileVariant": null,
       "levels": [
@@ -737,7 +3333,9 @@
               "program_type": "境外访校",
               "category": "艺术人文"
             },
-            "searchText": "2027寒假-新加坡名校探访团 新加坡 新加坡"
+            "searchText": "2027寒假-新加坡名校探访团 新加坡 新加坡",
+            "pdf": "assets/pdf/courses/overseas/2027寒假-新加坡名校探访团.pdf",
+            "docLabel": "2027寒假-新加坡名校探访团"
           },
           {
             "tab": "oversea",
@@ -767,7 +3365,9 @@
               "program_type": "境外访校",
               "category": "艺术人文"
             },
-            "searchText": "2027寒假-英国名校探访团 英国 伦敦、剑桥、提赛德、拉夫堡、利兹、爱丁堡、格拉斯哥"
+            "searchText": "2027寒假-英国名校探访团 英国 伦敦、剑桥、提赛德、拉夫堡、利兹、爱丁堡、格拉斯哥",
+            "pdf": "assets/pdf/courses/overseas/2027寒假-英国名校探访团.pdf",
+            "docLabel": "2027寒假-英国名校探访团"
           },
           {
             "tab": "oversea",
@@ -797,7 +3397,9 @@
               "program_type": "境外访校",
               "category": "艺术人文"
             },
-            "searchText": "2027暑假-美国访校访企团 美国 纽约、波士顿、洛杉矶"
+            "searchText": "2027暑假-美国访校访企团 美国 纽约、波士顿、洛杉矶",
+            "pdf": "assets/pdf/courses/overseas/2027暑假-美国访校访企团.pdf",
+            "docLabel": "2027暑假-美国访校访企团"
           },
           {
             "tab": "oversea",
@@ -827,7 +3429,9 @@
               "program_type": "境外夏校",
               "category": "艺术人文"
             },
-            "searchText": "2027暑假- risd官方夏校 美国 普罗维登斯"
+            "searchText": "2027暑假- risd官方夏校 美国 普罗维登斯",
+            "pdf": "assets/pdf/courses/overseas/2027暑假- RISD官方夏校.pdf",
+            "docLabel": "2027暑假- RISD官方夏校"
           },
           {
             "tab": "oversea",
@@ -856,7 +3460,8 @@
               "program_type": "境外夏校",
               "category": "艺术人文"
             },
-            "searchText": "2027暑假- ual伦艺本科官方夏校 英国 "
+            "searchText": "2027暑假- ual伦艺本科官方夏校 英国 ",
+            "pdfMissing": "2027暑假- UAL伦艺本科官方夏校.pdf"
           }
         ]
       }
@@ -864,7 +3469,7 @@
     {
       "id": "overseas-anxinban",
       "badge": "安心伴",
-      "cover": "",
+      "cover": "assets/img/products/英国产品.png",
       "placeholder": true,
       "tileVariant": null,
       "levels": [
@@ -872,13 +3477,13 @@
         "pg"
       ],
       "meta": {
-        "eyebrow": "Overseas Programs｜安心伴",
-        "titleEn": "Anxinban",
-        "titleCn": "安心伴",
-        "desc": "占位：安心伴项目整体定位、服务内容与申请引导待后续填充。",
+        "eyebrow": "UK Programs｜英国产品",
+        "titleEn": "UK Programs",
+        "titleCn": "英国产品",
+        "desc": "面向赴英及在英艺术留学生的核心产品体系，涵盖入境安顿、学习支持、升学规划全流程。",
         "chips": [
-          "安心伴",
-          "毕无忧",
+          "3门课程",
+          "安心伴 · 毕无忧 · 升学通",
           "本科 / 研究生"
         ]
       },
@@ -887,57 +3492,142 @@
       "whySFK": [],
       "closing": {},
       "detail": {
+        "desc": "升学通、安心伴、毕无忧，三段式覆盖英国艺术留学的升学、在读与毕业全程。",
+        "sections": [
+          {
+            "type": "deckGrid",
+            "id": "deck-positioning",
+            "no": "01",
+            "kicker": "项目定位 · POSITIONING",
+            "title": "升学 · 在读 · 毕业，三段式全程陪伴",
+            "intro": "由 SFK 伦敦校区导师贯穿支持，一站式衔接英国艺术留学的关键阶段。",
+            "columns": 3,
+            "items": [
+              {
+                "no": "01",
+                "en": "STAGE 01 · FOUNDATION",
+                "title": "升学通",
+                "desc": "面向 UAL 预科生，贯穿三学期的课程同步、作品集与申请指导，助力升入理想本科。"
+              },
+              {
+                "no": "02",
+                "en": "STAGE 02 · IN STUDY",
+                "title": "安心伴",
+                "desc": "覆盖在英学业与生活：课程同步、技法与英语提升，配套情绪支持与资源拓展。"
+              },
+              {
+                "no": "03",
+                "en": "STAGE 03 · GRADUATION",
+                "title": "毕无忧",
+                "desc": "围绕创作、展览与职业规划，提供作品指导、伦敦画廊资源与求职材料辅导。"
+              }
+            ]
+          },
+          {
+            "type": "curriculum",
+            "id": "cd-curriculum",
+            "label": "课程模块 · CURRICULUM"
+          },
+          {
+            "type": "cta",
+            "closing": {
+              "cn": "你的留学，我来守护",
+              "en": "Study smarter. Learn deeper. Grow beyond.",
+              "desc": "从预科申本到毕业求职，SFK UK 让每一段成长都有专业陪伴。",
+              "tags": [
+                "SFK UK",
+                "伦敦校区",
+                "一站式支持"
+              ]
+            }
+          }
+        ],
         "curriculumFacets": {
-          "searchPlaceholder": "搜索课程模块…",
+          "searchPlaceholder": "搜索课程…",
           "groups": [
             {
-              "value": "安心伴",
-              "label": "安心伴"
+              "label": "安心伴",
+              "value": "安心伴"
             },
             {
-              "value": "毕无忧",
-              "label": "毕无忧"
+              "label": "毕无忧",
+              "value": "毕无忧"
+            },
+            {
+              "label": "升学通",
+              "value": "升学通"
             }
           ]
         },
         "curriculum": [
           {
             "cat": "安心伴",
-            "eyebrow": "MODULE 01",
-            "title": "课程模块标题占位 01",
-            "program": "所属项目 / 院校占位",
+            "eyebrow": "学业陪伴",
+            "program": "安心伴 · 在英学业陪伴",
+            "title": "SFK 伦敦校区",
             "tags": [
-              "标签占位一",
-              "标签占位二"
+              "英国艺术留学生",
+              "本科 / 研究生",
+              "伦敦 · 线上",
+              "学业与生活陪伴"
             ],
-            "desc": "课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。",
-            "poster": "",
-            "pdf": "",
-            "_ph": true,
+            "desc": "课程同步、技法与英语提升，配套情绪支持与资源拓展。",
+            "poster": "assets/img/courses/uk-programs/安心伴.jpg",
             "facets": {
-              "program_type": "安心伴"
+              "program_type": "安心伴",
+              "category": "艺术人文"
             },
-            "searchText": "课程模块标题占位 01 所属项目 / 院校占位 课程模块简介占位 标签占位一 标签占位二 安心伴"
+            "searchText": "安心伴 · 在英学业陪伴 sfk 伦敦校区 课程同步、技法与英语提升，配套情绪支持与资源拓展。 英国艺术留学生 本科 / 研究生 伦敦 · 线上 学业与生活陪伴 学业陪伴 安心伴 艺术人文"
           },
           {
             "cat": "毕无忧",
-            "eyebrow": "MODULE 02",
-            "title": "课程模块标题占位 02",
-            "program": "所属项目 / 院校占位",
+            "eyebrow": "毕业支持",
+            "program": "毕无忧 · 毕业支持",
+            "title": "SFK 伦敦校区",
             "tags": [
-              "标签占位一",
-              "标签占位二"
+              "英国应届毕业生",
+              "本科 / 研究生",
+              "伦敦 · 线上",
+              "创作 · 展览 · 求职"
             ],
-            "desc": "课程模块简介占位：此处将展示该模块的教学内容、课时安排与产出成果，待后续填充。",
-            "poster": "",
-            "pdf": "",
-            "_ph": true,
+            "desc": "作品指导、策展布展与伦敦画廊资源，衔接 CV 与求职材料辅导。",
+            "poster": "assets/img/courses/uk-programs/毕无忧.png",
             "facets": {
-              "program_type": "毕无忧"
+              "program_type": "毕无忧",
+              "category": "艺术人文"
             },
-            "searchText": "课程模块标题占位 02 所属项目 / 院校占位 课程模块简介占位 标签占位一 标签占位二 毕无忧"
+            "searchText": "毕无忧 · 毕业支持 sfk 伦敦校区 作品指导、策展布展与伦敦画廊资源，衔接 cv 与求职材料辅导。 英国应届毕业生 本科 / 研究生 伦敦 · 线上 创作 · 展览 · 求职 毕业支持 毕无忧 艺术人文"
+          },
+          {
+            "cat": "升学通",
+            "eyebrow": "本科升学",
+            "program": "升学通",
+            "title": "SFK 伦敦校区",
+            "tags": [
+              "UAL 预科生",
+              "本科预科",
+              "伦敦 · 三学期",
+              "作品集 · 申请"
+            ],
+            "desc": "课程同步、学业规划与作品集创作，贯穿语言提升与申请指导。",
+            "poster": "assets/img/courses/uk-programs/升学通.jpg",
+            "facets": {
+              "program_type": "升学通",
+              "category": "艺术人文"
+            },
+            "searchText": "升学通 sfk 伦敦校区 课程同步、学业规划与作品集创作，贯穿语言提升与申请指导。 ual 预科生 本科预科 伦敦 · 三学期 作品集 · 申请 本科升学 升学通 艺术人文"
           }
-        ]
+        ],
+        "closing": {
+          "cn": "你的留学，我来守护",
+          "en": "Study smarter. Learn deeper. Grow beyond.",
+          "desc": "从预科申本到毕业求职，SFK UK 让每一段成长都有专业陪伴。",
+          "tags": [
+            "SFK UK",
+            "伦敦校区",
+            "一站式支持"
+          ]
+        }
       }
     }
   ],
@@ -945,7 +3635,7 @@
     {
       "id": "frontier-lecture",
       "badge": "11 门课程",
-      "cover": "",
+      "cover": "assets/img/products/时尚未来趋势讲座.png",
       "placeholder": true,
       "tileVariant": null,
       "levels": [

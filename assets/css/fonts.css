@@ -1,0 +1,131 @@
+/* ═══════════════════════════════════════════
+   FONTS — self-hosted, no external CDN request.
+   Previously loaded live from fonts.googleapis.com,
+   which some hosting environments/networks can't
+   reach (e.g. mainland China), causing silent
+   fallback to system fonts. Files below live in
+   assets/fonts/ and ship with the site.
+═══════════════════════════════════════════ */
+
+/* ── Poppins (--font-en) ──
+   2026-09-20：全局字体升级。用户原定英文层用 ITC Avant Garde Gothic Std，
+   但该字体是 Monotype/ITC 的商业付费字体，官方唯一的网页分发渠道是
+   Adobe Fonts 自家 CDN 或付费购买 Fonts.com/MyFonts 的 webfont 授权，
+   两者都不允许把字体文件下载后自行放入 assets 自托管（与本项目「所有字体
+   必须自托管、不走外部 CDN」的强制要求冲突，原因见上方总说明：中国大陆
+   网络环境下外部 CDN 不可靠）。经与用户确认，英文层改用 Poppins
+   （Indian Type Foundry 设计，OFL 协议，可免费自托管，几何无衬线风格与
+   Avant Garde Gothic 气质相近）替代。
+   注：Poppins 原始字形不含 → ← ↑ ↓ 箭头符号（West-latin 字符集限制），
+   站内 .u-arrow 等箭头元素会自动 fallback 到系统无衬线字体渲染——这与
+   替换前 Space Grotesk 子集对 →/← 两个箭头本就同样缺失、依赖 fallback
+   的情况一致，非本次替换引入的新问题。 */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url('../fonts/poppins/poppins-latin-300-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('../fonts/poppins/poppins-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('../fonts/poppins/poppins-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('../fonts/poppins/poppins-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('../fonts/poppins/poppins-latin-700-normal.woff2') format('woff2');
+}
+
+/* ── Space Mono (--font-mono) ──
+   2026-09-20：全局字体升级，JetBrains Mono → Space Mono。用户要求换一款
+   「没那么科技感、偏文艺」的非衬线等宽字体——JetBrains Mono 是给代码编辑器
+   设计的「IDE 感」很重的字体；Space Mono（Colophon Foundry 设计，OFL 协议，
+   Google Fonts 收录）是编辑/数据新闻类网站常用的「有个性但不是终端字体」
+   的等宽字体（FiveThirtyEight 等编辑向网站的经典选择），字重只有
+   400/700（原字体本身不提供 500/600，跟之前 JetBrains Mono 也没有 600
+   是同一种情况——CSS 里少数写死 font-weight:500/600 的地方会被浏览器就近
+   匹配到最接近的已加载字重，不会报错或不显示）。 */
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('../fonts/space-mono/space-mono-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('../fonts/space-mono/space-mono-latin-700-normal.woff2') format('woff2');
+}
+
+/* ── HarmonyOS Sans SC (--font-cn) ──
+   2026-09-20：全局字体升级，Noto Sans SC → HarmonyOS Sans SC（华为开发者
+   官方字体）。原始 TTF 是全字符集，单个字重 8MB+，体积上完全没法直接
+   自托管；这里用 fonttools/pyftsubset 按「本项目 html/js/json/css 里实际
+   出现过的全部字符」（见 tools/_font_subset_chars.txt，扫描时排除了
+   _archive/_component_demos 等非生产内容）做了一次精确子集化，只保留
+   用得到的约 2100 个汉字 + 基础拉丁/数字/标点，单字重压缩到 ~264-272KB
+   （比之前 Noto Sans SC 单字重 1.1MB 还更小）。字重比原来多了 600
+   （Semibold）——排查发现全站有 12 处 --font-cn 场景写了 font-weight:600，
+   之前 Noto Sans SC 只有 300/400/500/700 四档，600 一直是被浏览器就近
+   匹配到别的字重顶替，这次补齐了真实的 600 字重文件。
+   授权：HarmonyOS Sans Fonts License Agreement（见同目录 LICENSE.txt）
+   允许免费嵌入使用，但要求「在软件中显著声明使用了 HarmonyOS Sans
+   Fonts」——已在页脚 .site-footer__bottom 加了对应署名（见 index.html）。 */
+@font-face {
+  font-family: 'HarmonyOS Sans SC';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url('../fonts/harmonyos-sans-sc/harmonyos-sans-sc-300.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'HarmonyOS Sans SC';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('../fonts/harmonyos-sans-sc/harmonyos-sans-sc-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'HarmonyOS Sans SC';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('../fonts/harmonyos-sans-sc/harmonyos-sans-sc-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'HarmonyOS Sans SC';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('../fonts/harmonyos-sans-sc/harmonyos-sans-sc-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'HarmonyOS Sans SC';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('../fonts/harmonyos-sans-sc/harmonyos-sans-sc-700.woff2') format('woff2');
+}
