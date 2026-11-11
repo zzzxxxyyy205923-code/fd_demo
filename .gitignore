@@ -1,3 +1,29 @@
+# Dependencies (restored with npm ci)
 node_modules/
-server/data/*.jsonl
+
+# Operating-system metadata
 .DS_Store
+._*
+Thumbs.db
+
+# Temporary files, editor swaps and generated backups
+*.tmp
+*.swp
+*.swo
+*~
+server/data/*.bak
+
+# Python caches from content import/build tools
+__pycache__/
+*.py[cod]
+
+# Test output and package-manager debug logs
+coverage/
+playwright-report/
+test-results/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Keep live site state: accounts.json, content.json, usage.jsonl,
+# audit.jsonl and server/data/uploads/ are intentionally not ignored.

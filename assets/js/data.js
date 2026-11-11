@@ -111,6 +111,7 @@ const DATA = (() => {
     try {
       return await loadJson();
     } catch (err) {
+      if (window.__SFK_GATE__) throw err;
       /* HTTP 取数失败（服务未启动 / 路径不对 / JSON 损坏）→ 尝试镜像 */
       try {
         return await loadFallback();

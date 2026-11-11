@@ -12,7 +12,9 @@
     "account:list": "node server/scripts/account.js list",
     "account:remove": "node server/scripts/account.js remove",
     "account:passwd": "node server/scripts/account.js passwd",
-    "account:hash": "node server/scripts/account.js hash"
+    "account:hash": "node server/scripts/account.js hash",
+    "test": "node tools/tests/content.cjs",
+    "test:http": "node tools/tests/content.cjs --http"
   },
   "engines": {
     "node": ">=18"

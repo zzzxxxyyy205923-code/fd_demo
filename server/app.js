@@ -14,8 +14,7 @@
 
   ★ 本站相对源站的三处刻意裁剪（均为「不覆盖已有功能与数据」的要求）：
     1) 站点内容由同一道闸门保护，登录后仍按原有 index.html + hash 路由浏览，页面结构不变；
-    2) 不加载 content / uploads 模块，不注册 /data/*.json 快照路由与内容编辑接口 ——
-       本站页面数据一律仍由 assets/data/*.json 提供，后台不会改写任何已写入内容；
+    2) 内容编辑写入本站私有快照，assets/data/*.json 路由发布最新内容；
     3) 账号库只认本站 server/data/accounts.json（见 lib/account-cloud.js），
        CloudBase 账号源恒为关闭，避免环境变量把账号或内容串到别的站点。
 */
@@ -28,6 +27,11 @@ const accounts = require("./lib/accounts");
 const usage = require("./lib/usage");
 const xlsx = require("./lib/xlsx");
 const audit = require("./lib/audit");
+const content = require("./lib/content");
+const uploads = require("./lib/uploads");
+const isContentEditor = user => user && ["admin", "research_mentor"].includes(user.role);
+const { PAGES: CONTENT_SECTIONS, LABELS: CONTENT_LABELS, ADMIN_NAV } = require("./lib/content-navigation");
+const CONTENT_PAGES = CONTENT_SECTIONS.map(p => p.key);
 const {
   hasPermission, rolesForClient, permissionsForClient,
   accountScope, isScopedAccount, SCOPED_POSITION, ROLES
@@ -37,7 +41,7 @@ const SITE_ROOT = path.join(__dirname, "..");
 
 /* 静态资源白名单：只有 assets/ 与根目录页面/脚本允许被读取，
    server/、node_modules/、tools/、package.json 一律 404（账号哈希绝不能被下载）。 */
-const ROOT_DENY = new Set(["/package.json", "/package-lock.json"]);
+const ROOT_DENY = new Set(["/package.json", "/package-lock.json", "/content.html"]);
 const SERVED_DIRS = ["assets"];
 
 /* 全站闸门的唯一放行清单：登录页本身、认证接口，以及登录页渲染所需的静态资源。
@@ -217,15 +221,17 @@ function sendHtmlWithMarker(file, res) {
 
 /* ── 后台页面外壳（与源站同一套占位符注入） ───────────────────── */
 const VIEWS = path.join(__dirname, "views");
-const ADMIN_NAV = [{ key: "accounts", href: "admin", label: "账号与权限" }];
 const escapeHtml = value => String(value == null ? "" : value)
   .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
+function adminNav(user, current) {
+  const items = ADMIN_NAV.filter(item => !item.editor || isContentEditor(user));
+  if (items.length < 2) return "";
+  return `<nav class="admin-nav" aria-label="后台导航">${items.map(item => `<a href="${item.href}"${item.key === current ? ' aria-current="page"' : ''}>${item.label}</a>`).join('')}</nav>`;
+}
 function adminTabs(current) {
   const page = ADMIN_NAV.find(item => item.key === current);
-  return `<nav class="admin-tabs" aria-label="后台页面标签">`
-    + `<span class="admin-tab is-active" aria-current="page">${page.label}</span>`
-    + `<button class="admin-tab admin-tab--action" type="button" id="admin-logout-tab">登出</button></nav>`;
+  return `<nav class="admin-tabs" aria-label="后台页面标签"><span class="admin-tab is-active" aria-current="page">${page.label}</span><button class="admin-tab admin-tab--action" type="button" id="admin-logout-tab">登出</button></nav>`;
 }
 
 /* 后台页脚直接复用主页的共享组件：数据取自同一份 site-content.json，
@@ -248,8 +254,10 @@ function sendAdminPage(file, current, req, res) {
     const html = fs.readFileSync(path.join(SITE_ROOT, file), "utf8")
       .replace(/<head[^>]*>/i, match => `${match}\n${GATE_MARKER}<base href="${escapeHtml(joinPath(basePath(), "/"))}">`)
       .replace("<!-- admin:topbar -->", fill("admin-topbar.html", { account: escapeHtml(`${me.name} · ${me.roleLabel}`) }))
-      .replace("<!-- admin:nav -->", "")
+      .replace("<!-- admin:nav -->", adminNav(req.user, current))
       .replace("<!-- admin:tabs -->", adminTabs(current))
+      .replace('data-page=""', `data-page="${current}"`)
+      .replace('<h1 id="page-title">站点内容</h1>', `<h1 id="page-title">${ADMIN_NAV.find(item => item.key === current).label}</h1>`)
       .replace("<!-- admin:footer -->", adminFooterMarkup());
     res.setHeader("Cache-Control", "no-store");
     res.type("html").send(html);
@@ -357,9 +365,96 @@ function createApp() {
     res.sendFile(path.join(SITE_ROOT, "login.html"));
   });
 
-  /* 后台页面：仅登录用户可进；数据范围由 /api/accounts 控制 */
+  /* ── 后台页面 ── */
+  const contentEditor = (req, res, next) => {
+    if (!req.user) return denyAccess(req, res);
+    if (!isContentEditor(req.user)) return denyAccess(req, res, "仅超级管理员和协作管理员可编辑站点内容");
+    next();
+  };
   site.get("/admin", requireLogin, (req, res) => sendAdminPage("admin.html", "accounts", req, res));
+  site.get("/admin/content", contentEditor, (_req, res) => res.redirect(joinPath(basePath(), "/admin/courses")));
+  site.get(`/admin/:slug(${CONTENT_PAGES.join("|")})`, contentEditor, (req, res) => sendAdminPage("content.html", req.params.slug, req, res));
   site.get("/admin.html", (_req, res) => res.redirect(joinPath(basePath(), "/admin")));
+
+  /* ── 站点内容编辑接口：列表 / 读取 / 新增 / 修改 / 删除 + 文件上传 ── */
+  site.get("/api/content-kinds", contentEditor, (req,res) => {
+    const section = CONTENT_SECTIONS.find(p => p.key === req.query.page);
+    if (req.query.page && !section) return sendError(res, 404, "内容页面不存在");
+    const kinds = section ? section.kinds : Object.keys(content.configs);
+    res.set("Cache-Control", "no-store").json(kinds.map(kind => ({kind,
+      label: CONTENT_LABELS[kind] || (kind.startsWith('schools_') ? kind.slice(8) : content.configs[kind].label),
+      count: content.list(kind).all, pageTitle: section && section.label, hint: section && section.hint
+    })));
+  });
+  site.get("/api/content/:kind/schema", contentEditor, (req, res) => {
+    try { res.set("Cache-Control", "no-store").json({ ...content.editorSchema(req.params.kind), uploadMaxBytes: uploads.MAX_BYTES, pdfMaxBytes: uploads.PDF_MAX_BYTES }); }
+    catch (e) { sendError(res, e.status || 500, e.message); }
+  });
+  /* 文件上传：请求体即文件本身（Content-Type: image/* 或 application/pdf），返回 uploads/<哈希>.<扩展名>。
+     请求体按声明类型的上限读取（图片 5 MB / PDF 50 MB），save() 再按文件头识别的真实类型复核。 */
+  const sameOrigin = req => { const origin = req.get("origin"); return !origin || origin === `${req.protocol}://${req.get("host")}`; };
+  site.post("/api/content/upload", contentEditor, (req, res, next) => {
+    if (!sameOrigin(req)) return sendError(res, 403, "请在本站内上传");
+    const mime = String(req.get("content-type") || "").split(";")[0].trim();
+    const limit = uploads.limitFor(mime);
+    if (!limit) return sendError(res, 415, "仅支持 JPG / PNG / WebP / GIF 图片、PDF、MP4 或 WebM 视频");
+    const declared = Number(req.get("content-length"));
+    if (declared > limit) return sendError(res, 413, `${mime === "application/pdf" ? "PDF" : "图片"}超过 ${Math.round(limit / 1048576)} MB 上限，请压缩后再上传`);
+    req.uploadMime = mime;
+    express.raw({ type: () => true, limit })(req, res, next);
+  }, async (req, res) => {
+    try {
+      const result = await uploads.save(req.body, req.uploadMime);
+      const pdf = /\.pdf$/.test(result.url);
+      auditLog(req, { action: "content.upload", targetId: result.url, targetName: "uploads",
+        changes: [{ field: pdf ? "pdf" : "image", label: pdf ? "上传 PDF" : "上传图片", before: "", after: result.url }] });
+      res.status(201).json(result);
+    } catch (e) { sendError(res, e.status || 500, e.status ? e.message : "上传失败，请稍后重试"); }
+  });
+  /* 上传的文件：登录后可读（前台页面要显示后台换上的照片 / 海报 / PDF） */
+  site.get("/uploads/:name", requireLogin, async (req, res) => {
+    try {
+      const file = await uploads.locate(req.params.name);
+      if (!file) return res.status(404).send("Not Found");
+      res.sendFile(file, { maxAge: "365d", immutable: true });
+    } catch (e) { console.error("[uploads]", e); res.status(502).send("文件暂时无法读取"); }
+  });
+  site.get("/api/content/:kind", contentEditor, (req, res) => {
+    try { res.set("Cache-Control", "no-store").json(content.list(req.params.kind, req.query)); }
+    catch (e) { sendError(res, e.status || 500, e.message); }
+  });
+  site.get("/api/content/:kind/:id", contentEditor, (req, res) => {
+    try { res.set("Cache-Control", "no-store").json(content.get(req.params.kind, req.params.id)); }
+    catch (e) { sendError(res, e.status || 500, e.message); }
+  });
+  const writeContent = action => async (req, res) => {
+    if (!sameOrigin(req)) return sendError(res, 403, "请在本站内提交修改");
+    if (!req.is("application/json")) return sendError(res, 415, "请使用 JSON 请求");
+    const body = req.body || {};
+    try {
+      const result = await content.mutate(req.params.kind, req.params.id, body.record, body.version, action);
+      const record = result.record || {};
+      auditLog(req, { action: `content.${action}`, targetId: req.params.id || record.id,
+        targetName: req.params.kind, changes: [{ field: "content", label: "站点内容", before: "", after: action }] });
+      res.status(action === "create" ? 201 : 200).json(result);
+    } catch (e) {
+      auditLog(req, { action: `content.${action}`, targetId: req.params.id || "—", targetName: req.params.kind,
+        result: "failed", reason: e.status ? e.message : "保存失败" });
+      if (!e.status) console.error("[content]", e);
+      sendError(res, e.status || 500, e.status ? e.message : "保存失败，请稍后重试");
+    }
+  };
+  site.post("/api/content/:kind", contentEditor, writeContent("create"));
+  site.put("/api/content/:kind/:id", contentEditor, writeContent("update"));
+  site.delete("/api/content/:kind/:id", contentEditor, writeContent("delete"));
+
+  /* 站点读取的数据文件：返回后台编辑后的内容（与原静态文件同一 URL、同一形状；未登录不能读取） */
+  for (const file of content.DATA_FILES) {
+    site.get(`/${file}.json`, requireLogin, (_req, res) => {
+      try { res.set("Cache-Control", "no-cache").json(content.data(file)); }
+      catch (e) { console.error("[data]", e); sendError(res, 500, "数据暂时无法读取"); }
+    });
+  }
 
   site.get("/api/roles", requireLogin, (_req, res) => {
     res.setHeader("Cache-Control", "no-store");

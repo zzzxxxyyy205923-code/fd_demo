@@ -251,7 +251,7 @@ const CourseProducts = {
   _prepare(p) {
     const PH = cpPlaceholder();
     const D = p.detail || (DATA.coursesIndustry || {})[p.id] || (DATA.coursesAcademic || {})[p.id] || {};
-    const cards = (D.curriculum && D.curriculum.length) ? D.curriculum : (PH.curriculum || []);
+    const cards = Array.isArray(D.curriculum) ? D.curriculum : (PH.curriculum || []);
     this._cur = {
       cards,
       facets: D.curriculumFacets || PH.facets || { groups: [] },

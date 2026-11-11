@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="assets/img/brand/logo-fashion.png">
+  <title>后台 · 站点内容｜SFK 时尚科系</title>
+  <!-- 受保护页面：仅登录用户可打开；数据范围由服务端 /api/accounts 决定。
+       版式骨架完整复用 art-humanities_demo 的 admin.html，
+       品牌与设计令牌由 admin-fashion.css 换成 SFK 时尚科系粉黑体系。
+       顶栏 / 底部标签由服务端从 server/views/ 注入；
+       页脚直接复用主页的共享组件（site-footer.css + site-footer.js），
+       服务端从同一份 site-content.json 注入页脚数据。 -->
+  <link rel="stylesheet" href="assets/css/fonts.css?v=20261109v">
+  <link rel="stylesheet" href="assets/css/admin-site.css?v=20261109v">
+  <link rel="stylesheet" href="assets/css/admin.css?v=20261109v">
+  <link rel="stylesheet" href="assets/css/admin-fashion.css?v=20261109v">
+  <!-- 必须排在后台样式之后：统一焦点态，覆盖 .admin-page a:focus-visible -->
+  <link rel="stylesheet" href="assets/css/site-footer.css?v=20261109v">
+  <script src="assets/js/auth-guard.js?v=20261109v"></script>
+<link rel="stylesheet" href="assets/css/content.css"></head>
+<body class="admin-page" data-page="">
+
+  <!-- admin:topbar -->
+
+<main class="admin-shell"><!-- admin:nav --><section class="admin-hero"><div><p class="admin-kicker">CONTENT MANAGEMENT</p><h1 id="page-title">站点内容</h1></div><p id="counts"></p></section>
+<p id="page-hint"></p><nav id="kinds" class="content-kinds" aria-label="内容分类"></nav>
+<p id="status" role="status" aria-live="polite"></p><section class="admin-block"><div class="admin-block__head"><h2 id="heading"></h2><input id="search" type="search" placeholder="搜索当前分类" aria-label="搜索内容"><button id="create" class="admin-btn admin-btn--primary">＋ 新增</button></div><div id="rows"></div></section>
+<dialog id="editor"><form id="edit-form"><div class="editor-head"><h2 id="edit-title">编辑内容</h2><button type="button" id="cancel" class="admin-btn">关闭</button></div><p id="edit-status" role="status"></p><div id="fields"></div><div class="editor-head"><button id="save" class="admin-btn admin-btn--primary">保存</button><button id="delete" type="button" class="admin-btn">删除此条目</button></div></form></dialog><!-- admin:tabs --></main>  <!-- admin:footer -->
+
+  <script src="assets/js/site-footer.js?v=20261109v"></script>
+<script src="assets/js/admin-shell.js"></script><script src="assets/js/content.js"></script></body></html>
